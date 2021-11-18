@@ -12,7 +12,7 @@ Presensi adalah salah satu faktor yang digunakan untuk laporan atau dijadikan se
 > 1.	Apa masalah yang terdapat pada presensi menggunakan metode konvensional?
 > 2.	Bagaimana cara kerja aplikasi untuk melakukan monitoring presensi?
 
-# roject Scope dan Deliverables:
+# Project Scope dan Deliverables:
 ![image](https://user-images.githubusercontent.com/53375007/142345690-d425ca6d-f4ce-49d8-8f6b-d82c164eb6ad.png)
 # Project schedule:
 WBS	TUGAS PROYEK	DURASI	TANGGAL MULAI	TANGGAL SELESAI
