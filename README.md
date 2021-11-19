@@ -1,5 +1,3 @@
-# msib-capstone
- pembuatan capstone untuk menyelesaikan studi independen di dicoding
 # Team ID: CSD-040  
 # Nama Anggota:
 > 1.	A195R4154 - EDO JULIANTIO
