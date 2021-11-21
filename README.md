@@ -28,12 +28,15 @@ Resources yang akan digunakan dalam pembuatan aplikasi ini adalah sebagai beriku
 Strength :   
 1	Menjadi solusi atas permasalahan presensi yang muncul hingga saat ini  
 2	Mempermudah pegawai perusahaan dalam melakukan presensi.  
+
 Weakness :  
 1	Masih awam di kalangan masyarakat  
 2	Kemungkinan untuk mengalami error pada aplikasi, seperti kemungkinan data presensi tidak masuk database, bug, dll.  
+
 Opportunity :  
 1	Bisa bekerja sama dengan banyak perusahaan untuk menerapkan aplikasi ini.  
 2	Nantinya memiliki fitur-fitur yang akan mempermudah pegawai dalam menggunakan aplikasi.  
+
 Threat :    
 1	Munculnya aplikasi sejenisnya untuk menghambat perkembangan aplikasi ini.  
 
