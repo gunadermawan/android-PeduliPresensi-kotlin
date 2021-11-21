@@ -21,7 +21,7 @@ Resources yang akan digunakan dalam pembuatan aplikasi ini adalah sebagai beriku
 1.	Bahasa Pemrograman: Kotlin 
 2.	IDE: Android Studio
 3.	Basis Data: Firebase
-4.	Jurnal sebagai referensi :
+4.	Jurnal sebagai referensi :  
 	[1]	D. Supriatna and E. Junianto, “Aplikasi Presensi Pegawai Memanfaatkan Teknologi Fingerprint dan Global Positioning System (GPS) Pada Android,” e Pros. Tek. Inform., vol. 1, no. 1, pp. 269–280, 2020.  
 [2]D. Supriatna and E. Junianto, “Aplikasi Presensi Pegawai Memanfaatkan Teknologi Fingerprint dan Global Positioning System (GPS) Pada Android,” e Pros. Tek. Inform., vol. 1, no. 1, pp. 269–280, 2020.
 # Risk and Issue Management plant:
