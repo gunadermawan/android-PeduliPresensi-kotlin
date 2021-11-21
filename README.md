@@ -2,7 +2,8 @@
 # Nama Anggota:
 > 1.	A195R4154 - EDO JULIANTIO
 > 2.	A007R6017 - GUNA DERMAWAN
-# Tema		: Utilitas
+# Tema		: 
+Utilitas
 # Judul Proyek	:  
 Pengembangan mobile presensi berbasis GPS dan Geocoding menggunakan metode haversine
 # Executive summary: 
