@@ -25,16 +25,16 @@ Resources yang akan digunakan dalam pembuatan aplikasi ini adalah sebagai beriku
 	[1]	D. Supriatna and E. Junianto, “Aplikasi Presensi Pegawai Memanfaatkan Teknologi Fingerprint dan Global Positioning System (GPS) Pada Android,” e Pros. Tek. Inform., vol. 1, no. 1, pp. 269–280, 2020.  
 [2]D. Supriatna and E. Junianto, “Aplikasi Presensi Pegawai Memanfaatkan Teknologi Fingerprint dan Global Positioning System (GPS) Pada Android,” e Pros. Tek. Inform., vol. 1, no. 1, pp. 269–280, 2020.
 # Risk and Issue Management plant:
-> Strength :   
+Strength :   
 1	Menjadi solusi atas permasalahan presensi yang muncul hingga saat ini  
 2	Mempermudah pegawai perusahaan dalam melakukan presensi.  
-> Weakness :  
+Weakness :  
 1	Masih awam di kalangan masyarakat  
 2	Kemungkinan untuk mengalami error pada aplikasi, seperti kemungkinan data presensi tidak masuk database, bug, dll.  
-> Opportunity :  
+Opportunity :  
 1	Bisa bekerja sama dengan banyak perusahaan untuk menerapkan aplikasi ini.  
 2	Nantinya memiliki fitur-fitur yang akan mempermudah pegawai dalam menggunakan aplikasi.  
-> Threat :    
+Threat :    
 1	Munculnya aplikasi sejenisnya untuk menghambat perkembangan aplikasi ini.  
 
 
