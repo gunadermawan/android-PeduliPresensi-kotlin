@@ -3,4 +3,26 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="email">Email</string>
+    <string name="register">REGISTER</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="already_have_account">SUDAH PUNYA AKUN?</string>
+    <string name="login">MASUK</string>
+    <string name="not_have_account">TIDAK PUNYA AKUN?</string>
+    <string name="logout">Logout</string>
+    <string name="input_phone_number">smasukan nomor handphone Anda</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">HOME</string>
+    <string name="location">location</string>
+    <string name="attendance">presensi</string>
+    <string name="histori">histori</string>
+    <string name="profile">profile</string>
+    <!--    notification -->
+    <string name="register_succes">Registrasi Berhasil!</string>
+    <string name="register_succes_desc">Silahkan aktivasi email Anda di menu proofil</string>
+    <string name="welcome">Selamat datang</string>
+    <string name="user">User</string>
+    <string name="save">Save</string>
+    <string name="masukan_nama">Masukan nama</string>
 </resources>

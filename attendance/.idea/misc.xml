@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_camera.xml" value="0.25092592592592594" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_home.xml" value="0.20833333333333334" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_profile.xml" value="0.12604166666666666" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/menu/bottom_nav_menu.xml" value="0.12604166666666666" />
       </map>
     </option>
   </component>

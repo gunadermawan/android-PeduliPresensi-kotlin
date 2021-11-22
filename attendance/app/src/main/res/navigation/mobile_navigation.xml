@@ -14,12 +14,17 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.capstone.attendance.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/attendance"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.capstone.attendance.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/histori"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.capstone.attendance.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
