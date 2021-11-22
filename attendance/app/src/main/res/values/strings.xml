@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">attendance</string>
+    <string name="home">BERANDA</string>
+    <string name="presensi">PRESENSI</string>
+    <string name="history">HISTORI</string>
+    <string name="profile">PROFILE</string>
 </resources>
