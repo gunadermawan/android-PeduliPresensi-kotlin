@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">attendance</string>
+    <string name="presensi">PRESENSI</string>
+    <string name="histori">HISTORI</string>
+    <string name="home">HOME</string>
+    <string name="attendance">ATTENDANCE</string>
+    <string name="history">HISTORY</string>
+    <string name="profile">PROFILE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">SELAMAT DATANG</string>
+    <string name="user">USER</string>
+    <string name="date_today">TANGGAL HARI INI</string>
 </resources>
