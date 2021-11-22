@@ -2,27 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation.xml"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.capstone.attendance.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/locationFragment"
+        android:id="@+id/navigation_location"
         android:name="com.capstone.attendance.LocationFragment"
         android:label="@string/presensi"
         tools:layout="@layout/fragment_location" />
     <fragment
-        android:id="@+id/historiFragment"
+        android:id="@+id/navigation_histori"
         android:name="com.capstone.attendance.HistoriFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_histori" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/navigation_profile"
         android:name="com.capstone.attendance.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
