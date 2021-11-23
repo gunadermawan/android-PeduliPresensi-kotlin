@@ -50,6 +50,7 @@
                     android:layout_marginEnd="16dp"
                     android:ems="10"
                     android:hint="@string/masukan_nama"
+                    android:importantForAutofill="no"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +64,7 @@
                     android:layout_marginEnd="32dp"
                     android:ems="10"
                     android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toStartOf="@+id/etName"
@@ -75,6 +77,7 @@
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="phone"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -100,7 +103,8 @@
                     app:layout_constraintBottom_toBottomOf="@+id/etEmail"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
+                    app:layout_constraintTop_toTopOf="@+id/etEmail"
+                    android:contentDescription="@string/img_verificaiton" />
 
                 <ImageView
                     android:id="@+id/iv_unverified"
@@ -110,7 +114,8 @@
                     app:layout_constraintBottom_toBottomOf="@+id/etEmail"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
+                    app:layout_constraintTop_toTopOf="@+id/etEmail"
+                    android:contentDescription="@string/img_verificaiton" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
