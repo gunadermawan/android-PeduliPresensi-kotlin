@@ -9,4 +9,8 @@
     <string name="user">User</string>
     <string name="save">Save</string>
     <string name="masukan_nama">Masukan nama</string>
+    <string name="check_in">Check In</string>
+    <string name="scanning_balai_desa_warureja">Scanning your location</string>
+    <string name="check_in_success">Check-in success</string>
+    <string name="btn_attendance">btn attendance</string>
 </resources>
