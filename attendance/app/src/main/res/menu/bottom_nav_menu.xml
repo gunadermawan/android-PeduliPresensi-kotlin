@@ -4,6 +4,7 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
+<<<<<<< HEAD
         android:title="@string/home" />
 
     <item
@@ -15,6 +16,19 @@
         android:id="@+id/navigation_history"
         android:icon="@drawable/ice_history"
         android:title="@string/history" />
+=======
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_finger"
+        android:title="@string/attendance" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ice_history"
+        android:title="@string/histori" />
+>>>>>>> 3e7321ff5084aaf545687521783f15e6510092b5
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_person"
