@@ -20,4 +20,5 @@
     <string name="password">password</string>
     <string name="forgot_password">lupa password?</string>
     <string name="sign_up">BELUM PUNYA AKUN?</string>
+    <string name="register">DAFTAR</string>
 </resources>
