@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:background="@color/blue_500"
     app:rb_color="@android:color/white"
+    app:rb_duration="3000"
     app:rb_radius="32dp"
     app:rb_rippleAmount="6"
-    app:rb_duration="3000"
     app:rb_scale="6"
     tools:context=".ui.attendance.AttendanceFragment">
 
@@ -17,50 +17,50 @@
         android:id="@+id/tv_checkIn"
         android:layout_width="99dp"
         android:layout_height="wrap_content"
-        android:text="@string/check_in"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-medium"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/check_in"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvScanning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/scanning_balai_desa_warureja"
-        android:textSize="14sp"
-        android:textColor="@android:color/white"
         android:layout_below="@id/tv_checkIn"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
+        android:text="@string/scanning_balai_desa_warureja"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_CheckIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/ic_finger_white"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:contentDescription="@string/btn_attendance" />
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/btn_attendance"
+        android:src="@drawable/ic_finger_white" />
 
     <TextView
         android:id="@+id/tv_CheckInSuccess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/check_in_success"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/bg_checkin_success"
+        android:paddingStart="68dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="68dp"
+        android:paddingBottom="14dp"
+        android:text="@string/check_in_success"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:paddingTop="14dp"
-        android:paddingBottom="14dp"
-        android:paddingStart="68dp"
-        android:paddingEnd="68dp"
-        android:visibility="gone"
-        android:layout_marginBottom="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:visibility="gone" />
 
 </com.skyfishjy.library.RippleBackground>
