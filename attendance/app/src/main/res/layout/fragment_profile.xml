@@ -95,6 +95,17 @@
                     app:layout_constraintEnd_toEndOf="@+id/etPhone"
                     app:layout_constraintStart_toStartOf="@+id/etPhone"
                     app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/round_courners"
+                    android:text="@string/logout"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_update"
+                    app:layout_constraintStart_toStartOf="@+id/btn_update"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_update" />
 
                 <ImageView
                     android:id="@+id/iv_verified"
