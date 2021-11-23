@@ -10,5 +10,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
+//        remove actionbar
+        if (supportActionBar!=null){
+            supportActionBar?.hide()
+        }
     }
 }
