@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.capstone.attendance.ui.dashboard.DashboardFragment"
+        android:name="com.capstone.attendance.ui.attendance.AttendanceFragment"
         android:label="@string/attendance"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_attendance" />
 
     <fragment
         android:id="@+id/navigation_notifications"
