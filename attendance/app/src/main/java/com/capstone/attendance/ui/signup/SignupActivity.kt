@@ -1,12 +1,18 @@
 package com.capstone.attendance.ui.signup
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.capstone.attendance.R
+import androidx.appcompat.app.AppCompatActivity
+import com.capstone.attendance.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
+    private lateinit var signupBinding: ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        signupBinding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(signupBinding.root)
+//        remove actionbar
+        if (supportActionBar != null) {
+            supportActionBar?.hide()
+        }
     }
 }
