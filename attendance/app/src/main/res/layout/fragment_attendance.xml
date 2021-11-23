@@ -41,7 +41,7 @@
         android:id="@+id/fab_CheckIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue_500"
+        android:backgroundTint="@color/white"
         android:src="@drawable/ic_finger_white"
         android:layout_centerInParent="true"
         android:contentDescription="@string/btn_attendance" />
