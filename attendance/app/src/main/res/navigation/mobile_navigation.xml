@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.capstone.attendance.ui.notifications.NotificationsFragment"
+        android:name="com.capstone.attendance.ui.history.HistoryFragment"
         android:label="@string/histori"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.capstone.attendance.ui.profile.ProfileFragment"
