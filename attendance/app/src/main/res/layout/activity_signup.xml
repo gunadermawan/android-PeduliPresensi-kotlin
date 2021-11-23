@@ -68,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/register"
+                android:background="@drawable/round_courners"
                 app:layout_constraintEnd_toEndOf="@id/btn_login"
                 app:layout_constraintStart_toStartOf="@id/btn_login"
                 app:layout_constraintTop_toBottomOf="@id/et_password" />
@@ -79,6 +80,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/login"
                 android:textStyle="bold"
+                android:background="@drawable/round_courners"
                 app:layout_constraintEnd_toEndOf="@id/et_password"
                 app:layout_constraintStart_toStartOf="@id/et_password"
                 app:layout_constraintTop_toBottomOf="@id/btn_signUp" />
