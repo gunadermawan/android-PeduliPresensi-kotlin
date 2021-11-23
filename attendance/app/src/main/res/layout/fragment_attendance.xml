@@ -14,7 +14,7 @@
     tools:context=".ui.attendance.AttendanceFragment">
 
     <TextView
-        android:id="@+id/textViewCheckIn"
+        android:id="@+id/tv_checkIn"
         android:layout_width="99dp"
         android:layout_height="wrap_content"
         android:text="@string/check_in"
@@ -33,21 +33,21 @@
         android:text="@string/scanning_balai_desa_warureja"
         android:textSize="14sp"
         android:textColor="@android:color/white"
-        android:layout_below="@id/textViewCheckIn"
+        android:layout_below="@id/tv_checkIn"
         android:layout_centerHorizontal="true"
         android:visibility="gone"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabCheckIn"
+        android:id="@+id/fab_CheckIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue_500"
-        android:src="@drawable/ic_finger"
+        android:src="@drawable/ic_finger_white"
         android:layout_centerInParent="true"
         android:contentDescription="@string/btn_attendance" />
 
     <TextView
-        android:id="@+id/tvCheckInSuccess"
+        android:id="@+id/tv_CheckInSuccess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/check_in_success"
