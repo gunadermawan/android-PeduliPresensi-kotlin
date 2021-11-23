@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">attendance</string>
     <string name="title_home">Home</string>
-    <string name="home">HOME</string>
+    <string name="home">home</string>
     <string name="attendance">presensi</string>
     <string name="histori">histori</string>
     <string name="profile">profile</string>
@@ -21,4 +21,5 @@
     <string name="forgot_password">lupa password?</string>
     <string name="sign_up">BELUM PUNYA AKUN?</string>
     <string name="register">DAFTAR</string>
+    <string name="logout">logout</string>
 </resources>
