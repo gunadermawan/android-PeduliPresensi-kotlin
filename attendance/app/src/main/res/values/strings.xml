@@ -26,4 +26,5 @@
     <string name="start_attendance">Presensi dimulai pukul</string>
     <string name="radius_attendance">Radius presensi adalah</string>
     <string name="_10_m">10 M</string>
+    <string name="turn_on_gps">Aktifkan GPS Anda</string>
 </resources>
