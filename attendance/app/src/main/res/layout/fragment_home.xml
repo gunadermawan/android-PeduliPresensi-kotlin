@@ -131,7 +131,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
                                 android:maxLines="1"
                                 android:text="@string/start_attendance"
                                 android:textColor="@color/white"
@@ -146,6 +145,11 @@
                                 android:textSize="50sp"
                                 android:textStyle="bold" />
 
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_time" />
+
                         </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -155,6 +159,7 @@
                 <androidx.cardview.widget.CardView
                     style="@style/cardView_home"
                     android:backgroundTint="@color/green_700">
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -172,7 +177,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
                                 android:maxLines="1"
                                 android:text="@string/radius_attendance"
                                 android:textColor="@color/white"
@@ -186,6 +190,11 @@
                                 android:textColor="@color/white"
                                 android:textSize="50sp"
                                 android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_office" />
 
                         </LinearLayout>
 
