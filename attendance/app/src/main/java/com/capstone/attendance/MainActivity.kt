@@ -1,22 +1,22 @@
 package com.capstone.attendance
 
 import android.os.Bundle
-import android.view.WindowManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.attendance.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,5 +34,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 //        hide actionBar
         supportActionBar?.hide()
+        auth = FirebaseAuth.getInstance()
     }
 }
