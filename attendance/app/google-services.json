@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "313971943463",
+    "project_id": "attendance-ac103",
+    "storage_bucket": "attendance-ac103.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313971943463:android:db025ddc3f205bbf5f8602",
+        "android_client_info": {
+          "package_name": "com.capstone.attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313971943463-ulisef9v8uag8v226515n11na3st975r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaCJjRbhoBaPjOKEWrvxR8gYoNTgwI4ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313971943463-ulisef9v8uag8v226515n11na3st975r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
