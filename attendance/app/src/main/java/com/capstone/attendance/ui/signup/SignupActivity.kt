@@ -28,7 +28,7 @@ class SignupActivity : AppCompatActivity() {
             val email = signupBinding.etEmail.text.toString().trim()
             val pass = signupBinding.etPassword.text.toString().trim()
 //            validation
-            if (email.isEmpty()){
+            if (email.isEmpty()) {
                 signupBinding.etEmail.error = "Email tidak boleh kosong!"
                 signupBinding.etEmail.requestFocus()
                 return@setOnClickListener
@@ -38,7 +38,7 @@ class SignupActivity : AppCompatActivity() {
                 signupBinding.etEmail.requestFocus()
                 return@setOnClickListener
             }
-            if (pass.isEmpty() || pass.length < 8){
+            if (pass.isEmpty() || pass.length < 8) {
                 signupBinding.etPassword.error = "Password harus lebih dari 8 karakter"
                 signupBinding.etPassword.requestFocus()
                 return@setOnClickListener
@@ -56,16 +56,25 @@ class SignupActivity : AppCompatActivity() {
 
     private fun registerUser(email: String, pass: String) {
         auth.createUserWithEmailAndPassword(email, pass)
-            .addOnCompleteListener(this){
-                if (it.isSuccessful){
+            .addOnCompleteListener(this) {
+                if (it.isSuccessful) {
                     Intent(this@SignupActivity, MainActivity::class.java).also {
                         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(it)
                     }
                 } else {
-                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "$it.exception?.message", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
 
+    override fun onStart() {
+        super.onStart()
+        if (auth.currentUser != null) {
+            Intent(this@SignupActivity, MainActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
     }
 }
