@@ -148,6 +148,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:contentDescription="@string/image_time"
                                 android:src="@drawable/ic_time" />
 
                         </LinearLayout>
@@ -194,6 +195,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:contentDescription="@string/image_location"
                                 android:src="@drawable/ic_location" />
 
                         </LinearLayout>
@@ -222,8 +224,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:maxLines="1"
                                 android:layout_marginBottom="16dp"
+                                android:maxLines="1"
                                 android:text="@string/turn_on_gps"
                                 android:textColor="@color/white"
                                 android:textSize="12sp"
@@ -233,13 +235,15 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginBottom="16dp"
+                                android:contentDescription="@string/image_gps"
                                 android:src="@drawable/ic_navigations" />
+
                             <Button
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
+                                android:layout_marginBottom="8dp"
                                 android:background="@drawable/round_courners"
-                                android:text="GPS"
-                                android:layout_marginBottom="8dp"/>
+                                android:text="@string/gps" />
 
                         </LinearLayout>
 
@@ -249,7 +253,8 @@
 
                 <androidx.cardview.widget.CardView
                     style="@style/cardView_home"
-                    android:backgroundTint="@color/yellow_700" >
+                    android:backgroundTint="@color/yellow_700">
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -267,9 +272,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:maxLines="1"
                                 android:layout_marginBottom="16dp"
-                                android:text="Cek koneksi internet"
+                                android:maxLines="1"
+                                android:text="@string/check_connection"
                                 android:textColor="@color/white"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -278,13 +283,15 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginBottom="16dp"
+                                android:contentDescription="@string/image_connections"
                                 android:src="@drawable/ic_network" />
+
                             <Button
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
+                                android:layout_marginBottom="8dp"
                                 android:background="@drawable/round_courners"
-                                android:text="INTERNET"
-                                android:layout_marginBottom="8dp"/>
+                                android:text="@string/internet" />
 
                         </LinearLayout>
 
