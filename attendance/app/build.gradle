@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -52,4 +53,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     // ripple effect layout
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+//    firebase
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
 }
