@@ -9,7 +9,7 @@
     <string name="user">User</string>
     <string name="save">Save</string>
     <string name="masukan_nama">Masukan nama</string>
-    <string name="check_in">Check In</string>
+    <string name="check_in">Mulai presensi</string>
     <string name="scanning_balai_desa_warureja">Scanning your location</string>
     <string name="check_in_success">Check-in success</string>
     <string name="btn_attendance">btn attendance</string>
@@ -27,4 +27,11 @@
     <string name="radius_attendance">Radius presensi adalah</string>
     <string name="_10_m">10 M</string>
     <string name="turn_on_gps">Aktifkan GPS Anda</string>
+    <string name="image_time">image time</string>
+    <string name="image_location">image location</string>
+    <string name="image_gps">image gps</string>
+    <string name="gps">GPS</string>
+    <string name="internet">INTERNET</string>
+    <string name="image_connections">image connections</string>
+    <string name="check_connection">Cek koneksi internet</string>
 </resources>
