@@ -34,4 +34,5 @@
     <string name="internet">INTERNET</string>
     <string name="image_connections">image connections</string>
     <string name="check_connection">Cek koneksi internet</string>
+    <string name="input_phone_number">Masukan No Hp Anda</string>
 </resources>
