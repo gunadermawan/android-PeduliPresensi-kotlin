@@ -46,7 +46,11 @@
                         android:id="@+id/iv_user_profile_home"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:src="@drawable/ic_person"
+                        app:civ_border_color="@color/red_500"
+                        app:civ_border_width="1dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.081"
@@ -63,36 +67,28 @@
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.075"
+                        app:layout_constraintHorizontal_bias="0.069"
                         app:layout_constraintStart_toEndOf="@+id/iv_user_profile_home"
                         app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintVertical_bias="0.148" />
 
                     <TextView
                         android:id="@+id/tv_user_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="32dp"
                         android:text="@string/user"
                         android:textSize="24sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_home"
                         app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tv_welcome" />
+                        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+                        app:layout_constraintVertical_bias="1.0" />
 
-                    <TextView
-                        android:id="@+id/tv_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/date_today"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/iv_user_profile_home"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_user_profile_home"
-                        app:layout_constraintVertical_bias="0.555" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -238,6 +234,7 @@
                                 android:src="@drawable/ic_navigations" />
 
                             <Button
+                                android:id="@+id/btn_gps"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="8dp"
@@ -286,6 +283,7 @@
                                 android:src="@drawable/ic_network" />
 
                             <Button
+                                android:id="@+id/btn_connections"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="8dp"
