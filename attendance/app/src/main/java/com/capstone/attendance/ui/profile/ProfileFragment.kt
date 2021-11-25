@@ -1,5 +1,6 @@
 package com.capstone.attendance.ui.profile
 
+import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Bitmap
@@ -98,6 +99,7 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private fun intentCamera() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
             activity?.packageManager?.let {
