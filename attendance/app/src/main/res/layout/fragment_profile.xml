@@ -18,6 +18,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_camera"
+            app:civ_border_color="@color/red_500"
+            app:civ_border_width="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,11 +28,11 @@
             android:id="@+id/cvForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="24dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
-            android:layout_margin="24dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +97,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toStartOf="@+id/etName"
                     app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+
                 <Button
                     android:id="@+id/btn_logout"
                     android:layout_width="0dp"
@@ -111,23 +114,25 @@
                     android:id="@+id/iv_verified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/img_verificaiton"
                     android:src="@drawable/ic_verified"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/etEmail"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail"
-                    android:contentDescription="@string/img_verificaiton" />
+                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
 
                 <ImageView
                     android:id="@+id/iv_unverified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/img_verificaiton"
                     android:src="@drawable/ic_unverified"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/etEmail"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail"
-                    android:contentDescription="@string/img_verificaiton" />
+                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

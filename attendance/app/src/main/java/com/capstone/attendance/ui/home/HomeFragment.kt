@@ -1,12 +1,12 @@
 package com.capstone.attendance.ui.home
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
@@ -16,7 +16,6 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
     private lateinit var auth: FirebaseAuth
-    private lateinit var imgUri: Uri
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,13 +25,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 
@@ -47,7 +45,11 @@ class HomeFragment : Fragment() {
                 Picasso.get().load("https://picsum.photos/id/1/200/300")
                     .into(binding.ivUserProfileHome)
             }
-            binding.tvUserHome.text = user.displayName
+            if (user.displayName == null) {
+                binding.tvUserHome.text = getString(R.string.user)
+            } else {
+                binding.tvUserHome.text = user.displayName
+            }
         }
     }
 

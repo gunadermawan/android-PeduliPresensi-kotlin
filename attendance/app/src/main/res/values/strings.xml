@@ -5,7 +5,7 @@
     <string name="attendance">presensi</string>
     <string name="histori">histori</string>
     <string name="profile">profile</string>
-    <string name="welcome">Selamat datang</string>
+    <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
     <string name="save">Save</string>
     <string name="masukan_nama">Masukan nama</string>
@@ -35,4 +35,5 @@
     <string name="image_connections">image connections</string>
     <string name="check_connection">Cek koneksi internet</string>
     <string name="input_phone_number">Masukan No Hp Anda</string>
+    <string name="show_profile">Lihat Profil</string>
 </resources>
