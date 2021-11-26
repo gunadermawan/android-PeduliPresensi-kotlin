@@ -26,5 +26,18 @@
         android:id="@+id/navigation_profile"
         android:name="com.capstone.attendance.ui.profile.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionUpdateEmail"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.capstone.attendance.ui.update.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/actionUpdatedEmail"
+            app:destination="@id/navigation_profile" />
+    </fragment>
 </navigation>
