@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
@@ -71,6 +72,12 @@ class ProfileFragment : Fragment() {
                 profileBinding.etName.requestFocus()
                 return@setOnClickListener
             }
+            val phoneNumber = profileBinding.etPhone.text.toString().trim()
+            if (phoneNumber.isEmpty()) {
+                profileBinding.etPhone.error = "Masukan No. Hp Anda"
+                profileBinding.etPhone.requestFocus()
+                return@setOnClickListener
+            }
             UserProfileChangeRequest.Builder()
                 .setDisplayName(name)
                 .setPhotoUri(image)
@@ -110,6 +117,10 @@ class ProfileFragment : Fragment() {
                     Toast.makeText(activity, "Verifikasi gagal!", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+        profileBinding.etEmail.setOnClickListener {
+            val updateEmail = ProfileFragmentDirections.actionUpdateEmail()
+            Navigation.findNavController(it).navigate(updateEmail)
         }
     }
 

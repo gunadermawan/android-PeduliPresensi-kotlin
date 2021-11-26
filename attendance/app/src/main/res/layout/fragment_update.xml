@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masukkan Password Anda"
+            android:text="@string/enter_your_pass"
             android:textAlignment="center" />
 
         <EditText
@@ -32,16 +32,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/btnAuth"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:background="@color/blue_500"
-            android:text="Confirm Password"
+            android:background="@drawable/round_courners"
+            android:text="@string/confirm_password"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
     </LinearLayout>
@@ -63,16 +64,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masukkan Email Baru"
+            android:text="@string/new_email"
             android:textAlignment="center" />
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="New Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:autofillHints="false" />
 
         <Button
             android:id="@+id/btnUpdate"
@@ -81,7 +83,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:background="@drawable/round_courners"
-            android:text="Update"
+            android:text="@string/update"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 
