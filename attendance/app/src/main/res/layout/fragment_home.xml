@@ -107,7 +107,7 @@
 
                 <androidx.cardview.widget.CardView
                     style="@style/cardView_home"
-                    android:backgroundTint="@color/red_500">
+                    android:backgroundTint="@color/orange_400">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
