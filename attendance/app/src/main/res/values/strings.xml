@@ -36,4 +36,5 @@
     <string name="check_connection">Cek koneksi internet</string>
     <string name="input_phone_number">Masukan No Hp Anda</string>
     <string name="show_profile">Lihat Profil</string>
+    <string name="email_verification">Verifikasi Email Anda</string>
 </resources>

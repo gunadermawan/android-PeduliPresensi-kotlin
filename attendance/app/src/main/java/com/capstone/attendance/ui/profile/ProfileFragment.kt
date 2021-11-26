@@ -83,7 +83,8 @@ class ProfileFragment : Fragment() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
+                                .show()
                     }
                 }
         }
@@ -96,6 +97,19 @@ class ProfileFragment : Fragment() {
         }
         profileBinding.ivProfile.setOnClickListener {
             intentCamera()
+        }
+        profileBinding.btnVerification.setOnClickListener {
+            user?.sendEmailVerification()?.addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(
+                        activity,
+                        "Email verifikasi berhasil dikirim",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(activity, "Verifikasi gagal!", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
