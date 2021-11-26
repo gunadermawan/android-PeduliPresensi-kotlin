@@ -13,7 +13,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 
-class UpdateFragment : Fragment() {
+class UpdateEmailFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var updateBinding: FragmentUpdateBinding
 
@@ -69,7 +69,7 @@ class UpdateFragment : Fragment() {
                 user?.let {
                     user.updateEmail(email).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val actionUpdatedEmail = UpdateFragmentDirections.actionUpdatedEmail()
+                            val actionUpdatedEmail = UpdateEmailFragmentDirections.actionUpdatedEmail()
                             Navigation.findNavController(view).navigate(actionUpdatedEmail)
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
@@ -79,6 +79,5 @@ class UpdateFragment : Fragment() {
                 }
             }
         }
-
     }
 }

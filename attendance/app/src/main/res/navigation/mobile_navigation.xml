@@ -30,14 +30,26 @@
         <action
             android:id="@+id/actionUpdateEmail"
             app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/actionUpdatePassword"
+            app:destination="@id/updatePasswordFragment2" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.capstone.attendance.ui.update.UpdateFragment"
+        android:name="com.capstone.attendance.ui.update.UpdateEmailFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/actionUpdatedEmail"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePasswordFragment2"
+        android:name="com.capstone.attendance.ui.update.UpdatePasswordFragment"
+        android:label="fragment_update_password"
+        tools:layout="@layout/fragment_update_password" >
+        <action
+            android:id="@+id/actionUpdatedPassword"
             app:destination="@id/navigation_profile" />
     </fragment>
 </navigation>

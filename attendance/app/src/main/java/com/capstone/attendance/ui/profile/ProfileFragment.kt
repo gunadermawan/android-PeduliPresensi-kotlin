@@ -110,6 +110,10 @@ class ProfileFragment : Fragment() {
             val updateEmail = ProfileFragmentDirections.actionUpdateEmail()
             Navigation.findNavController(it).navigate(updateEmail)
         }
+        profileBinding.btnChangePassword.setOnClickListener {
+            val updatePass = ProfileFragmentDirections.actionUpdatePassword()
+            Navigation.findNavController(it).navigate(updatePass)
+        }
     }
 
     @SuppressLint("QueryPermissionsNeeded")
