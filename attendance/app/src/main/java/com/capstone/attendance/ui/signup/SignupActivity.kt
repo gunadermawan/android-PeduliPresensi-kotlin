@@ -1,11 +1,18 @@
 package com.capstone.attendance.ui.signup
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import com.capstone.attendance.MainActivity
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivitySignupBinding
 import com.capstone.attendance.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -62,8 +69,28 @@ class SignupActivity : AppCompatActivity() {
                         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(it)
                     }
+                    val mNotificationManager =
+                        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                    val mBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.ic_finger)
+                        .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_finger))
+                        .setContentTitle(resources.getString(R.string.register_succes))
+                        .setContentText(resources.getString(R.string.register_succes_desc))
+                        .setAutoCancel(true)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        val channel = NotificationChannel(
+                            CHANNEL_ID,
+                            CHANNEL_NAME,
+                            NotificationManager.IMPORTANCE_HIGH
+                        )
+                        channel.description = CHANNEL_NAME
+                        mBuilder.setChannelId(CHANNEL_ID)
+                        mNotificationManager.createNotificationChannel(channel)
+                    }
+                    val notification = mBuilder.build()
+                    mNotificationManager.notify(NOTIFICATION_ID, notification)
                 } else {
-                    Toast.makeText(this, "$it.exception?.message", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -76,5 +103,11 @@ class SignupActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+    }
+
+    companion object {
+        private const val NOTIFICATION_ID = 1
+        private const val CHANNEL_ID = "channel_id"
+        private const val CHANNEL_NAME = "channel_name"
     }
 }
