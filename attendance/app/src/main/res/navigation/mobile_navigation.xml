@@ -41,7 +41,9 @@
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/actionUpdatedEmail"
-            app:destination="@id/navigation_profile" />
+            app:destination="@id/navigation_profile"
+            app:popUpTo="@id/navigation_profile"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/updatePasswordFragment2"
@@ -50,6 +52,8 @@
         tools:layout="@layout/fragment_update_password" >
         <action
             android:id="@+id/actionUpdatedPassword"
-            app:destination="@id/navigation_profile" />
+            app:destination="@id/navigation_profile"
+            app:popUpTo="@id/navigation_profile"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
