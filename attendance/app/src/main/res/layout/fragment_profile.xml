@@ -18,8 +18,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_camera"
-            app:civ_border_color="@color/red_500"
-            app:civ_border_width="1dp"
+            app:civ_border_color="@color/blue_700"
+            app:civ_border_width="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +66,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="32dp"
                     android:ems="10"
-                    android:enabled="false"
+                    android:focusableInTouchMode="false"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:ems="10"
-                    android:enabled="false"
+                    android:focusableInTouchMode="true"
                     android:importantForAutofill="no"
                     android:inputType="phone"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
@@ -109,6 +109,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/btn_update"
                     app:layout_constraintStart_toStartOf="@+id/btn_update"
                     app:layout_constraintTop_toBottomOf="@+id/btn_update" />
+
                 <Button
                     android:id="@+id/btn_verification"
                     android:layout_width="0dp"
