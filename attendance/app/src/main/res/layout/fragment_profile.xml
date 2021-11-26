@@ -73,18 +73,6 @@
                     app:layout_constraintStart_toStartOf="@+id/etName"
                     app:layout_constraintTop_toBottomOf="@+id/etName" />
 
-                <EditText
-                    android:id="@+id/etPhone"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:focusableInTouchMode="true"
-                    android:importantForAutofill="no"
-                    android:inputType="phone"
-                    app:layout_constraintEnd_toEndOf="@+id/etName"
-                    app:layout_constraintStart_toStartOf="@+id/etEmail"
-                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
                 <Button
                     android:id="@+id/btn_update"
@@ -96,7 +84,7 @@
                     android:textColor="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toStartOf="@+id/etName"
-                    app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
                 <Button
                     android:id="@+id/btn_logout"
@@ -121,6 +109,18 @@
                     app:layout_constraintEnd_toEndOf="@+id/btn_logout"
                     app:layout_constraintStart_toStartOf="@+id/btn_logout"
                     app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
+
+                <Button
+                    android:id="@+id/btn_changePassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/round_courners"
+                    android:text="@string/change_password"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_verification"
+                    app:layout_constraintStart_toStartOf="@+id/btn_verification"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_verification" />
 
                 <ImageView
                     android:id="@+id/iv_verified"
