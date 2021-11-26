@@ -7,7 +7,7 @@
     <string name="profile">profile</string>
     <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
-    <string name="save">Save</string>
+    <string name="save">Simpan</string>
     <string name="masukan_nama">Masukan nama</string>
     <string name="check_in">Mulai presensi</string>
     <string name="scanning_balai_desa_warureja">Scanning your location</string>
@@ -21,7 +21,7 @@
     <string name="forgot_password">lupa password?</string>
     <string name="sign_up">BELUM PUNYA AKUN?</string>
     <string name="register">DAFTAR</string>
-    <string name="logout">logout</string>
+    <string name="logout">Keluar</string>
     <string name="_07_00">07:00</string>
     <string name="start_attendance">Presensi dimulai pukul</string>
     <string name="radius_attendance">Radius presensi</string>
@@ -43,4 +43,5 @@
     <string name="confirm_password">Konfirmasi Password</string>
     <string name="new_email">Masukkan Email Baru</string>
     <string name="update">update</string>
+    <string name="change_password">Ganti Password</string>
 </resources>

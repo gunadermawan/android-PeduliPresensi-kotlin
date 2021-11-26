@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -54,11 +53,6 @@ class ProfileFragment : Fragment() {
             } else {
                 profileBinding.ivUnverified.visibility = View.VISIBLE
             }
-            if (user.phoneNumber.isNullOrEmpty()) {
-                profileBinding.etPhone.setText(R.string.input_phone_number)
-            } else {
-                profileBinding.etPhone.setText(user.phoneNumber)
-            }
         }
         profileBinding.btnUpdate.setOnClickListener {
             val image = when {
@@ -70,12 +64,6 @@ class ProfileFragment : Fragment() {
             if (name.isEmpty()) {
                 profileBinding.etName.error = "Nama harus diisi!"
                 profileBinding.etName.requestFocus()
-                return@setOnClickListener
-            }
-            val phoneNumber = profileBinding.etPhone.text.toString().trim()
-            if (phoneNumber.isEmpty()) {
-                profileBinding.etPhone.error = "Masukan No. Hp Anda"
-                profileBinding.etPhone.requestFocus()
                 return@setOnClickListener
             }
             UserProfileChangeRequest.Builder()
