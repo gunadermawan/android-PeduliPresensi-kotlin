@@ -24,17 +24,13 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         signupBinding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(signupBinding.root)
-//        remove actionbar
         if (supportActionBar != null) {
             supportActionBar?.hide()
         }
-//        firebase
         auth = FirebaseAuth.getInstance()
         signupBinding.btnSignUp.setOnClickListener {
-//            fetch from edit_text
             val email = signupBinding.etEmail.text.toString().trim()
             val pass = signupBinding.etPassword.text.toString().trim()
-//            validation
             if (email.isEmpty()) {
                 signupBinding.etEmail.error = "Email tidak boleh kosong!"
                 signupBinding.etEmail.requestFocus()
@@ -50,7 +46,6 @@ class SignupActivity : AppCompatActivity() {
                 signupBinding.etPassword.requestFocus()
                 return@setOnClickListener
             }
-//            register this edit text to firebase
             registerUser(email, pass)
 
         }
