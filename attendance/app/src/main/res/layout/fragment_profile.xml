@@ -82,6 +82,7 @@
                     android:background="@drawable/round_courners"
                     android:text="@string/save"
                     android:textColor="#FFFFFF"
+                    android:theme="@style/Theme.Simpan"
                     app:layout_constraintEnd_toEndOf="@+id/etName"
                     app:layout_constraintStart_toStartOf="@+id/etName"
                     app:layout_constraintTop_toBottomOf="@+id/etEmail" />
