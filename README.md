@@ -1,7 +1,7 @@
 # Team ID: CSD-040  
 # Nama Anggota:
-> 1.	A195R4154 - EDO JULIANTIO
-> 2.	A007R6017 - GUNA DERMAWAN
+1.	A007R6017 - GUNA DERMAWAN
+2.	A195R4154 - EDO JULIANTIO
 # Tema		: 
 Utilitas
 # Judul Proyek	:  
