@@ -47,9 +47,11 @@
     <string name="new_password">Masukan Password baru</string>
     <string name="password_baru">password baru</string>
     <string name="repeat_password">Konfirmasi password</string>
-<!--    notification -->
+    <!--    notification -->
     <string name="register_succes">Registrasi Berhasil!</string>
     <string name="update_profile_succes">Pembaruan profil</string>
     <string name="update_email_succes_desc">Email Anda Berhasil diperbarui.</string>
     <string name="register_succes_desc">Silahkan aktivasi email Anda di menu proofil</string>
+    <string name="btn_reset_pass">Reset password</string>
+    <string name="reset_password">Reset password Anda</string>
 </resources>

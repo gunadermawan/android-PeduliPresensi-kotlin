@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.attendance.MainActivity
 import com.capstone.attendance.databinding.ActivityLoginBinding
+import com.capstone.attendance.ui.resetPassword.ResetPasswordActivity
 import com.capstone.attendance.ui.signup.SignupActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -49,6 +50,11 @@ class LoginActivity : AppCompatActivity() {
         }
         loginBinding.btnSignUp.setOnClickListener {
             Intent(this@LoginActivity, SignupActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        loginBinding.tvForgotPassword.setOnClickListener {
+            Intent(this@LoginActivity, ResetPasswordActivity::class.java).also {
                 startActivity(it)
             }
         }
