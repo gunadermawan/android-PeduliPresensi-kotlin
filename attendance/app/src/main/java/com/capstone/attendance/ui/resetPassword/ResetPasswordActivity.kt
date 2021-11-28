@@ -15,6 +15,7 @@ class ResetPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         binding.btnReset.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             if (email.isEmpty()) {
@@ -39,7 +40,7 @@ class ResetPasswordActivity : AppCompatActivity() {
                         startActivity(it)
                     }
                 } else {
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Email tidak terdaftar!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
