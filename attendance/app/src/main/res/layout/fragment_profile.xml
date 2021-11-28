@@ -66,6 +66,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="32dp"
                     android:ems="10"
+                    android:hint="@string/masukan_email"
                     android:focusableInTouchMode="false"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"

@@ -52,4 +52,5 @@
     <string name="update_profile_succes">Pembaruan profil</string>
     <string name="update_email_succes_desc">Email Anda Berhasil diperbarui.</string>
     <string name="register_succes_desc">Silahkan aktivasi email Anda di menu proofil</string>
+    <string name="masukan_email">Masukan Email</string>
 </resources>
