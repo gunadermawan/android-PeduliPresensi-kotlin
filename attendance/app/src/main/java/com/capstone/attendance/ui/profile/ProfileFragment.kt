@@ -102,7 +102,7 @@ class ProfileFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    Toast.makeText(activity, "Verifikasi gagal!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Silahkan coba beberapa saat lagi!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
