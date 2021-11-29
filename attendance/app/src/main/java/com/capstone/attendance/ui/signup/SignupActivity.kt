@@ -28,7 +28,7 @@ class SignupActivity : AppCompatActivity() {
             supportActionBar?.hide()
         }
         auth = FirebaseAuth.getInstance()
-        signupBinding.btnSignUp.setOnClickListener {
+        signupBinding.btnRegister.setOnClickListener {
             val email = signupBinding.etEmail.text.toString().trim()
             val pass = signupBinding.etPassword.text.toString().trim()
             if (email.isEmpty()) {
