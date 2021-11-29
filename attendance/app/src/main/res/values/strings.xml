@@ -54,4 +54,6 @@
     <string name="register_succes_desc">Silahkan aktivasi email Anda di menu proofil</string>
     <string name="btn_reset_pass">Reset password</string>
     <string name="reset_password">Reset password Anda</string>
+    <string name="masukan_email">Masukan email</string>
+    <string name="input_email">Masukan Email</string>
 </resources>

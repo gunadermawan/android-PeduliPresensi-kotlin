@@ -26,34 +26,34 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         loginBinding.btnLogin.setOnClickListener {
 //            validations
-            //            fetch from edit_text
+            //        fetch from edit_text
             val email = loginBinding.etEmail.text.toString().trim()
             val pass = loginBinding.etPassword.text.toString().trim()
 //            validation
             if (email.isEmpty()) {
-                loginBinding.etEmail.error = "Email tidak boleh kosong!"
-                loginBinding.etEmail.requestFocus()
+                loginBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                loginBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                loginBinding.etEmail.error = "Email tidak valid!"
-                loginBinding.etEmail.requestFocus()
+                loginBinding.txtInputEmail.error = "Email tidak valid!"
+                loginBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (pass.isEmpty() || pass.length < 8) {
-                loginBinding.etPassword.error = "Password harus lebih dari 8 karakter"
-                loginBinding.etPassword.requestFocus()
+                loginBinding.txtInputPassword.error = "Password harus lebih dari 8 karakter"
+                loginBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
 //            login this edit text to firebase
             loginUser(email, pass)
         }
-        loginBinding.btnSignUp.setOnClickListener {
+        loginBinding.btnRegister.setOnClickListener {
             Intent(this@LoginActivity, SignupActivity::class.java).also {
                 startActivity(it)
             }
         }
-        loginBinding.tvForgotPassword.setOnClickListener {
+        loginBinding.tvForgotPass.setOnClickListener {
             Intent(this@LoginActivity, ResetPasswordActivity::class.java).also {
                 startActivity(it)
             }
@@ -69,7 +69,8 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(it)
                     }
                 } else {
-                    Toast.makeText(this, "Email/Password salah!", Toast.LENGTH_SHORT).show()
+                    loginBinding.txtInputPassword.error = "Password Anda salah!"
+                    loginBinding.txtInputPassword.requestFocus()
                 }
             }
     }

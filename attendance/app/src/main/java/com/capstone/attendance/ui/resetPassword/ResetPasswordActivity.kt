@@ -15,16 +15,17 @@ class ResetPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         binding.btnReset.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             if (email.isEmpty()) {
-                binding.etEmail.error = "Email tidak boleh kosong!"
-                binding.etEmail.requestFocus()
+                binding.txtInputEmail.error = "Email tidak boleh kosong!"
+                binding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.etEmail.error = "Email tidak valid!"
-                binding.etEmail.requestFocus()
+                binding.txtInputEmail.error = "Email tidak valid!"
+                binding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {
@@ -39,7 +40,8 @@ class ResetPasswordActivity : AppCompatActivity() {
                         startActivity(it)
                     }
                 } else {
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                    binding.txtInputEmail.error = "Email Anda tidak terdaftar!"
+                    binding.txtInputEmail.requestFocus()
                 }
             }
         }

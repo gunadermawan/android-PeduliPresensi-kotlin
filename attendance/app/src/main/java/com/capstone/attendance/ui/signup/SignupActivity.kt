@@ -28,22 +28,22 @@ class SignupActivity : AppCompatActivity() {
             supportActionBar?.hide()
         }
         auth = FirebaseAuth.getInstance()
-        signupBinding.btnSignUp.setOnClickListener {
+        signupBinding.btnRegister.setOnClickListener {
             val email = signupBinding.etEmail.text.toString().trim()
             val pass = signupBinding.etPassword.text.toString().trim()
             if (email.isEmpty()) {
-                signupBinding.etEmail.error = "Email tidak boleh kosong!"
-                signupBinding.etEmail.requestFocus()
+                signupBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                signupBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                signupBinding.etEmail.error = "Email tidak valid!"
-                signupBinding.etEmail.requestFocus()
+                signupBinding.txtInputEmail.error = "Email tidak valid!"
+                signupBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (pass.isEmpty() || pass.length < 8) {
-                signupBinding.etPassword.error = "Password harus lebih dari 8 karakter"
-                signupBinding.etPassword.requestFocus()
+                signupBinding.txtInputPassword.error = "Password harus lebih dari 8 karakter"
+                signupBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
             registerUser(email, pass)
