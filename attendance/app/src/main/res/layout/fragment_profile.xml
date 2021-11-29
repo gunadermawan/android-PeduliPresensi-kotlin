@@ -30,130 +30,247 @@
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivProfile">
+            app:layout_constraintTop_toBottomOf="@+id/ivProfile"
+            app:layout_constraintVertical_bias="0.045">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="16dp">
 
-                <EditText
-                    android:id="@+id/etName"
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile"
+                    android:textColor="@color/blue_500"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:ems="10"
+                    android:layout_marginBottom="8dp"
                     android:hint="@string/masukan_nama"
-                    android:importantForAutofill="no"
-                    android:inputType="textPersonName"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.181"
+                    app:startIconDrawable="@drawable/ic_person">
 
-                <EditText
-                    android:id="@+id/etEmail"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="32dp"
-                    android:ems="10"
-                    android:hint="@string/masukan_email"
-                    android:focusableInTouchMode="false"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
-                    app:layout_constraintEnd_toEndOf="@+id/etName"
-                    app:layout_constraintStart_toStartOf="@+id/etName"
-                    app:layout_constraintTop_toBottomOf="@+id/etName" />
+                    android:layout_marginBottom="8dp"
+                    android:enabled="false"
+                    app:helperText="*verifikasi email Anda untuk dapat melakukan reset password dan ganti email"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputName"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textInputName"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputName"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:startIconDrawable="@drawable/ic_mail">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_unverified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="@string/tv_unverified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivUnverified"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/ivUnverified"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.166" />
+
+                <ImageView
+                    android:id="@+id/ivUnverified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_unverified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputName"
+                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    app:layout_constraintHorizontal_bias="0.64"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.166"
+                    android:contentDescription="@string/tv_unverified" />
+
+                <ImageView
+                    android:id="@+id/ivVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_verified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivUnverified"
+                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.166"
+                    app:layout_constraintStart_toStartOf="@+id/ivUnverified"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    android:contentDescription="@string/tv_verified" />
+
+                <TextView
+                    android:id="@+id/tv_verified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tv_verified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_unverified"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_unverified"
+                    app:layout_constraintStart_toStartOf="@+id/tv_unverified"
+                    app:layout_constraintTop_toTopOf="@+id/tv_unverified" />
 
                 <Button
-                    android:id="@+id/btn_update"
+                    android:id="@+id/btnUpdate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/round_courners"
-                    android:text="@string/save"
-                    android:textColor="#FFFFFF"
-                    android:theme="@style/Theme.Simpan"
-                    app:layout_constraintEnd_toEndOf="@+id/etName"
-                    app:layout_constraintStart_toStartOf="@+id/etName"
-                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+                    android:text="@string/update"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputEmail"
+                    app:layout_constraintStart_toStartOf="@+id/textInputEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputEmail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cvForm"
+            app:layout_constraintTop_toBottomOf="@+id/cvForm">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="16dp">
+
+                <TextView
+                    android:id="@+id/tv_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textColor="@color/blue_500"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/btn_logout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
                     android:background="@drawable/round_courners"
-                    android:gravity="center"
                     android:text="@string/logout"
-                    android:textColor="#FFFFFF"
-                    android:theme="@style/Theme.Logout"
-                    app:layout_constraintEnd_toEndOf="@+id/btn_update"
-                    app:layout_constraintStart_toStartOf="@+id/btn_update"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_update" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_settings"
+                    app:layout_constraintVertical_bias="0.111" />
 
                 <Button
-                    android:id="@+id/btn_verification"
+                    android:id="@+id/btnVerification"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/email_verification"
-                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btn_logout"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/btn_logout"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_logout"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
-                    android:id="@+id/btn_changePassword"
+                    android:id="@+id/btnChangePassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/change_password"
-                    android:textColor="#FFFFFF"
-                    app:layout_constraintEnd_toEndOf="@+id/btn_verification"
-                    app:layout_constraintStart_toStartOf="@+id/btn_verification"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_verification" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/btnVerification"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/btnVerification"
+                    app:layout_constraintTop_toBottomOf="@id/btnVerification"
+                    app:layout_constraintVertical_bias="0.0" />
 
-                <ImageView
-                    android:id="@+id/iv_verified"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnChangeEmail"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/img_verificaiton"
-                    android:src="@drawable/ic_verified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/etEmail"
-                    app:layout_constraintEnd_toEndOf="@+id/etName"
-                    app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
-
-                <ImageView
-                    android:id="@+id/iv_unverified"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/img_verificaiton"
-                    android:src="@drawable/ic_unverified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/etEmail"
-                    app:layout_constraintEnd_toEndOf="@+id/etName"
-                    app:layout_constraintStart_toEndOf="@+id/etEmail"
-                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/round_courners"
+                    android:text="@string/change_email"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/btnChangePassword"
+                    app:layout_constraintStart_toStartOf="@id/btnChangePassword"
+                    app:layout_constraintTop_toBottomOf="@id/btnChangePassword" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

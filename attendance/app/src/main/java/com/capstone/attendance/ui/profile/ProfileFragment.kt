@@ -50,8 +50,10 @@ class ProfileFragment : Fragment() {
             profileBinding.etEmail.setText(user.email)
             if (user.isEmailVerified) {
                 profileBinding.ivVerified.visibility = View.VISIBLE
+                profileBinding.tvVerified.visibility = View.VISIBLE
             } else {
                 profileBinding.ivUnverified.visibility = View.VISIBLE
+                profileBinding.tvUnverified.visibility = View.VISIBLE
             }
         }
         profileBinding.btnUpdate.setOnClickListener {
@@ -62,8 +64,8 @@ class ProfileFragment : Fragment() {
             }
             val name = profileBinding.etName.text.toString().trim()
             if (name.isEmpty()) {
-                profileBinding.etName.error = "Nama harus diisi!"
-                profileBinding.etName.requestFocus()
+                profileBinding.textInputName.error = "Nama harus diisi!"
+                profileBinding.textInputName.requestFocus()
                 return@setOnClickListener
             }
             UserProfileChangeRequest.Builder()
@@ -106,7 +108,7 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
-        profileBinding.etEmail.setOnClickListener {
+        profileBinding.btnChangeEmail.setOnClickListener {
             val updateEmail = ProfileFragmentDirections.actionUpdateEmail()
             Navigation.findNavController(it).navigate(updateEmail)
         }
@@ -141,7 +143,6 @@ class ProfileFragment : Fragment() {
             FirebaseStorage.getInstance().reference.child("img_profile/${FirebaseAuth.getInstance().currentUser?.uid}")
         imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val img = baos.toByteArray()
-//        upload
         ref.putBytes(img)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
