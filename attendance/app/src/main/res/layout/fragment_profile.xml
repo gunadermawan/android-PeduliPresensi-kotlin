@@ -64,7 +64,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
                     android:hint="@string/masukan_nama"
@@ -76,7 +76,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
-                    app:layout_constraintVertical_bias="0.181"
+                    app:layout_constraintVertical_bias="0.0"
                     app:startIconDrawable="@drawable/ic_person">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -176,6 +176,7 @@
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/update"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textInputEmail"
                     app:layout_constraintStart_toStartOf="@+id/textInputEmail"
@@ -222,16 +223,17 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/logout"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_settings"
-                    app:layout_constraintVertical_bias="0.111" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/btnVerification"
@@ -240,6 +242,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/email_verification"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btn_logout"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -254,6 +257,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/change_password"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnVerification"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -268,6 +272,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_courners"
                     android:text="@string/change_email"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnChangePassword"
                     app:layout_constraintStart_toStartOf="@id/btnChangePassword"
