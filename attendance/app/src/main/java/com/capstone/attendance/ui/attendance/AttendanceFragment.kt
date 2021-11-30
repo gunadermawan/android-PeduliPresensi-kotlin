@@ -16,7 +16,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
@@ -25,7 +24,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AttendanceFragment : Fragment() {
 
-    private lateinit var attendanceViewModel: AttendanceViewModel
     private var _binding: FragmentAttendanceBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var locationRequest: LocationRequest
@@ -40,8 +38,6 @@ class AttendanceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        attendanceViewModel =
-            ViewModelProvider(this).get(AttendanceViewModel::class.java)
 
         _binding = FragmentAttendanceBinding.inflate(inflater, container, false)
         val root: View = binding.root
