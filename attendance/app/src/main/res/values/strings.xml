@@ -9,9 +9,9 @@
     <string name="user">User</string>
     <string name="save">Simpan</string>
     <string name="masukan_nama">Masukan nama</string>
-    <string name="check_in">Mulai presensi</string>
+    <string name="check_in">Ketuk untuk mulai presensi</string>
     <string name="scanning_balai_desa_warureja">Scanning your location</string>
-    <string name="check_in_success">Check-in success</string>
+    <string name="check_in_success">Presensi berhasil</string>
     <string name="btn_attendance">btn attendance</string>
     <string name="date_today">Date Today</string>
     <string name="img_verificaiton">img verificaiton</string>
