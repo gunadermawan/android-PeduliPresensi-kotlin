@@ -56,4 +56,12 @@
     <string name="reset_password">Reset password Anda</string>
     <string name="masukan_email">Masukan email</string>
     <string name="input_email">Masukan Email</string>
+    <string name="settings">Pengaturan</string>
+    <string name="change_email">Ganti Email</string>
+    <string name="tv_verified">Email terverifikasi</string>
+    <string name="tv_unverified">Email belum terverifikasi</string>
+    <string name="reset_email">Masukan Email Baru</string>
+    <string name="update_email">Update Email</string>
+    <string name="konfirmasi">Konfirmasi</string>
+    <string name="add_your_name">masukan nama Anda</string>
 </resources>
