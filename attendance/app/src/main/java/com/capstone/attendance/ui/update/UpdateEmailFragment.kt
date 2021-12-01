@@ -48,34 +48,34 @@ class UpdateEmailFragment : Fragment() {
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {
+                it.reauthenticate(userCredential).addOnCompleteListener {Task ->
                     when {
-                        it.isSuccessful -> {
+                        Task.isSuccessful -> {
                             updateBinding.layoutPassword.visibility = View.GONE
                             updateBinding.layoutEmail.visibility = View.VISIBLE
                         }
-                        it.exception is FirebaseAuthInvalidCredentialsException -> {
+                        Task.exception is FirebaseAuthInvalidCredentialsException -> {
                             updateBinding.txtInputPassword.error = "password Anda salah!"
                             updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
                         }
                     }
                 }
             }
-            updateBinding.btnUpdate.setOnClickListener { view ->
+            updateBinding.btnUpdate.setOnClickListener  BtnUpdate@ { view ->
                 val email = updateBinding.etEmail.text.toString().trim()
                 if (email.isEmpty()) {
                     updateBinding.txtInputEmail.error = "Email tidak boleh kosong!"
                     updateBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
+                    return@BtnUpdate
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     updateBinding.txtInputEmail.error = "Email tidak valid!"
                     updateBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
+                    return@BtnUpdate
                 }
                 user?.let {
                     user.updateEmail(email).addOnCompleteListener {
