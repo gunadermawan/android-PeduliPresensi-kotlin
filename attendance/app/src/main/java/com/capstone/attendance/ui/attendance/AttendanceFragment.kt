@@ -1,6 +1,5 @@
 package com.capstone.attendance.ui.attendance
 
-
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -96,7 +95,7 @@ class AttendanceFragment : Fragment() {
             loadScanLocation()
             Handler(Looper.getMainLooper()).postDelayed({
                 getLastLocation()
-            },2000)
+            }, 2000)
         }
     }
 
@@ -106,6 +105,13 @@ class AttendanceFragment : Fragment() {
 
     private fun loadScanLocation() {
         binding.rippleBackground.startRippleAnimation()
+        binding.tvScanning.visibility = View.VISIBLE
+        binding.tvCheckIn.visibility = View.GONE
+        binding.tvCheckInSuccess.visibility = View.GONE
+    }
+
+    private fun stopScanLocation() {
+        binding.rippleBackground.stopRippleAnimation()
         binding.tvScanning.visibility = View.GONE
     }
 
