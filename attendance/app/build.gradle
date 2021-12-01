@@ -59,6 +59,8 @@ dependencies {
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
     //    firebase
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
-//    picasso
+    //    picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //    google location services
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
 }

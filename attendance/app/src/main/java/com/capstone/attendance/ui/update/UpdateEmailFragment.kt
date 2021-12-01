@@ -42,40 +42,44 @@ class UpdateEmailFragment : Fragment() {
         updateBinding.btnAuth.setOnClickListener {
             val pass = updateBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
-                updateBinding.etPassword.error = "Password harus di isi!"
-                updateBinding.etPassword.requestFocus()
+                updateBinding.txtInputPassword.error = "Password harus di isi!"
+                updateBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {
+                it.reauthenticate(userCredential).addOnCompleteListener { Task ->
                     when {
-                        it.isSuccessful -> {
+                        Task.isSuccessful -> {
                             updateBinding.layoutPassword.visibility = View.GONE
                             updateBinding.layoutEmail.visibility = View.VISIBLE
                         }
-                        it.exception is FirebaseAuthInvalidCredentialsException -> {
-                            updateBinding.etPassword.error = "password Anda salah!"
-                            updateBinding.etPassword.requestFocus()
+                        Task.exception is FirebaseAuthInvalidCredentialsException -> {
+                            updateBinding.txtInputPassword.error = "password Anda salah!"
+                            updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                activity,
+                                "${Task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                     }
                 }
             }
-            updateBinding.btnUpdate.setOnClickListener { view ->
+            updateBinding.btnUpdate.setOnClickListener BtnUpdate@{ view ->
                 val email = updateBinding.etEmail.text.toString().trim()
                 if (email.isEmpty()) {
-                    updateBinding.etEmail.error = "Email tidak boleh kosong!"
-                    updateBinding.etEmail.requestFocus()
-                    return@setOnClickListener
+                    updateBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                    updateBinding.txtInputEmail.requestFocus()
+                    return@BtnUpdate
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    updateBinding.etEmail.error = "Email tidak valid!"
-                    updateBinding.etEmail.requestFocus()
-                    return@setOnClickListener
+                    updateBinding.txtInputEmail.error = "Email tidak valid!"
+                    updateBinding.txtInputEmail.requestFocus()
+                    return@BtnUpdate
                 }
                 user?.let {
                     user.updateEmail(email).addOnCompleteListener {
@@ -108,6 +112,11 @@ class UpdateEmailFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
+                            Toast.makeText(
+                                activity,
+                                "Email berhasil diperbarui",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
