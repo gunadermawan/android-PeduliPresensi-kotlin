@@ -35,37 +35,41 @@ class UpdatePasswordFragment : Fragment() {
         updatePasswordBinding.btnAuth.setOnClickListener {
             val pass = updatePasswordBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
-                updatePasswordBinding.etPassword.error = "Password harus di isi!"
-                updatePasswordBinding.etPassword.requestFocus()
+                updatePasswordBinding.txtInputPassword.error = "Password harus di isi!"
+                updatePasswordBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        updatePasswordBinding.layoutPassword.visibility = View.GONE
-                        updatePasswordBinding.layoutNewPass.visibility = View.VISIBLE
-                    } else if (it.exception is FirebaseAuthInvalidCredentialsException) {
-                        updatePasswordBinding.etPassword.error = "password Anda salah!"
-                        updatePasswordBinding.etPassword.requestFocus()
-                    } else {
-                        Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
-                            .show()
+                it.reauthenticate(userCredential).addOnCompleteListener {Task ->
+                    when {
+                        Task.isSuccessful -> {
+                            updatePasswordBinding.layoutPassword.visibility = View.GONE
+                            updatePasswordBinding.layoutNewPass.visibility = View.VISIBLE
+                        }
+                        Task.exception is FirebaseAuthInvalidCredentialsException -> {
+                            updatePasswordBinding.txtInputPassword.error = "password Anda salah!"
+                            updatePasswordBinding.txtInputPassword.requestFocus()
+                        }
+                        else -> {
+                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     }
                 }
             }
-            updatePasswordBinding.btnUpdate.setOnClickListener { view ->
-                val newPass = updatePasswordBinding.etNewPass.text.toString().trim()
-                val newPassConfirm = updatePasswordBinding.etNewPassConfirm.text.toString().trim()
+            updatePasswordBinding.btnUpdate.setOnClickListener btnUpdate@ { view ->
+                val newPass = updatePasswordBinding.etNewPassword.text.toString().trim()
+                val newPassConfirm = updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
                 if (newPass.isEmpty() || newPass.length < 8) {
-                    updatePasswordBinding.etNewPass.error = "Password tidak harus diisi!"
-                    updatePasswordBinding.etNewPass.requestFocus()
-                    return@setOnClickListener
+                    updatePasswordBinding.txtInputNewPassword.error = "Password tidak harus diisi!"
+                    updatePasswordBinding.txtInputNewPassword.requestFocus()
+                    return@btnUpdate
                 }
                 if (newPass != newPassConfirm) {
-                    updatePasswordBinding.etNewPassConfirm.error = "password tidak sama!"
-                    updatePasswordBinding.etNewPassConfirm.requestFocus()
-                    return@setOnClickListener
+                    updatePasswordBinding.txtInputNewPasswordConfirm.error = "password tidak sama!"
+                    updatePasswordBinding.txtInputNewPasswordConfirm.requestFocus()
+                    return@btnUpdate
                 }
 
                 user?.let {
@@ -84,5 +88,4 @@ class UpdatePasswordFragment : Fragment() {
             }
         }
     }
-
 }
