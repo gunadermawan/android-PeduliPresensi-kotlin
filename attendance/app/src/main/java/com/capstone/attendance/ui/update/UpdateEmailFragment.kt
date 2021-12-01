@@ -42,8 +42,8 @@ class UpdateEmailFragment : Fragment() {
         updateBinding.btnAuth.setOnClickListener {
             val pass = updateBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
-                updateBinding.etPassword.error = "Password harus di isi!"
-                updateBinding.etPassword.requestFocus()
+                updateBinding.txtInputPassword.error = "Password harus di isi!"
+                updateBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
             user.let {
@@ -55,8 +55,8 @@ class UpdateEmailFragment : Fragment() {
                             updateBinding.layoutEmail.visibility = View.VISIBLE
                         }
                         it.exception is FirebaseAuthInvalidCredentialsException -> {
-                            updateBinding.etPassword.error = "password Anda salah!"
-                            updateBinding.etPassword.requestFocus()
+                            updateBinding.txtInputPassword.error = "password Anda salah!"
+                            updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
@@ -68,13 +68,13 @@ class UpdateEmailFragment : Fragment() {
             updateBinding.btnUpdate.setOnClickListener { view ->
                 val email = updateBinding.etEmail.text.toString().trim()
                 if (email.isEmpty()) {
-                    updateBinding.etEmail.error = "Email tidak boleh kosong!"
-                    updateBinding.etEmail.requestFocus()
+                    updateBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                    updateBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    updateBinding.etEmail.error = "Email tidak valid!"
-                    updateBinding.etEmail.requestFocus()
+                    updateBinding.txtInputEmail.error = "Email tidak valid!"
+                    updateBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 user?.let {
@@ -108,6 +108,7 @@ class UpdateEmailFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
+                            Toast.makeText(activity, "Email berhasil diperbarui", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()

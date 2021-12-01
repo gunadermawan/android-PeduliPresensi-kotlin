@@ -4,89 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_500"
     tools:context=".ui.update.UpdateEmailFragment">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/layoutPassword"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:animateLayoutChanges="true"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:visibility="gone"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_your_pass"
-            android:textAlignment="center" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:importantForAutofill="no" />
+            <TextView
+                android:id="@+id/tv_reset_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/confirm_password"
+                android:textColor="@color/blue_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnAuth"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_courners"
-            android:text="@string/confirm_password"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInput_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/password"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/ic_error"
+                app:helperText="*Masukan password akun Anda"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_reset_password"
+                app:layout_constraintVertical_bias="0.166"
+                app:startIconDrawable="@drawable/ic_mail">
 
-    <LinearLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnAuth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/round_courners"
+                android:text="@string/konfirmasi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txtInput_password"
+                app:layout_constraintStart_toStartOf="@+id/txtInput_password"
+                app:layout_constraintTop_toBottomOf="@+id/txtInput_password"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/layoutEmail"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:animateLayoutChanges="true"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/new_email"
-            android:textAlignment="center" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"
-            android:autofillHints="false" />
+            <TextView
+                android:id="@+id/tv_reset_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/reset_email"
+                android:textColor="@color/blue_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/round_courners"
-            android:text="@string/update"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInput_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/input_email"
+                app:endIconMode="clear_text"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/ic_error"
+                app:helperText="*pastikan email Anda aktif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_reset_email"
+                app:layout_constraintVertical_bias="0.166"
+                app:startIconDrawable="@drawable/ic_mail">
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/round_courners"
+                android:text="@string/update_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txtInput_email"
+                app:layout_constraintStart_toStartOf="@+id/txtInput_email"
+                app:layout_constraintTop_toBottomOf="@+id/txtInput_email"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
