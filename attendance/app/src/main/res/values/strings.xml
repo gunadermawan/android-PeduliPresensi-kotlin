@@ -62,6 +62,7 @@
     <string name="tv_unverified">Belum verifikasi email</string>
     <string name="reset_email">Masukan Email Baru</string>
     <string name="update_email">Update Email</string>
-    <string name="konfirmasi">Konfirmasi</string>
+    <string name="confirm">Konfirmasi</string>
     <string name="add_your_name">masukan nama Anda</string>
+    <string name="add_new_password">Masukan Password Baru</string>
 </resources>
