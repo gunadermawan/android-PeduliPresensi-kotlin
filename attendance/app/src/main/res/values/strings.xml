@@ -59,7 +59,7 @@
     <string name="settings">Pengaturan</string>
     <string name="change_email">Ganti Email</string>
     <string name="tv_verified">Email terverifikasi</string>
-    <string name="tv_unverified">Email belum terverifikasi</string>
+    <string name="tv_unverified">Belum verifikasi email</string>
     <string name="reset_email">Masukan Email Baru</string>
     <string name="update_email">Update Email</string>
     <string name="konfirmasi">Konfirmasi</string>
