@@ -1,12 +1,19 @@
 package com.capstone.attendance.ui.update
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.graphics.BitmapFactory
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentUpdatePasswordBinding
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
@@ -41,7 +48,7 @@ class UpdatePasswordFragment : Fragment() {
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {Task ->
+                it.reauthenticate(userCredential).addOnCompleteListener { Task ->
                     when {
                         Task.isSuccessful -> {
                             updatePasswordBinding.layoutPassword.visibility = View.GONE
@@ -52,15 +59,20 @@ class UpdatePasswordFragment : Fragment() {
                             updatePasswordBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                activity,
+                                "${Task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                     }
                 }
             }
-            updatePasswordBinding.btnUpdate.setOnClickListener btnUpdate@ { view ->
+            updatePasswordBinding.btnUpdate.setOnClickListener btnUpdate@{ view ->
                 val newPass = updatePasswordBinding.etNewPassword.text.toString().trim()
-                val newPassConfirm = updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
+                val newPassConfirm =
+                    updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
                 if (newPass.isEmpty() || newPass.length < 8) {
                     updatePasswordBinding.txtInputNewPassword.error = "Password tidak harus diisi!"
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
@@ -76,9 +88,41 @@ class UpdatePasswordFragment : Fragment() {
                     user.updatePassword(newPass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             val actionUpdatedPass =
-                               UpdatePasswordFragmentDirections.actionUpdatedPassword()
+                                UpdatePasswordFragmentDirections.actionUpdatedPassword()
                             Navigation.findNavController(view).navigate(actionUpdatedPass)
-                            Toast.makeText(activity, "Password berhasil dirubah.", Toast.LENGTH_SHORT).show()
+                            val mNotificationManager =
+                                activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                            val mBuilder = NotificationCompat.Builder(
+                                view.context,
+                                CHANNEL_ID
+                            )
+                                .setSmallIcon(R.drawable.ic_finger)
+                                .setLargeIcon(
+                                    BitmapFactory.decodeResource(
+                                        resources,
+                                        R.drawable.ic_finger
+                                    )
+                                )
+                                .setContentTitle(resources.getString(R.string.update_profile_succes))
+                                .setContentText(resources.getString(R.string.update_password_succes_desc))
+                                .setAutoCancel(true)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                val channel = NotificationChannel(
+                                    CHANNEL_ID,
+                                    CHANNEL_NAME,
+                                    NotificationManager.IMPORTANCE_HIGH
+                                )
+                                channel.description = CHANNEL_NAME
+                                mBuilder.setChannelId(CHANNEL_ID)
+                                mNotificationManager.createNotificationChannel(channel)
+                            }
+                            val notification = mBuilder.build()
+                            mNotificationManager.notify(NOTIFICATION_ID, notification)
+                            Toast.makeText(
+                                activity,
+                                "Password berhasil dirubah.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
@@ -87,5 +131,11 @@ class UpdatePasswordFragment : Fragment() {
                 }
             }
         }
+    }
+
+    companion object {
+        private const val NOTIFICATION_ID = 1
+        private const val CHANNEL_ID = "channel_id"
+        private const val CHANNEL_NAME = "channel_name"
     }
 }
