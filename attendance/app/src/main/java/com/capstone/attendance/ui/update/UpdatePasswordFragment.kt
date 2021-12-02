@@ -48,7 +48,7 @@ class UpdatePasswordFragment : Fragment() {
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {Task ->
+                it.reauthenticate(userCredential).addOnCompleteListener { Task ->
                     when {
                         Task.isSuccessful -> {
                             updatePasswordBinding.layoutPassword.visibility = View.GONE
@@ -59,15 +59,20 @@ class UpdatePasswordFragment : Fragment() {
                             updatePasswordBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                activity,
+                                "${Task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                     }
                 }
             }
-            updatePasswordBinding.btnUpdate.setOnClickListener btnUpdate@ { view ->
+            updatePasswordBinding.btnUpdate.setOnClickListener btnUpdate@{ view ->
                 val newPass = updatePasswordBinding.etNewPassword.text.toString().trim()
-                val newPassConfirm = updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
+                val newPassConfirm =
+                    updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
                 if (newPass.isEmpty() || newPass.length < 8) {
                     updatePasswordBinding.txtInputNewPassword.error = "Password tidak harus diisi!"
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
@@ -83,11 +88,12 @@ class UpdatePasswordFragment : Fragment() {
                     user.updatePassword(newPass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             val actionUpdatedPass =
-                               UpdatePasswordFragmentDirections.actionUpdatedPassword()
+                                UpdatePasswordFragmentDirections.actionUpdatedPassword()
                             Navigation.findNavController(view).navigate(actionUpdatedPass)
                             val mNotificationManager =
                                 activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                            val mBuilder = NotificationCompat.Builder(view.context,
+                            val mBuilder = NotificationCompat.Builder(
+                                view.context,
                                 CHANNEL_ID
                             )
                                 .setSmallIcon(R.drawable.ic_finger)
@@ -112,7 +118,11 @@ class UpdatePasswordFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
-                            Toast.makeText(activity, "Password berhasil dirubah.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                activity,
+                                "Password berhasil dirubah.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
@@ -122,6 +132,7 @@ class UpdatePasswordFragment : Fragment() {
             }
         }
     }
+
     companion object {
         private const val NOTIFICATION_ID = 1
         private const val CHANNEL_ID = "channel_id"

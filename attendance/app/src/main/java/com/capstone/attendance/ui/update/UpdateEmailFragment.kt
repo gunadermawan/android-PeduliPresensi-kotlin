@@ -48,7 +48,7 @@ class UpdateEmailFragment : Fragment() {
             }
             user.let {
                 val userCredential = EmailAuthProvider.getCredential(it?.email!!, pass)
-                it.reauthenticate(userCredential).addOnCompleteListener {Task ->
+                it.reauthenticate(userCredential).addOnCompleteListener { Task ->
                     when {
                         Task.isSuccessful -> {
                             updateBinding.layoutPassword.visibility = View.GONE
@@ -59,13 +59,17 @@ class UpdateEmailFragment : Fragment() {
                             updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                activity,
+                                "${Task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                     }
                 }
             }
-            updateBinding.btnUpdate.setOnClickListener  BtnUpdate@ { view ->
+            updateBinding.btnUpdate.setOnClickListener BtnUpdate@{ view ->
                 val email = updateBinding.etEmail.text.toString().trim()
                 if (email.isEmpty()) {
                     updateBinding.txtInputEmail.error = "Email tidak boleh kosong!"
@@ -108,7 +112,11 @@ class UpdateEmailFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
-                            Toast.makeText(activity, "Email berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                activity,
+                                "Email berhasil diperbarui",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
