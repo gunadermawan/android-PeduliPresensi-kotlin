@@ -60,9 +60,10 @@ class SignupActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, pass)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Intent(this@SignupActivity, MainActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
+                    Intent(this@SignupActivity, MainActivity::class.java).also { intent ->
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
                     }
                     val mNotificationManager =
                         getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

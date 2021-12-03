@@ -52,7 +52,7 @@
     <string name="update_profile_succes">Pembaruan profil</string>
     <string name="update_email_succes_desc">Email Anda Berhasil diperbarui.</string>
     <string name="update_password_succes_desc">Password Anda Berhasil diperbarui.</string>
-    <string name="register_succes_desc">Silahkan aktivasi email Anda di menu proofil</string>
+    <string name="register_succes_desc">Silahkan aktivasi email Anda di menu profil</string>
     <string name="btn_reset_pass">Reset password</string>
     <string name="reset_password">Reset password Anda</string>
     <string name="masukan_email">Masukan email</string>
