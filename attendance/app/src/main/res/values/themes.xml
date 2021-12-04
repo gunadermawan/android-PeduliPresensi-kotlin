@@ -26,8 +26,4 @@
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">5dp</item>
     </style>
-    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSize">4dp</item>
-    </style>
 </resources>
