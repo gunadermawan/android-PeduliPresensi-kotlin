@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,7 +92,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <GridLayout
                 android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                 android:orientation="horizontal"
                 android:rowCount="4">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     style="@style/cardView_home"
                     android:backgroundTint="@color/orange_400">
 
@@ -151,9 +151,9 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     style="@style/cardView_home"
                     android:backgroundTint="@color/green_700">
 
@@ -198,9 +198,9 @@
                         </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     style="@style/cardView_home"
                     android:backgroundTint="@color/blue_700">
 
@@ -247,9 +247,9 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     style="@style/cardView_home"
                     android:backgroundTint="@color/yellow_700">
 
@@ -296,7 +296,7 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </GridLayout>
 
