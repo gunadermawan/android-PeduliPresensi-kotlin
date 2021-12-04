@@ -72,15 +72,15 @@ class ProfileFragment : Fragment() {
                 .setDisplayName(name)
                 .setPhotoUri(image)
                 .build().also {
-                    user?.updateProfile(it)?.addOnCompleteListener {
-                        if (it.isSuccessful) {
+                    user?.updateProfile(it)?.addOnCompleteListener {Task->
+                        if (Task.isSuccessful) {
                             Toast.makeText(
                                 activity,
                                 "Profile berhasil di update",
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
+                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
                     }
                 }
@@ -146,9 +146,9 @@ class ProfileFragment : Fragment() {
         ref.putBytes(img)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    ref.downloadUrl.addOnCompleteListener {
-                        it.result?.let {
-                            imgUri = it
+                    ref.downloadUrl.addOnCompleteListener {Task->
+                        Task.result?.let {Uri->
+                            imgUri = Uri
                             profileBinding.ivProfile.setImageBitmap(imgBitmap)
                         }
                     }

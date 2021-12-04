@@ -31,12 +31,11 @@
     <string name="image_connections">image connections</string>
     <string name="check_connection">Cek koneksi internet</string>
     <string name="email_verification">Verifikasi Email Anda</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="confirm_password">Konfirmasi Password</string>
+    <string name="out_off_range">Anda berada diluar jangkauan</string>
     <string name="update">Update</string>
     <string name="change_password">Ganti Password</string>
     <string name="password_baru">password baru</string>
-    <!--    notification -->
     <string name="register_succes">Registrasi Berhasil!</string>
     <string name="update_profile_succes">Pembaruan profil</string>
     <string name="update_email_succes_desc">Email Anda Berhasil diperbarui.</string>

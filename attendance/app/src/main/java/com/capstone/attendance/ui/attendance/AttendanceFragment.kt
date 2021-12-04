@@ -19,7 +19,6 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
@@ -131,8 +130,10 @@ class AttendanceFragment : Fragment() {
                             showDialogForm()
                             Toast.makeText(activity, "Lokasi ditemukan", Toast.LENGTH_SHORT).show()
                         } else {
-                            binding.tvCheckInSuccess.visibility = View.VISIBLE
-                            binding.tvCheckInSuccess.text = "Anda berada diluar jangkauan"
+//                            binding.tvCheckInSuccess.visibility = View.VISIBLE
+//                            binding.tvCheckInSuccess.text = getString(R.string.out_off_range)
+                            Toast.makeText(activity, "Anda berada diluar jangkauan presensi", Toast.LENGTH_SHORT).show()
+                            binding.tvCheckIn.visibility = View.VISIBLE
                         }
                         fusedLocationProviderClient?.removeLocationUpdates(this)
                         stopScanLocation()
@@ -163,7 +164,11 @@ class AttendanceFragment : Fragment() {
         val btnYes = dialog.findViewById<Button>(R.id.btn_save)
         btnYes.setOnClickListener {
             val name = dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
-            inputToFirebase(name)
+            if (name.isNotEmpty()) {
+                inputToFirebase(name)
+            } else {
+                Toast.makeText(activity, "Masukan nama Anda!", Toast.LENGTH_SHORT).show()
+            }
             dialog.dismiss()
         }
         val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel)
@@ -181,8 +186,7 @@ class AttendanceFragment : Fragment() {
 
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
-                binding.tvCheckInSuccess.visibility = View.VISIBLE
-                binding.tvCheckInSuccess.text = "Presensi berhasil"
+                Toast.makeText(activity, "Presensi Anda berhasil", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
                 Toast.makeText(activity, "${it.message}", Toast.LENGTH_SHORT).show()
