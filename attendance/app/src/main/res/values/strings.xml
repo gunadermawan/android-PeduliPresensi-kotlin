@@ -7,19 +7,15 @@
     <string name="profile">Profil</string>
     <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
-    <string name="save">Simpan</string>
     <string name="masukan_nama">Masukan nama</string>
     <string name="check_in">Ketuk untuk mulai presensi</string>
     <string name="scanning_balai_desa_warureja">Menghitung jarak lokasi Anda</string>
     <string name="check_in_success">Check-in success</string>
     <string name="btn_attendance">btn attendance</string>
-    <string name="date_today">Date Today</string>
-    <string name="img_verificaiton">img verificaiton</string>
     <string name="email">Email</string>
     <string name="login">MASUK</string>
     <string name="password">password</string>
     <string name="forgot_password">lupa password?</string>
-    <string name="sign_up">BELUM PUNYA AKUN?</string>
     <string name="register">DAFTAR</string>
     <string name="logout">Keluar</string>
     <string name="_07_00">07:00</string>
@@ -34,19 +30,12 @@
     <string name="internet">INTERNET</string>
     <string name="image_connections">image connections</string>
     <string name="check_connection">Cek koneksi internet</string>
-    <string name="input_phone_number">Masukan No Hp Anda</string>
-    <string name="show_profile">Lihat Profil</string>
     <string name="email_verification">Verifikasi Email Anda</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_your_pass">Masukkan Password Anda</string>
     <string name="confirm_password">Konfirmasi Password</string>
-    <string name="new_email">Masukkan Email Baru</string>
     <string name="update">Update</string>
     <string name="change_password">Ganti Password</string>
-    <string name="new_password">Masukan Password baru</string>
     <string name="password_baru">password baru</string>
-    <string name="repeat_password">Konfirmasi password</string>
     <!--    notification -->
     <string name="register_succes">Registrasi Berhasil!</string>
     <string name="update_profile_succes">Pembaruan profil</string>
@@ -64,6 +53,5 @@
     <string name="reset_email">Masukan Email Baru</string>
     <string name="update_email">Update Email</string>
     <string name="confirm">Konfirmasi</string>
-    <string name="add_your_name">masukan nama Anda</string>
     <string name="add_new_password">Masukan Password Baru</string>
 </resources>

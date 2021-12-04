@@ -23,17 +23,14 @@ import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
 import java.lang.Math.toRadians
 import java.util.*
-import kotlin.math.asin
-import kotlin.math.pow
-import kotlin.math.sin
-import kotlin.math.sqrt
+import kotlin.math.*
 
 class AttendanceFragment : Fragment() {
 
     private var _binding: FragmentAttendanceBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var locationRequest: LocationRequest
-    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private var fusedLocationProviderClient: FusedLocationProviderClient? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -120,16 +117,33 @@ class AttendanceFragment : Fragment() {
                         val distance = calculateDistance(
                             currentLat, currentLong, destinationLat, destinationLong
                         ) * 1000
-                        Log.d("MainActivity","[onLocationResult] - $distance")
-                        if (distance<10.0){
+                        Log.d("MainActivity", "[onLocationResult] - $distance")
+                        if (distance < 10.0) {
                             showDialogForm()
                             Toast.makeText(activity, "Lokasi ditemukan", Toast.LENGTH_SHORT).show()
+                        } else {
+                            binding.tvCheckInSuccess.visibility = View.VISIBLE
+                            binding.tvCheckInSuccess.text = "Anda berada diluar jangkauan"
                         }
+                        fusedLocationProviderClient?.removeLocationUpdates(this)
+                        stopScanLocation()
                     }
                 }
+                fusedLocationProviderClient?.requestLocationUpdates(
+                    locationRequest,
+                    locationCallBack,
+                    Looper.getMainLooper()
+                )
+            } else {
+                Toast.makeText(
+                    activity,
+                    "Aktifkan GPS Anda untuk melakukan presensi",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+        } else {
+            requestPermission()
         }
-
     }
 
     private fun showDialogForm() {
@@ -183,13 +197,12 @@ class AttendanceFragment : Fragment() {
         val dLon = toRadians(long2 - lon1)
         return 2 * r * asin(
             sqrt(
-                sin(dLat / 2).pow(2.0) + sin(dLon / 2).pow(2.0) * kotlin.math.cos(radianLat1) * kotlin.math.cos(
+                sin(dLat / 2).pow(2.0) + sin(dLon / 2).pow(2.0) * cos(radianLat1) * cos(
                     radianLat2
                 )
             )
         )
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
