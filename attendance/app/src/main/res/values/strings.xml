@@ -54,4 +54,6 @@
     <string name="update_email">Update Email</string>
     <string name="confirm">Konfirmasi</string>
     <string name="add_new_password">Masukan Password Baru</string>
+    <string name="save">simpan</string>
+    <string name="cancel">Batal</string>
 </resources>

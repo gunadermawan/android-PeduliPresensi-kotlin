@@ -1,6 +1,7 @@
 package com.capstone.attendance.ui.attendance
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,13 +16,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.capstone.attendance.R
+import com.capstone.attendance.data.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import java.lang.Math.toRadians
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.*
 
@@ -147,6 +156,44 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun showDialogForm() {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.layout_dialog_form)
+        val btnYes = dialog.findViewById<Button>(R.id.btn_save)
+        btnYes.setOnClickListener {
+            val name = dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
+            inputToFirebase(name)
+            dialog.dismiss()
+        }
+        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel)
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+
+    }
+
+    private fun inputToFirebase(name: String) {
+        val user = User(name, getCurrentTime())
+        val database = FirebaseDatabase.getInstance()
+        val attendanceRef = database.getReference("kehadiran")
+
+        attendanceRef.child(name).setValue(user)
+            .addOnCompleteListener {
+                binding.tvCheckInSuccess.visibility = View.VISIBLE
+                binding.tvCheckInSuccess.text = "Presensi berhasil"
+            }
+            .addOnFailureListener {
+                Toast.makeText(activity, "${it.message}", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+    private fun getCurrentTime(): String? {
+        val currentTime = Calendar.getInstance().time
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
+        return dateFormat.format(currentTime)
 
     }
 
