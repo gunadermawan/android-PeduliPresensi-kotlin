@@ -86,11 +86,12 @@
 
             <Button
                 android:id="@+id/btn_register"
+                style="@style/Widget.Material3.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/round_courners"
+                android:layout_marginTop="16dp"
                 android:text="@string/register"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_password"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_password"
@@ -98,16 +99,18 @@
 
             <Button
                 android:id="@+id/btn_login"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/round_courners"
-                android:text="@string/login"
+                android:text="@string/have_account"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btn_register"
                 app:layout_constraintStart_toStartOf="@+id/btn_register"
-                app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_register"
+                app:strokeColor="@color/blue_500" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
