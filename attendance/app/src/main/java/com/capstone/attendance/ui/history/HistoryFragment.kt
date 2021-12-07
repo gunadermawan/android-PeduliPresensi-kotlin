@@ -4,19 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.capstone.attendance.adapter.UserAdapter
+import com.capstone.attendance.data.User
 import com.capstone.attendance.databinding.FragmentHistoryBinding
+import com.google.firebase.database.*
 
 class HistoryFragment : Fragment() {
 
+    private lateinit var dbRef: DatabaseReference
+    private lateinit var userRecyclerView: RecyclerView
+    private lateinit var userArrayList: ArrayList<User>
+
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -28,13 +32,36 @@ class HistoryFragment : Fragment() {
             ViewModelProvider(this).get(HistoryViewModel::class.java)
 
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textNotifications
-        historyViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        userRecyclerView = binding.userList
+        userRecyclerView.layoutManager = LinearLayoutManager(context)
+        userRecyclerView.setHasFixedSize(true)
+
+        userArrayList = arrayListOf<User>()
+        getUserData()
+    }
+
+    private fun getUserData() {
+        dbRef = FirebaseDatabase.getInstance().getReference("kehadiran")
+        dbRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (userSnapshot in snapshot.children) {
+                    val user = userSnapshot.getValue(User::class.java)
+                    if (user != null) {
+                        userArrayList.add(user)
+                    }
+                }
+                userRecyclerView.adapter = UserAdapter(userArrayList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
         })
-        return root
     }
 
     override fun onDestroyView() {

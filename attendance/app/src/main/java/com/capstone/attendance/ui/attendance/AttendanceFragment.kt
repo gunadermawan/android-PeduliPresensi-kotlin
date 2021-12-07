@@ -132,7 +132,11 @@ class AttendanceFragment : Fragment() {
                         } else {
 //                            binding.tvCheckInSuccess.visibility = View.VISIBLE
 //                            binding.tvCheckInSuccess.text = getString(R.string.out_off_range)
-                            Toast.makeText(activity, "Anda berada diluar jangkauan presensi", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                activity,
+                                "Anda berada diluar jangkauan presensi",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             binding.tvCheckIn.visibility = View.VISIBLE
                         }
                         fusedLocationProviderClient?.removeLocationUpdates(this)
@@ -180,9 +184,11 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun inputToFirebase(name: String) {
-        val user = User(name, getCurrentTime())
         val database = FirebaseDatabase.getInstance()
         val attendanceRef = database.getReference("kehadiran")
+        val userId = attendanceRef.push().key
+        val user = User(userId, name, getCurrentTime())
+
 
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
