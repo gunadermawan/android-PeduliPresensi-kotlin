@@ -8,6 +8,7 @@
     tools:context=".ui.login.LoginActivity">
 
     <androidx.cardview.widget.CardView
+        style="?attr/materialCardViewElevatedStyle"
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
