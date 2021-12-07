@@ -184,9 +184,11 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun inputToFirebase(name: String) {
-        val user = User(name, getCurrentTime())
         val database = FirebaseDatabase.getInstance()
         val attendanceRef = database.getReference("kehadiran")
+        val userId = attendanceRef.push().key
+        val user = User(userId, name, getCurrentTime())
+
 
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
