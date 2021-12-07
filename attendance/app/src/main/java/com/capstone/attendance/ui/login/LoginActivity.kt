@@ -18,18 +18,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
-//        remove actionbar
         if (supportActionBar != null) {
             supportActionBar?.hide()
         }
-//        login with firebase
         auth = FirebaseAuth.getInstance()
         loginBinding.btnLogin.setOnClickListener {
-//            validations
-            //        fetch from edit_text
             val email = loginBinding.etEmail.text.toString().trim()
             val pass = loginBinding.etPassword.text.toString().trim()
-//            validation
             if (email.isEmpty()) {
                 loginBinding.txtInputEmail.error = "Email tidak boleh kosong!"
                 loginBinding.txtInputEmail.requestFocus()
@@ -45,7 +40,6 @@ class LoginActivity : AppCompatActivity() {
                 loginBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
-//            login this edit text to firebase
             loginUser(email, pass)
         }
         loginBinding.btnRegister.setOnClickListener {

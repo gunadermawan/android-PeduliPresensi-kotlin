@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.capstone.attendance.adapter.UserAdapter
 import com.capstone.attendance.data.User
 import com.capstone.attendance.databinding.FragmentHistoryBinding
+import com.capstone.attendance.viewModel.HistoryViewModel
 import com.google.firebase.database.*
 
 class HistoryFragment : Fragment() {
@@ -29,7 +30,7 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         historyViewModel =
-            ViewModelProvider(this).get(HistoryViewModel::class.java)
+            ViewModelProvider(this)[HistoryViewModel::class.java]
 
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         return binding.root
@@ -41,7 +42,7 @@ class HistoryFragment : Fragment() {
         userRecyclerView.layoutManager = LinearLayoutManager(context)
         userRecyclerView.setHasFixedSize(true)
 
-        userArrayList = arrayListOf<User>()
+        userArrayList = arrayListOf()
         getUserData()
     }
 

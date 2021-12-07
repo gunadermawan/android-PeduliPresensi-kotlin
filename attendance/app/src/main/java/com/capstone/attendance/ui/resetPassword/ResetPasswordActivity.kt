@@ -35,9 +35,9 @@ class ResetPasswordActivity : AppCompatActivity() {
                         "Silahkan cek email Anda untuk reset password",
                         Toast.LENGTH_SHORT
                     ).show()
-                    Intent(this@ResetPasswordActivity, LoginActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
+                    Intent(this@ResetPasswordActivity, LoginActivity::class.java).also {intent->
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
                     }
                 } else {
                     binding.txtInputEmail.error = "Email Anda tidak terdaftar!"
