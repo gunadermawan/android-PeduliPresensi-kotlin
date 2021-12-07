@@ -1,6 +1,8 @@
 package com.capstone.attendance.ui.history
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,7 +62,7 @@ class HistoryFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+               Log.w(TAG,"Load cancelled", error.toException())
             }
         })
     }
