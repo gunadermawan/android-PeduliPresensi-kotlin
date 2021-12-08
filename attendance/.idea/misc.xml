@@ -20,6 +20,7 @@
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_location.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_office.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_time.xml" value="0.26458333333333334" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_verified.xml" value="0.16547231270358306" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/item_selector.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/round_courners.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/round_courners_red.xml" value="0.26458333333333334" />
@@ -38,7 +39,7 @@
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_update_password.xml" value="0.264" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/layout_dialog_form.xml" value="0.16" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/test.xml" value="0.2484375" />
-        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/user_item.xml" value="0.1569078947368421" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/user_item.xml" value="0.176" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/menu/bottom_nav_menu.xml" value="0.12604166666666666" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/mipmap-anydpi-v26/ic_app.xml" value="0.16547231270358306" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/mipmap-anydpi-v26/ic_launcher_app.xml" value="0.16547231270358306" />

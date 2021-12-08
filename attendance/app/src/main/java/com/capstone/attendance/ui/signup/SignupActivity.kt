@@ -11,7 +11,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
-import com.capstone.attendance.MainActivity
+import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivitySignupBinding
 import com.capstone.attendance.ui.login.LoginActivity

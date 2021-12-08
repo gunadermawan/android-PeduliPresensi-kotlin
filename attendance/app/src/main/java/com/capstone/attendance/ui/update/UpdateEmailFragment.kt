@@ -90,11 +90,11 @@ class UpdateEmailFragment : Fragment() {
                             val mNotificationManager =
                                 activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                             val mBuilder = NotificationCompat.Builder(view.context, CHANNEL_ID)
-                                .setSmallIcon(R.drawable.ic_finger)
+                                .setSmallIcon(R.mipmap.ic_launcher_app)
                                 .setLargeIcon(
                                     BitmapFactory.decodeResource(
                                         resources,
-                                        R.drawable.ic_finger
+                                        R.mipmap.ic_launcher_app
                                     )
                                 )
                                 .setContentTitle(resources.getString(R.string.update_profile_succes))
