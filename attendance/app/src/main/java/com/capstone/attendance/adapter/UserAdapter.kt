@@ -27,7 +27,7 @@ class UserAdapter(private val userList: ArrayList<User>) :
     override fun getItemCount(): Int = userList.size
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name: TextView = itemView.findViewById(R.id.user_name)
-        val time: TextView = itemView.findViewById(R.id.user_time)
+        val name: TextView = itemView.findViewById(R.id.tv_user_name)
+        val time: TextView = itemView.findViewById(R.id.tv_user_time)
     }
 }
