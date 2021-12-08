@@ -1,4 +1,4 @@
-package com.capstone.attendance.ui.attendance
+package com.capstone.attendance.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

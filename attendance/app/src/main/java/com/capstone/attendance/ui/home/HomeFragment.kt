@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentHomeBinding
+import com.capstone.attendance.viewModel.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 
