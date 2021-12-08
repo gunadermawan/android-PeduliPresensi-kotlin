@@ -3,9 +3,8 @@ package com.capstone.attendance.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.capstone.attendance.MainActivity
+import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.databinding.ActivityLoginBinding
 import com.capstone.attendance.ui.resetPassword.ResetPasswordActivity
 import com.capstone.attendance.ui.signup.SignupActivity
