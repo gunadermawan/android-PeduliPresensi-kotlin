@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.attendance.R
-import com.capstone.attendance.data.User
+import com.capstone.attendance.data.remote.User
 
 class UserAdapter(private val userList: ArrayList<User>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {

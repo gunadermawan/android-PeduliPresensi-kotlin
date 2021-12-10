@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.attendance.adapter.UserAdapter
-import com.capstone.attendance.data.User
+import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentHistoryBinding
 import com.capstone.attendance.viewModel.HistoryViewModel
 import com.google.firebase.database.*
