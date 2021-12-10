@@ -1,4 +1,4 @@
-package com.capstone.attendance.data
+package com.capstone.attendance.data.remote
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -23,7 +23,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.capstone.attendance.R
-import com.capstone.attendance.data.User
+import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
