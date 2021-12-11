@@ -12,18 +12,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="50dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_camera"
-            app:civ_border_color="@color/blue_700"
-            app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cvForm"
             style="?attr/materialCardViewElevatedStyle"
@@ -31,12 +19,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivProfile"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,6 +45,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_camera"
+                    app:civ_border_color="@color/blue_700"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputName"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -73,7 +74,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/ivProfile"
                     app:layout_constraintVertical_bias="0.0"
                     app:startIconDrawable="@drawable/ic_person">
 
@@ -191,7 +192,6 @@
             android:layout_margin="24dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -213,66 +213,84 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/btn_logout"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/btn_logout"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/logout"
                     android:textAllCaps="false"
+                    android:textColor="@color/red_700"
+                    app:icon="@drawable/ic_error"
+                    app:iconTint="@color/red_700"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_settings"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.0"
+                    app:strokeColor="@color/red_700" />
 
                 <Button
                     android:id="@+id/btnVerification"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
                     android:text="@string/email_verification"
                     android:textAllCaps="false"
+                    app:icon="@drawable/ic_unverified"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btn_logout"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/btn_logout"
                     app:layout_constraintTop_toBottomOf="@id/btn_logout"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.0"
+                    app:strokeColor="@color/blue_500" />
 
                 <Button
                     android:id="@+id/btnChangePassword"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
                     android:text="@string/change_password"
                     android:textAllCaps="false"
+                    app:icon="@drawable/ic_reset_password"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnVerification"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/btnVerification"
                     app:layout_constraintTop_toBottomOf="@id/btnVerification"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.0"
+                    app:strokeColor="@color/blue_500" />
 
                 <Button
                     android:id="@+id/btnChangeEmail"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/change_email"
                     android:textAllCaps="false"
+                    app:icon="@drawable/ic_change_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnChangePassword"
                     app:layout_constraintStart_toStartOf="@id/btnChangePassword"
-                    app:layout_constraintTop_toBottomOf="@id/btnChangePassword" />
+                    app:layout_constraintTop_toBottomOf="@id/btnChangePassword"
+                    app:strokeColor="@color/blue_500" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
