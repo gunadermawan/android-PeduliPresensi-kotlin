@@ -71,12 +71,13 @@
 
             <Button
                 android:id="@+id/btnAuth"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/round_courners"
                 android:text="@string/confirm"
+                app:strokeColor="@color/blue_500"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_password"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_password"

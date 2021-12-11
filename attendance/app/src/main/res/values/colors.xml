@@ -10,5 +10,6 @@
     <color name="yellow_700">#eebb4d</color>
     <color name="green_700">#66b63a</color>
     <color name="grey_400">#dedede</color>
-    <color name="orange_400">#FF0000</color>
+    <color name="red_600">#e53935</color>
+    <color name="red_700">#d32f2f</color>
 </resources>
