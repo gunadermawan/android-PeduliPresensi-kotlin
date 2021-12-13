@@ -109,7 +109,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:backgroundTint="@color/red_600">
+                    android:backgroundTint="@color/red_600"
+                    app:cardCornerRadius="16dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="180dp"
@@ -157,7 +158,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:backgroundTint="@color/green_700">
+                    android:backgroundTint="@color/green_700"
+                    app:cardCornerRadius="16dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="180dp"
@@ -204,7 +206,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:backgroundTint="@color/blue_700">
+                    android:backgroundTint="@color/blue_700"
+                    app:cardCornerRadius="16dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="180dp"
@@ -235,7 +238,7 @@
                                 android:layout_height="60dp"
                                 android:layout_marginBottom="16dp"
                                 android:contentDescription="@string/image_gps"
-                                android:src="@drawable/ic_navigations" />
+                                android:src="@drawable/ic_navigation" />
 
                             <Button
                                 android:id="@+id/btn_gps"
@@ -253,7 +256,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:backgroundTint="@color/yellow_700">
+                    android:backgroundTint="@color/yellow_700"
+                    app:cardCornerRadius="16dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="180dp"
