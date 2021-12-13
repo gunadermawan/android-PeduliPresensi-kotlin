@@ -16,6 +16,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentUpdateBinding
+import com.capstone.attendance.utils.CHANNEL_ID
+import com.capstone.attendance.utils.CHANNEL_NAME
+import com.capstone.attendance.utils.NOTIFICATION_ID
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -125,11 +128,5 @@ class UpdateEmailFragment : Fragment() {
                 }
             }
         }
-    }
-
-    companion object {
-        private const val NOTIFICATION_ID = 1
-        private const val CHANNEL_ID = "channel_id"
-        private const val CHANNEL_NAME = "channel_name"
     }
 }

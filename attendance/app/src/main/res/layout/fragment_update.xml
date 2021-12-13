@@ -9,6 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layoutPassword"
+        style="?attr/materialCardViewElevatedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -77,12 +78,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/confirm"
-                app:strokeColor="@color/blue_500"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_password"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_password"
                 app:layout_constraintTop_toBottomOf="@+id/txtInput_password"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                app:strokeColor="@color/blue_500" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,8 +95,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:cardCornerRadius="16dp"
         android:visibility="gone"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,11 +126,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/input_email"
                 app:endIconMode="clear_text"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
                 app:helperText="*pastikan email Anda aktif"

@@ -25,6 +25,7 @@ import androidx.fragment.app.Fragment
 import com.capstone.attendance.R
 import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
+import com.capstone.attendance.utils.LOCATION_PERMISSION
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -266,7 +267,4 @@ class AttendanceFragment : Fragment() {
         _binding = null
     }
 
-    companion object {
-        const val LOCATION_PERMISSION = 0
-    }
 }

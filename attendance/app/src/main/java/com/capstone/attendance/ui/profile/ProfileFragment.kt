@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
+import com.capstone.attendance.utils.REQUEST_CAMERA
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -154,9 +155,5 @@ class ProfileFragment : Fragment() {
                     }
                 }
             }
-    }
-
-    companion object {
-        const val REQUEST_CAMERA = 100
     }
 }

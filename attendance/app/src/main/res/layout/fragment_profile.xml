@@ -169,6 +169,8 @@
 
                 <Button
                     android:id="@+id/btnUpdate"
+                    style="@style/Widget.Material3.Button"
+                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -229,7 +231,7 @@
                     android:text="@string/logout"
                     android:textAllCaps="false"
                     android:textColor="@color/red_700"
-                    app:icon="@drawable/ic_error"
+                    app:icon="@drawable/ic_logout"
                     app:iconTint="@color/red_700"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -281,7 +283,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="24dp"
                     android:gravity="center_vertical"
                     android:text="@string/change_email"
                     android:textAllCaps="false"
