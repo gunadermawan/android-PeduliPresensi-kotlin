@@ -42,7 +42,11 @@ Opportunity :
 Threat :    
 1	Munculnya aplikasi sejenisnya untuk menghambat perkembangan aplikasi ini.  
 
-
+# Library eksternal  
+1. Circle image (implementation 'de.hdodenhof:circleimageview:3.1.0')  
+2. Ripple Effect Layout (implementation 'com.skyfishjy.ripplebackground:library:1.0.1')  
+3. Picasso (implementation 'com.squareup.picasso:picasso:2.71828')  
+4. gooogle gms (implementation 'com.google.android.gms:play-services-location:18.0.0')
 
 
 
