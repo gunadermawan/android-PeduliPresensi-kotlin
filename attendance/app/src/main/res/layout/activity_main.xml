@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:itemIconSize="24dp"
         android:layout_margin="24dp"
-        android:background="@drawable/round_courners_nav"
+        android:background="@drawable/round_corner_nav"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@android:color/transparent"
         app:itemTextColor="@drawable/item_selector"
