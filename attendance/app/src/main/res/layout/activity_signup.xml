@@ -46,23 +46,23 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:errorEnabled="true"
-                app:endIconMode="clear_text"
-                app:helperText="*Pastikan email Anda aktif"
-                app:errorIconDrawable="@drawable/ic_error"
                 android:hint="@string/email"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/ic_error"
+                app:helperText="*Pastikan email Anda aktif"
                 app:helperTextEnabled="true"
-                app:startIconDrawable="@drawable/ic_mail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_login"
-                app:layout_goneMarginStart="32dp">
+                app:layout_goneMarginStart="32dp"
+                app:startIconDrawable="@drawable/ic_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_email"
-                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -70,10 +70,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:endIconMode="password_toggle"
                 android:hint="@string/password"
-                app:helperTextEnabled="true"
+                app:endIconMode="password_toggle"
                 app:helperText="*Password harus lebih dari  8 karakter"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_email"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_email"
                 app:layout_constraintTop_toBottomOf="@+id/txtInput_email"
@@ -81,9 +81,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
-                    android:inputType="textPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -122,11 +122,11 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginBottom="276dp"
+        android:contentDescription="@string/image_app"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="@+id/cardView2"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
-        app:srcCompat="@drawable/icon_app"
-        android:contentDescription="@string/image_app" />
+        app:srcCompat="@drawable/icon_app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

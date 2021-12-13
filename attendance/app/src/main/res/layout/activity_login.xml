@@ -8,8 +8,8 @@
     tools:context=".ui.login.LoginActivity">
 
     <androidx.cardview.widget.CardView
-        style="?attr/materialCardViewElevatedStyle"
         android:id="@+id/cardView"
+        style="?attr/materialCardViewElevatedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -85,17 +85,17 @@
 
             <Button
                 android:id="@+id/btn_login"
-                android:layout_width="0dp"
                 style="@style/Widget.Material3.Button"
-                app:strokeColor="@color/blue_500"
-                android:textSize="16sp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
                 android:text="@string/login"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_password"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_password"
-                app:layout_constraintTop_toBottomOf="@+id/txtInput_password" />
+                app:layout_constraintTop_toBottomOf="@+id/txtInput_password"
+                app:strokeColor="@color/blue_500" />
 
             <TextView
                 android:id="@+id/tv_forgotPass"
@@ -133,12 +133,12 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginBottom="276dp"
+        android:contentDescription="@string/image_app"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:srcCompat="@drawable/icon_app"
-        android:contentDescription="@string/image_app" />
+        app:srcCompat="@drawable/icon_app" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
