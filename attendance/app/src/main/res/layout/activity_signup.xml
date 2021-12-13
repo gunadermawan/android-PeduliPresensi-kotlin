@@ -8,7 +8,7 @@
     tools:context=".ui.signup.SignupActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cv_signup"
         style="?attr/materialCardViewElevatedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,15 +26,9 @@
 
             <TextView
                 android:id="@+id/tv_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                style="@style/TextContent_login"
                 android:text="@string/register"
-                android:textColor="@color/blue_500"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,10 +117,10 @@
         android:layout_height="350dp"
         android:layout_marginBottom="276dp"
         android:contentDescription="@string/image_app"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_signup"
+        app:layout_constraintEnd_toEndOf="@+id/cv_signup"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/cv_signup"
         app:srcCompat="@drawable/icon_app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
