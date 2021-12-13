@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">attendance</string>
     <string name="title_home">Home</string>
-    <string name="home">home</string>
-    <string name="attendance">presensi</string>
-    <string name="histori">histori</string>
-    <string name="profile">Profil</string>
+    <string name="home">Beranda</string>
+    <string name="attendance">Presensi</string>
+    <string name="histori">Histori</string>
+    <string name="profile">Akun</string>
     <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
     <string name="masukan_nama">Masukan nama</string>
