@@ -99,7 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
@@ -107,12 +108,12 @@
                 android:rowCount="4">
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/cardView_home"
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:backgroundTint="@color/red_600">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="180dp"
+                        android:layout_height="200dp"
                         android:padding="8dp">
 
                         <LinearLayout
@@ -155,12 +156,12 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/cardView_home"
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:backgroundTint="@color/green_700">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="180dp"
+                        android:layout_height="200dp"
                         android:padding="8dp">
 
                         <LinearLayout
@@ -202,12 +203,12 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/cardView_home"
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:backgroundTint="@color/blue_700">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="180dp"
+                        android:layout_height="200dp"
                         android:padding="8dp">
 
                         <LinearLayout
@@ -242,7 +243,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="8dp"
-                                android:background="@drawable/round_courners"
                                 android:text="@string/gps" />
 
                         </LinearLayout>
@@ -252,17 +252,17 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/cardView_home"
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:backgroundTint="@color/yellow_700">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="180dp"
+                        android:layout_height="200dp"
                         android:padding="8dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -292,7 +292,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="8dp"
-                                android:background="@drawable/round_courners"
                                 android:text="@string/internet" />
 
                         </LinearLayout>

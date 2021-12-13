@@ -137,7 +137,8 @@
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:srcCompat="@drawable/icon_app" />
+        app:srcCompat="@drawable/icon_app"
+        android:contentDescription="@string/image_app" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
