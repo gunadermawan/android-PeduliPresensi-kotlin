@@ -5,11 +5,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue_500">#5ca0ca</color>
-    <color name="blue_700">#006fb2</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="blue_700">#4c80a8</color>
     <color name="light_white">#d2d2d2</color>
     <color name="yellow_700">#eebb4d</color>
     <color name="green_700">#66b63a</color>
     <color name="grey_400">#dedede</color>
+    <color name="grey_500">#424242</color>
     <color name="red_600">#e53935</color>
     <color name="red_700">#d32f2f</color>
 </resources>

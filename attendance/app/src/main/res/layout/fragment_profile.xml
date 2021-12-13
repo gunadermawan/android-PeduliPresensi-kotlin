@@ -22,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             app:cardCornerRadius="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintBottom_toTopOf="@+id/cv_signup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,7 +51,7 @@
                     android:layout_height="150dp"
                     android:layout_marginTop="8dp"
                     android:src="@drawable/ic_camera"
-                    app:civ_border_color="@color/blue_700"
+                    app:civ_border_color="@color/light_blue_500"
                     app:civ_border_width="2dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +187,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
+            android:id="@+id/cv_signup"
             style="?attr/materialCardViewElevatedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                     android:gravity="center_vertical"
                     android:text="@string/change_email"
                     android:textAllCaps="false"
-                    app:icon="@drawable/ic_change_email"
+                    app:icon="@drawable/ic_mail_reset"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnChangePassword"
                     app:layout_constraintStart_toStartOf="@id/btnChangePassword"

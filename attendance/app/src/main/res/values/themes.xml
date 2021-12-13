@@ -13,18 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-
-    <style name="cardView_home">
-        <item name="android:layout_width">170dp</item>
-        <item name="android:layout_height">170dp</item>
-        <item name="android:layout_margin">5dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:orientation">vertical</item>
-        <item name="cardCornerRadius">16dp</item>
-        <item name="cardElevation">5dp</item>
+    <style name="TextContent_login">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/blue_500</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
+
 </resources>
