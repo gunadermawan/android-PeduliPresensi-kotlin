@@ -41,7 +41,6 @@
     <string name="update_password_succes_desc">Password Anda Berhasil diperbarui.</string>
     <string name="register_succes_desc">Silahkan aktivasi email Anda di menu profil</string>
     <string name="btn_reset_pass">Reset password</string>
-    <string name="reset_password">Reset password Anda</string>
     <string name="masukan_email">Masukan email</string>
     <string name="input_email">Masukan Email</string>
     <string name="settings">Pengaturan</string>
@@ -56,7 +55,5 @@
     <string name="cancel">Batal</string>
     <string name="have_account">Punya Akun?</string>
     <string name="not_have_account">Belum punya akun?</string>
-    <string name="name">Nama</string>
-    <string name="time">waktu</string>
     <string name="date_attendance">tannggal presensi:</string>
 </resources>
