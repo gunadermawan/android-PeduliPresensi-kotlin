@@ -148,7 +148,6 @@ class ProfileFragment : Fragment() {
                 if (it.isSuccessful) {
                     ref.downloadUrl.addOnCompleteListener {Task->
                         Task.result?.let {Uri->
-//                            BIKIN VARIABEL URI
                             imgUri = Uri
                             profileBinding.ivProfile.setImageBitmap(imgBitmap)
                         }

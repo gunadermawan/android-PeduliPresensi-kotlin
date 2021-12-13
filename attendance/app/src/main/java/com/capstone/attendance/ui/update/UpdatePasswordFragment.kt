@@ -74,7 +74,7 @@ class UpdatePasswordFragment : Fragment() {
                 val newPassConfirm =
                     updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
                 if (newPass.isEmpty() || newPass.length < 8) {
-                    updatePasswordBinding.txtInputNewPassword.error = "Password tidak harus diisi!"
+                    updatePasswordBinding.txtInputNewPassword.error = "Password harus diisi!"
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
                     return@btnUpdate
                 }
