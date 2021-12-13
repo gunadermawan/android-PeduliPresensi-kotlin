@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
-import com.capstone.attendance.utils.REQUEST_CAMERA
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -44,7 +44,7 @@ class ProfileFragment : Fragment() {
             if (user.photoUrl != null) {
                 Picasso.get().load(user.photoUrl).into(profileBinding.ivProfile)
             } else {
-                Picasso.get().load("https://picsum.photos/id/1/200/300")
+                Picasso.get().load(PATH_DEFAULT_PROFILE)
                     .into(profileBinding.ivProfile)
             }
             profileBinding.etName.setText(user.displayName)
@@ -60,12 +60,12 @@ class ProfileFragment : Fragment() {
         profileBinding.btnUpdate.setOnClickListener {
             val image = when {
                 ::imgUri.isInitialized -> imgUri
-                user?.photoUrl == null -> Uri.parse("https://picsum.photos/id/1/200/300")
+                user?.photoUrl == null -> Uri.parse(PATH_DEFAULT_PROFILE)
                 else -> user.photoUrl
             }
             val name = profileBinding.etName.text.toString().trim()
             if (name.isEmpty()) {
-                profileBinding.textInputName.error = "Nama harus diisi!"
+                profileBinding.textInputName.error = NAME_EMPTY
                 profileBinding.textInputName.requestFocus()
                 return@setOnClickListener
             }
@@ -77,7 +77,7 @@ class ProfileFragment : Fragment() {
                         if (Task.isSuccessful) {
                             Toast.makeText(
                                 activity,
-                                "Profile berhasil di update",
+                                PROFILE_UPDATED,
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else
@@ -101,11 +101,11 @@ class ProfileFragment : Fragment() {
                 if (it.isSuccessful) {
                     Toast.makeText(
                         activity,
-                        "Email verifikasi berhasil dikirim",
+                        EMAIL_VERIFICATION,
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    Toast.makeText(activity, "Silahkan coba beberapa saat lagi!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, EMAIL_VERIFICATION_ERROR, Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -139,11 +139,11 @@ class ProfileFragment : Fragment() {
     }
 
     private fun uploadImgBitmap(imgBitmap: Bitmap) {
-        val baos = ByteArrayOutputStream()
+        val byteArrayOutputStream = ByteArrayOutputStream()
         val ref =
             FirebaseStorage.getInstance().reference.child("img_profile/${FirebaseAuth.getInstance().currentUser?.uid}")
-        imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val img = baos.toByteArray()
+        imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
+        val img = byteArrayOutputStream.toByteArray()
         ref.putBytes(img)
             .addOnCompleteListener {
                 if (it.isSuccessful) {

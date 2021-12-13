@@ -15,9 +15,7 @@ import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivitySignupBinding
 import com.capstone.attendance.ui.login.LoginActivity
-import com.capstone.attendance.utils.CHANNEL_ID
-import com.capstone.attendance.utils.CHANNEL_NAME
-import com.capstone.attendance.utils.NOTIFICATION_ID
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
@@ -35,17 +33,17 @@ class SignupActivity : AppCompatActivity() {
             val email = signupBinding.etEmail.text.toString().trim()
             val pass = signupBinding.etPassword.text.toString().trim()
             if (email.isEmpty()) {
-                signupBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                signupBinding.txtInputEmail.error = EMAIL_EMPTY
                 signupBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                signupBinding.txtInputEmail.error = "Email tidak valid!"
+                signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
                 signupBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (pass.isEmpty() || pass.length < 8) {
-                signupBinding.txtInputPassword.error = "Password harus lebih dari 8 karakter"
+                signupBinding.txtInputPassword.error = PASSWORD_LENGTH
                 signupBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }

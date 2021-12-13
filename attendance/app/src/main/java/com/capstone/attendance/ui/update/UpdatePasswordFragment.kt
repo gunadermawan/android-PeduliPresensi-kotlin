@@ -15,9 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentUpdatePasswordBinding
-import com.capstone.attendance.utils.CHANNEL_ID
-import com.capstone.attendance.utils.CHANNEL_NAME
-import com.capstone.attendance.utils.NOTIFICATION_ID
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -45,7 +43,7 @@ class UpdatePasswordFragment : Fragment() {
         updatePasswordBinding.btnAuth.setOnClickListener {
             val pass = updatePasswordBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
-                updatePasswordBinding.txtInputPassword.error = "Password harus di isi!"
+                updatePasswordBinding.txtInputPassword.error = PASSWORD_EMPTY
                 updatePasswordBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -58,7 +56,7 @@ class UpdatePasswordFragment : Fragment() {
                             updatePasswordBinding.layoutNewPass.visibility = View.VISIBLE
                         }
                         Task.exception is FirebaseAuthInvalidCredentialsException -> {
-                            updatePasswordBinding.txtInputPassword.error = "password Anda salah!"
+                            updatePasswordBinding.txtInputPassword.error = WRONG_PASSWORD
                             updatePasswordBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
@@ -77,12 +75,12 @@ class UpdatePasswordFragment : Fragment() {
                 val newPassConfirm =
                     updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
                 if (newPass.isEmpty() || newPass.length < 8) {
-                    updatePasswordBinding.txtInputNewPassword.error = "Password harus diisi!"
+                    updatePasswordBinding.txtInputNewPassword.error = PASSWORD_EMPTY
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
                     return@btnUpdate
                 }
                 if (newPass != newPassConfirm) {
-                    updatePasswordBinding.txtInputNewPasswordConfirm.error = "password tidak sama!"
+                    updatePasswordBinding.txtInputNewPasswordConfirm.error = PASSWORD_NOT_SAME
                     updatePasswordBinding.txtInputNewPasswordConfirm.requestFocus()
                     return@btnUpdate
                 }
@@ -123,7 +121,7 @@ class UpdatePasswordFragment : Fragment() {
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
                             Toast.makeText(
                                 activity,
-                                "Password berhasil dirubah.",
+                                PASSWORD_CHANGED,
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {
