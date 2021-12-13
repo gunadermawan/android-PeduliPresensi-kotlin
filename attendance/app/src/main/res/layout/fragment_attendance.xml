@@ -40,9 +40,11 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_CheckIn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        style="@style/Widget.Material3.FloatingActionButton.Tertiary"
         android:layout_centerInParent="true"
+        app:tint="@color/blue_500"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/btn_attendance"
         android:src="@drawable/ic_finger_white" />
