@@ -45,7 +45,6 @@ class HistoryFragment : Fragment() {
         userRecyclerView = binding.userList
         userRecyclerView.layoutManager = LinearLayoutManager(context)
         userRecyclerView.setHasFixedSize(true)
-
         userArrayList = arrayListOf()
         getUserData()
     }
