@@ -15,6 +15,9 @@ import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivitySignupBinding
 import com.capstone.attendance.ui.login.LoginActivity
+import com.capstone.attendance.utils.CHANNEL_ID
+import com.capstone.attendance.utils.CHANNEL_NAME
+import com.capstone.attendance.utils.NOTIFICATION_ID
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
@@ -101,9 +104,4 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        private const val NOTIFICATION_ID = 1
-        private const val CHANNEL_ID = "channel_id"
-        private const val CHANNEL_NAME = "channel_name"
-    }
 }
