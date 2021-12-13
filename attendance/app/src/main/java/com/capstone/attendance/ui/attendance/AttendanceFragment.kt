@@ -25,7 +25,7 @@ import androidx.fragment.app.Fragment
 import com.capstone.attendance.R
 import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
-import com.capstone.attendance.utils.LOCATION_PERMISSION
+import com.capstone.attendance.utils.*
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -40,9 +40,6 @@ class AttendanceFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var locationRequest: LocationRequest
     private var fusedLocationProviderClient: FusedLocationProviderClient? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -50,7 +47,6 @@ class AttendanceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentAttendanceBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -82,7 +78,7 @@ class AttendanceFragment : Fragment() {
             if (!isLocationEnabled()) {
                 Toast.makeText(
                     activity,
-                    "Aktifkan GPS Anda untuk memulai presensi",
+                    PERMISSION_GPS,
                     Toast.LENGTH_SHORT
                 ).show()
                 startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
@@ -107,7 +103,7 @@ class AttendanceFragment : Fragment() {
             loadScanLocation()
             Handler(Looper.getMainLooper()).postDelayed({
                 getLastLocation()
-            }, 2000)
+            }, DELAY_LOCATION)
         }
     }
 
@@ -126,16 +122,16 @@ class AttendanceFragment : Fragment() {
                         val distance = calculateDistance(
                             currentLat, currentLong, destinationLat, destinationLong
                         ) * 1000
-                        Log.d("MainActivity", "[onLocationResult] - $distance")
+                        Log.d(TAG, "$TAG_RESULT - $distance")
                         if (distance < 10.0) {
                             showDialogForm()
-                            Toast.makeText(activity, "Lokasi ditemukan", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(activity, LOCATION_FOUND, Toast.LENGTH_SHORT).show()
                         } else {
 //                            binding.tvCheckInSuccess.visibility = View.VISIBLE
 //                            binding.tvCheckInSuccess.text = getString(R.string.out_off_range)
                             Toast.makeText(
                                 activity,
-                                "Anda berada diluar jangkauan presensi",
+                                OUT_OF_RANGE,
                                 Toast.LENGTH_SHORT
                             ).show()
                             binding.tvCheckIn.visibility = View.VISIBLE
@@ -152,7 +148,7 @@ class AttendanceFragment : Fragment() {
             } else {
                 Toast.makeText(
                     activity,
-                    "Aktifkan GPS Anda untuk melakukan presensi",
+                    PERMISSION_GPS,
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -172,7 +168,7 @@ class AttendanceFragment : Fragment() {
             if (name.isNotEmpty()) {
                 inputToFirebase(name)
             } else {
-                Toast.makeText(activity, "Masukan nama Anda!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, INPUT_YOUR_NAME, Toast.LENGTH_SHORT).show()
             }
             dialog.dismiss()
         }
@@ -186,14 +182,14 @@ class AttendanceFragment : Fragment() {
 
     private fun inputToFirebase(name: String) {
         val database = FirebaseDatabase.getInstance()
-        val attendanceRef = database.getReference("kehadiran")
+        val attendanceRef = database.getReference(REALTIME_DB)
         val userId = attendanceRef.push().key
         val user = User(userId, name, getCurrentTime())
 
 
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
-                Toast.makeText(activity, "Presensi Anda berhasil", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, ATTENDANCE_SUCCESSFULL, Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
                 Toast.makeText(activity, "${it.message}", Toast.LENGTH_SHORT).show()
@@ -203,15 +199,15 @@ class AttendanceFragment : Fragment() {
 
     private fun getCurrentTime(): String? {
         val currentTime = Calendar.getInstance().time
-        val dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
+        val dateFormat = SimpleDateFormat(SIMPLE_DATE_FORMAT, Locale.getDefault())
         return dateFormat.format(currentTime)
 
     }
 
     private fun getAddress(): List<Address> {
-        val destinationPlace = "Balai Desa Warureja"
+        val destinationPlace = ADDRESS_GEOCODER
         val geocode = Geocoder(context, Locale.getDefault())
-        return geocode.getFromLocationName(destinationPlace, 100)
+        return geocode.getFromLocationName(destinationPlace, MAX_RESULT)
     }
 
     private fun loadScanLocation() {

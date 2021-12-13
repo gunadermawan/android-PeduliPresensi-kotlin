@@ -16,9 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentUpdateBinding
-import com.capstone.attendance.utils.CHANNEL_ID
-import com.capstone.attendance.utils.CHANNEL_NAME
-import com.capstone.attendance.utils.NOTIFICATION_ID
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -45,7 +43,7 @@ class UpdateEmailFragment : Fragment() {
         updateBinding.btnAuth.setOnClickListener {
             val pass = updateBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
-                updateBinding.txtInputPassword.error = "Password harus di isi!"
+                updateBinding.txtInputPassword.error = PASSWORD_EMPTY
                 updateBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -58,7 +56,7 @@ class UpdateEmailFragment : Fragment() {
                             updateBinding.layoutEmail.visibility = View.VISIBLE
                         }
                         Task.exception is FirebaseAuthInvalidCredentialsException -> {
-                            updateBinding.txtInputPassword.error = "password Anda salah!"
+                            updateBinding.txtInputPassword.error = WRONG_PASSWORD
                             updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
@@ -75,12 +73,12 @@ class UpdateEmailFragment : Fragment() {
             updateBinding.btnUpdate.setOnClickListener BtnUpdate@{ view ->
                 val email = updateBinding.etEmail.text.toString().trim()
                 if (email.isEmpty()) {
-                    updateBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                    updateBinding.txtInputEmail.error = EMAIL_EMPTY
                     updateBinding.txtInputEmail.requestFocus()
                     return@BtnUpdate
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    updateBinding.txtInputEmail.error = "Email tidak valid!"
+                    updateBinding.txtInputEmail.error = EMAIL_NOT_VALID
                     updateBinding.txtInputEmail.requestFocus()
                     return@BtnUpdate
                 }
@@ -117,7 +115,7 @@ class UpdateEmailFragment : Fragment() {
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
                             Toast.makeText(
                                 activity,
-                                "Email berhasil diperbarui",
+                                EMAIL_UPDATED,
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {

@@ -4,10 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
-import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.databinding.ActivityLoginBinding
+import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.ui.resetPassword.ResetPasswordActivity
 import com.capstone.attendance.ui.signup.SignupActivity
+import com.capstone.attendance.utils.EMAIL_EMPTY
+import com.capstone.attendance.utils.EMAIL_NOT_VALID
+import com.capstone.attendance.utils.PASSWORD_LENGTH
+import com.capstone.attendance.utils.WRONG_PASSWORD
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -25,17 +29,17 @@ class LoginActivity : AppCompatActivity() {
             val email = loginBinding.etEmail.text.toString().trim()
             val pass = loginBinding.etPassword.text.toString().trim()
             if (email.isEmpty()) {
-                loginBinding.txtInputEmail.error = "Email tidak boleh kosong!"
+                loginBinding.txtInputEmail.error = EMAIL_EMPTY
                 loginBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                loginBinding.txtInputEmail.error = "Email tidak valid!"
+                loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
                 loginBinding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (pass.isEmpty() || pass.length < 8) {
-                loginBinding.txtInputPassword.error = "Password harus lebih dari 8 karakter"
+                loginBinding.txtInputPassword.error = PASSWORD_LENGTH
                 loginBinding.txtInputPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -57,12 +61,13 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, pass)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Intent(this@LoginActivity, MainActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
+                    Intent(this@LoginActivity, MainActivity::class.java).also { intent ->
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
                     }
                 } else {
-                    loginBinding.txtInputPassword.error = "Password Anda salah!"
+                    loginBinding.txtInputPassword.error = WRONG_PASSWORD
                     loginBinding.txtInputPassword.requestFocus()
                 }
             }

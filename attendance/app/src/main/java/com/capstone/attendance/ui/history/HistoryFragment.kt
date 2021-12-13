@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.capstone.attendance.adapter.UserAdapter
 import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentHistoryBinding
+import com.capstone.attendance.utils.REALTIME_DB
+import com.capstone.attendance.utils.REALTIME_DB_CANCELED
 import com.capstone.attendance.viewModel.HistoryViewModel
 import com.google.firebase.database.*
 
@@ -49,7 +51,7 @@ class HistoryFragment : Fragment() {
     }
 
     private fun getUserData() {
-        dbRef = FirebaseDatabase.getInstance().getReference("kehadiran")
+        dbRef = FirebaseDatabase.getInstance().getReference(REALTIME_DB)
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (userSnapshot in snapshot.children) {
@@ -62,7 +64,7 @@ class HistoryFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-               Log.w(TAG,"Load cancelled", error.toException())
+                Log.w(TAG, REALTIME_DB_CANCELED, error.toException())
             }
         })
     }

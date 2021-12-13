@@ -7,6 +7,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.attendance.databinding.ActivityResetPasswordBinding
 import com.capstone.attendance.ui.login.LoginActivity
+import com.capstone.attendance.utils.EMAIL_CONFIRM
+import com.capstone.attendance.utils.EMAIL_EMPTY
+import com.capstone.attendance.utils.EMAIL_NOT_REGISTERED
+import com.capstone.attendance.utils.EMAIL_NOT_VALID
 import com.google.firebase.auth.FirebaseAuth
 
 class ResetPasswordActivity : AppCompatActivity() {
@@ -19,12 +23,12 @@ class ResetPasswordActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             if (email.isEmpty()) {
-                binding.txtInputEmail.error = "Email tidak boleh kosong!"
+                binding.txtInputEmail.error = EMAIL_EMPTY
                 binding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.txtInputEmail.error = "Email tidak valid!"
+                binding.txtInputEmail.error = EMAIL_NOT_VALID
                 binding.txtInputEmail.requestFocus()
                 return@setOnClickListener
             }
@@ -32,7 +36,7 @@ class ResetPasswordActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     Toast.makeText(
                         this,
-                        "Silahkan cek email Anda untuk reset password",
+                        EMAIL_CONFIRM,
                         Toast.LENGTH_SHORT
                     ).show()
                     Intent(this@ResetPasswordActivity, LoginActivity::class.java).also {intent->
@@ -40,7 +44,7 @@ class ResetPasswordActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 } else {
-                    binding.txtInputEmail.error = "Email Anda tidak terdaftar!"
+                    binding.txtInputEmail.error = EMAIL_NOT_REGISTERED
                     binding.txtInputEmail.requestFocus()
                 }
             }
