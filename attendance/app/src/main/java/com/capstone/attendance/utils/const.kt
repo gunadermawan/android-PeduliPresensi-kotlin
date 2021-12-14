@@ -33,3 +33,6 @@ const val ADDRESS_GEOCODER = "Balai Desa Warureja"
 const val MAX_RESULT = 100
 const val INPUT_YOUR_NAME = "Masukan nama Anda!"
 const val PATH_DEFAULT_PROFILE = "https://picsum.photos/id/1/200/300"
+const val TOAST_WARNING = "Peringatan"
+const val TOAST_SUCCESS = "Berhasil"
+const val TOAST_ERROR = "Error"

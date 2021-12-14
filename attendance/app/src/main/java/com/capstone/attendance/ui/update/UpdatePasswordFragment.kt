@@ -1,5 +1,6 @@
 package com.capstone.attendance.ui.update
 
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.capstone.attendance.R
@@ -19,6 +21,8 @@ import com.capstone.attendance.utils.*
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class UpdatePasswordFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
@@ -119,11 +123,15 @@ class UpdatePasswordFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
-                            Toast.makeText(
-                                activity,
+                            FunctionLibrary.toastWarning(
+                                context as Activity,
+                                TOAST_SUCCESS,
                                 PASSWORD_CHANGED,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                                MotionToastStyle.SUCCESS,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                         } else {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
