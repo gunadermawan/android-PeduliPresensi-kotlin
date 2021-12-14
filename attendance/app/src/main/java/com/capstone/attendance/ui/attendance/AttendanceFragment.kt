@@ -127,13 +127,11 @@ class AttendanceFragment : Fragment() {
                             showDialogForm()
                             Toast.makeText(activity, LOCATION_FOUND, Toast.LENGTH_SHORT).show()
                         } else {
-//                            binding.tvCheckInSuccess.visibility = View.VISIBLE
-//                            binding.tvCheckInSuccess.text = getString(R.string.out_off_range)
-                            Toast.makeText(
-                                activity,
-                                OUT_OF_RANGE,
-                                Toast.LENGTH_SHORT
-                            ).show()
+//                            Toast.makeText(
+//                                activity,
+//                                OUT_OF_RANGE,
+//                                Toast.LENGTH_SHORT
+//                            ).show()
                             binding.tvCheckIn.visibility = View.VISIBLE
                         }
                         fusedLocationProviderClient?.removeLocationUpdates(this)
