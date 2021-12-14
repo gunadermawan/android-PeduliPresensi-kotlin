@@ -123,7 +123,7 @@ class UpdatePasswordFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_SUCCESS,
                                 PASSWORD_CHANGED,
@@ -133,8 +133,15 @@ class UpdatePasswordFragment : Fragment() {
                                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                             )
                         } else {
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
-                                .show()
+                            FunctionLibrary.toast(
+                                context as Activity,
+                                TOAST_ERROR,
+                                "${it.exception?.message}",
+                                MotionToastStyle.ERROR,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                         }
                     }
                 }
