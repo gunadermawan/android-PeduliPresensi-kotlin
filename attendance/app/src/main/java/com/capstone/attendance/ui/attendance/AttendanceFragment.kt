@@ -21,6 +21,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.capstone.attendance.R
 import com.capstone.attendance.data.remote.User
@@ -29,6 +30,8 @@ import com.capstone.attendance.utils.*
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 import java.lang.Math.toRadians
 import java.text.SimpleDateFormat
 import java.util.*
@@ -76,11 +79,15 @@ class AttendanceFragment : Fragment() {
     private fun checkPermissionLocations() {
         if (checkPermission()) {
             if (!isLocationEnabled()) {
-                Toast.makeText(
-                    activity,
+                FunctionLibrary.toastWarning(
+                    context as Activity,
+                    TOAST_WARNING,
                     PERMISSION_GPS,
-                    Toast.LENGTH_SHORT
-                ).show()
+                    MotionToastStyle.WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
                 startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
             } else {
                 requestPermission()
@@ -125,13 +132,25 @@ class AttendanceFragment : Fragment() {
                         Log.d(TAG, "$TAG_RESULT - $distance")
                         if (distance < 10.0) {
                             showDialogForm()
-                            Toast.makeText(activity, LOCATION_FOUND, Toast.LENGTH_SHORT).show()
+                            FunctionLibrary.toastWarning(
+                                context as Activity,
+                                TOAST_SUCCESS,
+                                LOCATION_FOUND,
+                                MotionToastStyle.SUCCESS,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                         } else {
-//                            Toast.makeText(
-//                                activity,
-//                                OUT_OF_RANGE,
-//                                Toast.LENGTH_SHORT
-//                            ).show()
+                            FunctionLibrary.toastWarning(
+                                context as Activity,
+                                TOAST_WARNING,
+                                OUT_OF_RANGE,
+                                MotionToastStyle.WARNING,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                             binding.tvCheckIn.visibility = View.VISIBLE
                         }
                         fusedLocationProviderClient?.removeLocationUpdates(this)
@@ -144,11 +163,15 @@ class AttendanceFragment : Fragment() {
                     Looper.getMainLooper()
                 )
             } else {
-                Toast.makeText(
-                    activity,
+                FunctionLibrary.toastWarning(
+                    context as Activity,
+                    TOAST_WARNING,
                     PERMISSION_GPS,
-                    Toast.LENGTH_SHORT
-                ).show()
+                    MotionToastStyle.WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
             }
         } else {
             requestPermission()
@@ -166,7 +189,15 @@ class AttendanceFragment : Fragment() {
             if (name.isNotEmpty()) {
                 inputToFirebase(name)
             } else {
-                Toast.makeText(activity, INPUT_YOUR_NAME, Toast.LENGTH_SHORT).show()
+                FunctionLibrary.toastWarning(
+                    context as Activity,
+                    TOAST_ERROR,
+                    INPUT_YOUR_NAME,
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
             }
             dialog.dismiss()
         }
@@ -183,14 +214,28 @@ class AttendanceFragment : Fragment() {
         val attendanceRef = database.getReference(REALTIME_DB)
         val userId = attendanceRef.push().key
         val user = User(userId, name, getCurrentTime())
-
-
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
-                Toast.makeText(activity, ATTENDANCE_SUCCESSFULL, Toast.LENGTH_SHORT).show()
+                FunctionLibrary.toastWarning(
+                    context as Activity,
+                    TOAST_SUCCESS,
+                    ATTENDANCE_SUCCESSFULL,
+                    MotionToastStyle.SUCCESS,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
             }
             .addOnFailureListener {
-                Toast.makeText(activity, "${it.message}", Toast.LENGTH_SHORT).show()
+                FunctionLibrary.toastWarning(
+                    context as Activity,
+                    TOAST_WARNING,
+                    "${it.message}",
+                    MotionToastStyle.SUCCESS,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
             }
 
     }

@@ -1,17 +1,19 @@
 package com.capstone.attendance.ui.resetPassword
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivityResetPasswordBinding
 import com.capstone.attendance.ui.login.LoginActivity
-import com.capstone.attendance.utils.EMAIL_CONFIRM
-import com.capstone.attendance.utils.EMAIL_EMPTY
-import com.capstone.attendance.utils.EMAIL_NOT_REGISTERED
-import com.capstone.attendance.utils.EMAIL_NOT_VALID
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.FirebaseAuth
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class ResetPasswordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResetPasswordBinding
@@ -34,11 +36,15 @@ class ResetPasswordActivity : AppCompatActivity() {
             }
             FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    Toast.makeText(
+                    FunctionLibrary.toastWarning(
                         this,
+                        TOAST_SUCCESS,
                         EMAIL_CONFIRM,
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        MotionToastStyle.SUCCESS,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(this, R.font.helveticabold)
+                    )
                     Intent(this@ResetPasswordActivity, LoginActivity::class.java).also {intent->
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)

@@ -1,6 +1,7 @@
 package com.capstone.attendance.ui.profile
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Bitmap
@@ -11,8 +12,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
 import com.capstone.attendance.utils.*
@@ -20,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 import java.io.ByteArrayOutputStream
 
 class ProfileFragment : Fragment() {
@@ -73,7 +78,7 @@ class ProfileFragment : Fragment() {
                 .setDisplayName(name)
                 .setPhotoUri(image)
                 .build().also {
-                    user?.updateProfile(it)?.addOnCompleteListener {Task->
+                    user?.updateProfile(it)?.addOnCompleteListener { Task ->
                         if (Task.isSuccessful) {
                             Toast.makeText(
                                 activity,
@@ -81,8 +86,15 @@ class ProfileFragment : Fragment() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else
-                            Toast.makeText(activity, "${Task.exception?.message}", Toast.LENGTH_SHORT)
-                                .show()
+                            FunctionLibrary.toastWarning(
+                                context as Activity,
+                                TOAST_WARNING,
+                                "${Task.exception?.message}",
+                                MotionToastStyle.ERROR,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                     }
                 }
         }
@@ -147,8 +159,8 @@ class ProfileFragment : Fragment() {
         ref.putBytes(img)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    ref.downloadUrl.addOnCompleteListener {Task->
-                        Task.result?.let {Uri->
+                    ref.downloadUrl.addOnCompleteListener { Task ->
+                        Task.result?.let { Uri ->
                             imgUri = Uri
                             profileBinding.ivProfile.setImageBitmap(imgBitmap)
                         }
