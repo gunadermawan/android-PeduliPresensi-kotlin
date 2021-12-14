@@ -6,7 +6,7 @@ import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
 
 object FunctionLibrary {
-    fun toastWarning(
+    fun toast(
         context: Activity,
         title: String?,
         message: String,

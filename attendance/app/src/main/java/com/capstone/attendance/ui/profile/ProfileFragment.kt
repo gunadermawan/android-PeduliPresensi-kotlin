@@ -86,7 +86,7 @@ class ProfileFragment : Fragment() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_WARNING,
                                 "${Task.exception?.message}",
@@ -111,13 +111,25 @@ class ProfileFragment : Fragment() {
         profileBinding.btnVerification.setOnClickListener {
             user?.sendEmailVerification()?.addOnCompleteListener {
                 if (it.isSuccessful) {
-                    Toast.makeText(
-                        activity,
+                    FunctionLibrary.toast(
+                        context as Activity,
+                        TOAST_SUCCESS,
                         EMAIL_VERIFICATION,
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        MotionToastStyle.SUCCESS,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                    )
                 } else {
-                    Toast.makeText(activity, EMAIL_VERIFICATION_ERROR, Toast.LENGTH_SHORT).show()
+                    FunctionLibrary.toast(
+                        context as Activity,
+                        TOAST_ERROR,
+                        EMAIL_VERIFICATION_ERROR,
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                    )
                 }
             }
         }

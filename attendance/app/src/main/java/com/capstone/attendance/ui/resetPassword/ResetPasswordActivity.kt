@@ -1,10 +1,8 @@
 package com.capstone.attendance.ui.resetPassword
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.capstone.attendance.R
@@ -36,7 +34,7 @@ class ResetPasswordActivity : AppCompatActivity() {
             }
             FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    FunctionLibrary.toastWarning(
+                    FunctionLibrary.toast(
                         this,
                         TOAST_SUCCESS,
                         EMAIL_CONFIRM,

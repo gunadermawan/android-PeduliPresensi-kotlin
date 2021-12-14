@@ -19,7 +19,6 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -79,7 +78,7 @@ class AttendanceFragment : Fragment() {
     private fun checkPermissionLocations() {
         if (checkPermission()) {
             if (!isLocationEnabled()) {
-                FunctionLibrary.toastWarning(
+                FunctionLibrary.toast(
                     context as Activity,
                     TOAST_WARNING,
                     PERMISSION_GPS,
@@ -132,7 +131,7 @@ class AttendanceFragment : Fragment() {
                         Log.d(TAG, "$TAG_RESULT - $distance")
                         if (distance < 10.0) {
                             showDialogForm()
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_SUCCESS,
                                 LOCATION_FOUND,
@@ -142,7 +141,7 @@ class AttendanceFragment : Fragment() {
                                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                             )
                         } else {
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_WARNING,
                                 OUT_OF_RANGE,
@@ -163,7 +162,7 @@ class AttendanceFragment : Fragment() {
                     Looper.getMainLooper()
                 )
             } else {
-                FunctionLibrary.toastWarning(
+                FunctionLibrary.toast(
                     context as Activity,
                     TOAST_WARNING,
                     PERMISSION_GPS,
@@ -189,7 +188,7 @@ class AttendanceFragment : Fragment() {
             if (name.isNotEmpty()) {
                 inputToFirebase(name)
             } else {
-                FunctionLibrary.toastWarning(
+                FunctionLibrary.toast(
                     context as Activity,
                     TOAST_ERROR,
                     INPUT_YOUR_NAME,
@@ -216,7 +215,7 @@ class AttendanceFragment : Fragment() {
         val user = User(userId, name, getCurrentTime())
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
-                FunctionLibrary.toastWarning(
+                FunctionLibrary.toast(
                     context as Activity,
                     TOAST_SUCCESS,
                     ATTENDANCE_SUCCESSFULL,
@@ -227,7 +226,7 @@ class AttendanceFragment : Fragment() {
                 )
             }
             .addOnFailureListener {
-                FunctionLibrary.toastWarning(
+                FunctionLibrary.toast(
                     context as Activity,
                     TOAST_WARNING,
                     "${it.message}",

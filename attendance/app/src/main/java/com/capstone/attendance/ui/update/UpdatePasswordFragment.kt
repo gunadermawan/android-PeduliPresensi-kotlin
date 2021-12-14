@@ -101,11 +101,11 @@ class UpdatePasswordFragment : Fragment() {
                                 view.context,
                                 CHANNEL_ID
                             )
-                                .setSmallIcon(R.drawable.icon_app)
+                                .setSmallIcon(R.mipmap.ic_launcher_app)
                                 .setLargeIcon(
                                     BitmapFactory.decodeResource(
                                         resources,
-                                        R.drawable.icon_app
+                                        R.mipmap.ic_launcher_app
                                     )
                                 )
                                 .setContentTitle(resources.getString(R.string.update_profile_succes))
@@ -123,7 +123,7 @@ class UpdatePasswordFragment : Fragment() {
                             }
                             val notification = mBuilder.build()
                             mNotificationManager.notify(NOTIFICATION_ID, notification)
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_SUCCESS,
                                 PASSWORD_CHANGED,
@@ -133,7 +133,7 @@ class UpdatePasswordFragment : Fragment() {
                                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                             )
                         } else {
-                            FunctionLibrary.toastWarning(
+                            FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_ERROR,
                                 "${it.exception?.message}",
