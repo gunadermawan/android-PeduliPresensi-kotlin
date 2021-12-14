@@ -55,6 +55,7 @@ class HistoryFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (userSnapshot in snapshot.children) {
                     val user = userSnapshot.getValue(User::class.java)
+                    binding.progressBar.visibility = View.GONE
                     if (user != null) {
                         userArrayList.add(user)
                     }
