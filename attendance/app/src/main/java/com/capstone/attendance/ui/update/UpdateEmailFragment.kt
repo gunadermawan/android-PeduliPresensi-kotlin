@@ -95,11 +95,11 @@ class UpdateEmailFragment : Fragment() {
                             val mNotificationManager =
                                 activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                             val mBuilder = NotificationCompat.Builder(view.context, CHANNEL_ID)
-                                .setSmallIcon(R.mipmap.ic_launcher_app)
+                                .setSmallIcon(R.drawable.icon_app)
                                 .setLargeIcon(
                                     BitmapFactory.decodeResource(
                                         resources,
-                                        R.mipmap.ic_launcher_app
+                                        R.drawable.icon_app
                                     )
                                 )
                                 .setContentTitle(resources.getString(R.string.update_profile_succes))
@@ -127,8 +127,15 @@ class UpdateEmailFragment : Fragment() {
                                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                             )
                         } else {
-                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
-                                .show()
+                            FunctionLibrary.toastWarning(
+                                context as Activity,
+                                TOAST_ERROR,
+                                "${it.exception?.message}",
+                                MotionToastStyle.ERROR,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                         }
                     }
                 }
