@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Please input Your Name!"
+        android:text="@string/add_name"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
@@ -18,18 +18,31 @@
         android:id="@+id/et_name_attendance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:autofillHints="false"
+        android:hint="@string/name"
+        android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:gravity="end"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel" />
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/save" />
+    </LinearLayout>
 
 </LinearLayout>

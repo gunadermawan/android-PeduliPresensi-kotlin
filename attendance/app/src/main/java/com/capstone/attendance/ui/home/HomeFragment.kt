@@ -10,10 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentHomeBinding
-import com.capstone.attendance.utils.PATH_DEFAULT_PROFILE
+import com.capstone.attendance.utils.*
 import com.capstone.attendance.viewModel.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -60,6 +61,14 @@ class HomeFragment : Fragment() {
             Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS).also {
                 startActivity(it)
             }
+        }
+        val calendar = Calendar.getInstance()
+        when(calendar.get(Calendar.HOUR_OF_DAY)){
+            in 0..11 -> binding.tvWelcome.text = GOOD_MORNING
+            in 12..15 -> binding.tvWelcome.text = GOOD_AFTERNOON
+            in 16..20 -> binding.tvWelcome.text = GOOD_EVENING
+            in 21..23 -> binding.tvWelcome.text = GOOD_NIGHT
+            else -> binding.tvUserHome.text = GOOD_LATE_NIGHT
         }
     }
 

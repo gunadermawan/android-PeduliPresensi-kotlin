@@ -56,6 +56,7 @@ class HistoryFragment : Fragment() {
                 for (userSnapshot in snapshot.children) {
                     val user = userSnapshot.getValue(User::class.java)
                     binding.progressBar.visibility = View.GONE
+                    binding.textView2.visibility = View.GONE
                     if (user != null) {
                         userArrayList.add(user)
                     }

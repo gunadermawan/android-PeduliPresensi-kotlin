@@ -11,7 +11,6 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -37,7 +36,6 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         profileBinding = FragmentProfileBinding.inflate(layoutInflater, container, false)
-        // Inflate the layout for this fragment
         return profileBinding.root
     }
 
@@ -81,11 +79,15 @@ class ProfileFragment : Fragment() {
                 .build().also {
                     user?.updateProfile(it)?.addOnCompleteListener { Task ->
                         if (Task.isSuccessful) {
-                            Toast.makeText(
-                                activity,
+                            FunctionLibrary.toast(
+                                context as Activity,
+                                TOAST_SUCCESS,
                                 PROFILE_UPDATED,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                                MotionToastStyle.INFO,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                            )
                         } else
                             FunctionLibrary.toast(
                                 context as Activity,
