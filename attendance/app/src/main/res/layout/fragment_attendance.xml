@@ -33,7 +33,7 @@
         android:layout_below="@id/tv_checkIn"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/scanning_balai_desa_warureja"
+        android:text="@string/scanning_location"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:visibility="gone" />
@@ -56,7 +56,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/bg_checkin_success"
+        android:background="@drawable/bg_attendance_success"
         android:paddingStart="68dp"
         android:paddingTop="14dp"
         android:paddingEnd="68dp"
