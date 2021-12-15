@@ -3,16 +3,18 @@ package com.capstone.attendance.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
+import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivityLoginBinding
 import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.ui.resetPassword.ResetPasswordActivity
 import com.capstone.attendance.ui.signup.SignupActivity
-import com.capstone.attendance.utils.EMAIL_EMPTY
-import com.capstone.attendance.utils.EMAIL_NOT_VALID
-import com.capstone.attendance.utils.PASSWORD_LENGTH
-import com.capstone.attendance.utils.WRONG_PASSWORD
+import com.capstone.attendance.utils.*
 import com.google.firebase.auth.FirebaseAuth
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginBinding
@@ -26,24 +28,42 @@ class LoginActivity : AppCompatActivity() {
         }
         auth = FirebaseAuth.getInstance()
         loginBinding.btnLogin.setOnClickListener {
-            val email = loginBinding.etEmail.text.toString().trim()
-            val pass = loginBinding.etPassword.text.toString().trim()
-            if (email.isEmpty()) {
-                loginBinding.txtInputEmail.error = EMAIL_EMPTY
-                loginBinding.txtInputEmail.requestFocus()
-                return@setOnClickListener
+            if (FunctionLibrary.checkConnection(this)) {
+                loginBinding.pbLogin.visibility = View.VISIBLE
+                val email = loginBinding.etEmail.text.toString().trim()
+                val pass = loginBinding.etPassword.text.toString().trim()
+                if (email.isEmpty()) {
+                    loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.txtInputEmail.error = EMAIL_EMPTY
+                    loginBinding.txtInputEmail.requestFocus()
+                    return@setOnClickListener
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
+                    loginBinding.txtInputEmail.requestFocus()
+                    return@setOnClickListener
+                }
+                if (pass.isEmpty() || pass.length < 8) {
+                    loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.txtInputPassword.error = PASSWORD_LENGTH
+                    loginBinding.txtInputPassword.requestFocus()
+                    return@setOnClickListener
+                }
+                loginUser(email, pass)
+            } else {
+                loginBinding.pbLogin.visibility = View.GONE
+                FunctionLibrary.checkConnection(this)
+                FunctionLibrary.toast(
+                    this,
+                    TOAST_ERROR,
+                    PERMISSION_INTERNET,
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helveticabold)
+                )
             }
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
-                loginBinding.txtInputEmail.requestFocus()
-                return@setOnClickListener
-            }
-            if (pass.isEmpty() || pass.length < 8) {
-                loginBinding.txtInputPassword.error = PASSWORD_LENGTH
-                loginBinding.txtInputPassword.requestFocus()
-                return@setOnClickListener
-            }
-            loginUser(email, pass)
         }
         loginBinding.btnRegister.setOnClickListener {
             Intent(this@LoginActivity, SignupActivity::class.java).also {
