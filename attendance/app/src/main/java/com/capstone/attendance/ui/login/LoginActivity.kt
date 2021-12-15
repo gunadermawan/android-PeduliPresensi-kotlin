@@ -87,6 +87,7 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 } else {
+                    loginBinding.pbLogin.visibility = View.GONE
                     loginBinding.txtInputPassword.error = WRONG_PASSWORD
                     loginBinding.txtInputPassword.requestFocus()
                 }

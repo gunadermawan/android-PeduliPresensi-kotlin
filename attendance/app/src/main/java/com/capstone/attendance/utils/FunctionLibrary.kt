@@ -8,6 +8,8 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
+import java.text.SimpleDateFormat
+import java.util.*
 
 object FunctionLibrary {
     fun toast(
@@ -43,5 +45,15 @@ object FunctionLibrary {
             }
         }
         return false
+    }
+    fun getTimeNow(): String? {
+        val currentTime = Calendar.getInstance().time
+        val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        return dateFormat.format(currentTime)
+    }
+    fun getCurrentTime(): String? {
+        val currentTime = Calendar.getInstance().time
+        val dateFormat = SimpleDateFormat(SIMPLE_DATE_FORMAT, Locale.getDefault())
+        return dateFormat.format(currentTime)
     }
 }

@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.content.res.ResourcesCompat
@@ -80,6 +79,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun registerUser(email: String, pass: String) {
+        signupBinding.pbSignup.visibility = View.GONE
         auth.createUserWithEmailAndPassword(email, pass)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
@@ -109,7 +109,15 @@ class SignupActivity : AppCompatActivity() {
                     val notification = mBuilder.build()
                     mNotificationManager.notify(NOTIFICATION_ID, notification)
                 } else {
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                    FunctionLibrary.toast(
+                        this,
+                        TOAST_ERROR,
+                        "${it.exception?.message}",
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(this, R.font.helveticabold)
+                    )
                 }
             }
     }
