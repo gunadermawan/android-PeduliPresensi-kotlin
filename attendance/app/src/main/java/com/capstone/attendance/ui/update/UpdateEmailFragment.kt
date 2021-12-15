@@ -11,7 +11,6 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -64,12 +63,15 @@ class UpdateEmailFragment : Fragment() {
                             updateBinding.txtInputPassword.requestFocus()
                         }
                         else -> {
-                            Toast.makeText(
-                                activity,
+                            FunctionLibrary.toast(
+                                context as Activity,
+                                TOAST_ERROR,
                                 "${Task.exception?.message}",
-                                Toast.LENGTH_SHORT
+                                MotionToastStyle.ERROR,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                             )
-                                .show()
                         }
                     }
                 }

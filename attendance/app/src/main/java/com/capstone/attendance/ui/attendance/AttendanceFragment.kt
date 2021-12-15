@@ -32,7 +32,6 @@ import com.google.firebase.database.FirebaseDatabase
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
 import java.lang.Math.toRadians
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.*
 
@@ -116,75 +115,86 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-            if (checkPermission()) {
-                if (isLocationEnabled()) {
-                    val locationCallBack = object : LocationCallback() {
-                        override fun onLocationResult(locationResult: LocationResult) {
-                            super.onLocationResult(locationResult)
-                            val location = locationResult.lastLocation
-                            val currentLat = location.latitude
-                            val currentLong = location.longitude
-//                        geocoder
-                            val destinationLat = getAddress()[0].latitude
-                            val destinationLong = getAddress()[0].longitude
-                            val distance = calculateDistance(
-                                currentLat, currentLong, destinationLat, destinationLong
-                            ) * 1000
-                            Log.d(TAG, "$TAG_RESULT - $distance")
-                            if (distance < 10.0) {
-                                showDialogForm()
-                                FunctionLibrary.toast(
-                                    context as Activity,
-                                    TOAST_SUCCESS,
-                                    LOCATION_FOUND,
-                                    MotionToastStyle.SUCCESS,
-                                    MotionToast.GRAVITY_BOTTOM,
-                                    MotionToast.LONG_DURATION,
-                                    ResourcesCompat.getFont(
+            if (FunctionLibrary.getTimeNow()!! > "07:00" && FunctionLibrary.getTimeNow()!! < "09:00"){
+                if (checkPermission()) {
+                    if (isLocationEnabled()) {
+                        val locationCallBack = object : LocationCallback() {
+                            override fun onLocationResult(locationResult: LocationResult) {
+                                super.onLocationResult(locationResult)
+                                val location = locationResult.lastLocation
+                                val currentLat = location.latitude
+                                val currentLong = location.longitude
+                                val destinationLat = getAddress()[0].latitude
+                                val destinationLong = getAddress()[0].longitude
+                                val distance = calculateDistance(
+                                    currentLat, currentLong, destinationLat, destinationLong
+                                ) * 1000
+                                Log.d(TAG, "$TAG_RESULT - $distance")
+                                if (distance < 10.0) {
+                                    showDialogForm()
+                                    FunctionLibrary.toast(
                                         context as Activity,
-                                        R.font.helveticabold
+                                        TOAST_SUCCESS,
+                                        LOCATION_FOUND,
+                                        MotionToastStyle.SUCCESS,
+                                        MotionToast.GRAVITY_BOTTOM,
+                                        MotionToast.LONG_DURATION,
+                                        ResourcesCompat.getFont(
+                                            context as Activity,
+                                            R.font.helveticabold
+                                        )
                                     )
-                                )
-                            } else {
-                                FunctionLibrary.toast(
-                                    context as Activity,
-                                    TOAST_WARNING,
-                                    OUT_OF_RANGE,
-                                    MotionToastStyle.WARNING,
-                                    MotionToast.GRAVITY_BOTTOM,
-                                    MotionToast.LONG_DURATION,
-                                    ResourcesCompat.getFont(
+                                } else {
+                                    FunctionLibrary.toast(
                                         context as Activity,
-                                        R.font.helveticabold
+                                        TOAST_WARNING,
+                                        OUT_OF_RANGE,
+                                        MotionToastStyle.WARNING,
+                                        MotionToast.GRAVITY_BOTTOM,
+                                        MotionToast.LONG_DURATION,
+                                        ResourcesCompat.getFont(
+                                            context as Activity,
+                                            R.font.helveticabold
+                                        )
                                     )
-                                )
-                                binding.tvCheckIn.visibility = View.VISIBLE
+                                    binding.tvCheckIn.visibility = View.VISIBLE
+                                }
+                                fusedLocationProviderClient?.removeLocationUpdates(this)
+                                stopScanLocation()
                             }
-                            fusedLocationProviderClient?.removeLocationUpdates(this)
-                            stopScanLocation()
                         }
+                        fusedLocationProviderClient?.requestLocationUpdates(
+                            locationRequest,
+                            locationCallBack,
+                            Looper.getMainLooper()
+                        )
+                    } else {
+                        FunctionLibrary.toast(
+                            context as Activity,
+                            TOAST_WARNING,
+                            PERMISSION_GPS,
+                            MotionToastStyle.WARNING,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                        )
                     }
-                    fusedLocationProviderClient?.requestLocationUpdates(
-                        locationRequest,
-                        locationCallBack,
-                        Looper.getMainLooper()
-                    )
                 } else {
-                    FunctionLibrary.toast(
-                        context as Activity,
-                        TOAST_WARNING,
-                        PERMISSION_GPS,
-                        MotionToastStyle.WARNING,
-                        MotionToast.GRAVITY_BOTTOM,
-                        MotionToast.LONG_DURATION,
-                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                    )
+                    requestPermission()
                 }
             } else {
-                requestPermission()
+                FunctionLibrary.toast(
+                    context as Activity,
+                    TOAST_INFO,
+                    ATTENDANCE_TIME,
+                    MotionToastStyle.INFO,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
+                stopScanLocation()
             }
         } else {
-            FunctionLibrary.checkConnection(requireContext())
             FunctionLibrary.toast(
                 context as Activity,
                 TOAST_ERROR,
@@ -196,7 +206,6 @@ class AttendanceFragment : Fragment() {
             )
             stopScanLocation()
         }
-
     }
 
     private fun showDialogForm() {
@@ -234,13 +243,13 @@ class AttendanceFragment : Fragment() {
         val database = FirebaseDatabase.getInstance()
         val attendanceRef = database.getReference(REALTIME_DB)
         val userId = attendanceRef.push().key
-        val user = User(userId, name, getCurrentTime())
+        val user = User(userId, name, FunctionLibrary.getCurrentTime())
         attendanceRef.child(name).setValue(user)
             .addOnCompleteListener {
                 FunctionLibrary.toast(
                     context as Activity,
                     TOAST_SUCCESS,
-                    ATTENDANCE_SUCCESSFULL,
+                    ATTENDANCE_SUCCESSFUL,
                     MotionToastStyle.SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -258,16 +267,7 @@ class AttendanceFragment : Fragment() {
                     ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                 )
             }
-
     }
-
-    private fun getCurrentTime(): String? {
-        val currentTime = Calendar.getInstance().time
-        val dateFormat = SimpleDateFormat(SIMPLE_DATE_FORMAT, Locale.getDefault())
-        return dateFormat.format(currentTime)
-
-    }
-
     private fun getAddress(): List<Address> {
         val destinationPlace = ADDRESS_GEOCODER
         val geocode = Geocoder(context, Locale.getDefault())
@@ -284,6 +284,7 @@ class AttendanceFragment : Fragment() {
     private fun stopScanLocation() {
         binding.rippleBackground.stopRippleAnimation()
         binding.tvScanning.visibility = View.GONE
+        binding.tvCheckIn.visibility = View.VISIBLE
     }
 
     private fun isLocationEnabled(): Boolean {
