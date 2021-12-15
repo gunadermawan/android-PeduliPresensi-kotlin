@@ -187,9 +187,9 @@ class AttendanceFragment : Fragment() {
             FunctionLibrary.checkConnection(requireContext())
             FunctionLibrary.toast(
                 context as Activity,
-                TOAST_WARNING,
+                TOAST_ERROR,
                 PERMISSION_INTERNET,
-                MotionToastStyle.WARNING,
+                MotionToastStyle.ERROR,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
