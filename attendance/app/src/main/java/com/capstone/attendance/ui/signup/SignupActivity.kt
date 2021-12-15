@@ -8,15 +8,19 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
-import com.capstone.attendance.ui.main.MainActivity
+import androidx.core.content.res.ResourcesCompat
 import com.capstone.attendance.R
 import com.capstone.attendance.databinding.ActivitySignupBinding
 import com.capstone.attendance.ui.login.LoginActivity
+import com.capstone.attendance.ui.main.MainActivity
 import com.capstone.attendance.utils.*
 import com.google.firebase.auth.FirebaseAuth
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var signupBinding: ActivitySignupBinding
@@ -30,24 +34,42 @@ class SignupActivity : AppCompatActivity() {
         }
         auth = FirebaseAuth.getInstance()
         signupBinding.btnRegister.setOnClickListener {
-            val email = signupBinding.etEmail.text.toString().trim()
-            val pass = signupBinding.etPassword.text.toString().trim()
-            if (email.isEmpty()) {
-                signupBinding.txtInputEmail.error = EMAIL_EMPTY
-                signupBinding.txtInputEmail.requestFocus()
-                return@setOnClickListener
+            if (FunctionLibrary.checkConnection(this)) {
+                signupBinding.pbSignup.visibility = View.VISIBLE
+                val email = signupBinding.etEmail.text.toString().trim()
+                val pass = signupBinding.etPassword.text.toString().trim()
+                if (email.isEmpty()) {
+                    signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.txtInputEmail.error = EMAIL_EMPTY
+                    signupBinding.txtInputEmail.requestFocus()
+                    return@setOnClickListener
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
+                    signupBinding.txtInputEmail.requestFocus()
+                    return@setOnClickListener
+                }
+                if (pass.isEmpty() || pass.length < 8) {
+                    signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.txtInputPassword.error = PASSWORD_LENGTH
+                    signupBinding.txtInputPassword.requestFocus()
+                    return@setOnClickListener
+                }
+                registerUser(email, pass)
+            } else {
+                signupBinding.pbSignup.visibility = View.GONE
+                FunctionLibrary.checkConnection(this)
+                FunctionLibrary.toast(
+                    this,
+                    TOAST_ERROR,
+                    PERMISSION_INTERNET,
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helveticabold)
+                )
             }
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
-                signupBinding.txtInputEmail.requestFocus()
-                return@setOnClickListener
-            }
-            if (pass.isEmpty() || pass.length < 8) {
-                signupBinding.txtInputPassword.error = PASSWORD_LENGTH
-                signupBinding.txtInputPassword.requestFocus()
-                return@setOnClickListener
-            }
-            registerUser(email, pass)
 
         }
         signupBinding.btnLogin.setOnClickListener {
