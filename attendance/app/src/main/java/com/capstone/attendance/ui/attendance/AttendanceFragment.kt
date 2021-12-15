@@ -8,8 +8,6 @@ import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.location.LocationManager
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -77,30 +75,6 @@ class AttendanceFragment : Fragment() {
         return false
     }
 
-    private fun isOnline(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val capabilities =
-            connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-        if (capabilities != null) {
-            when {
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
-                    return true
-                }
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
-                    return true
-                }
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
     private fun checkPermissionLocations() {
         if (checkPermission()) {
             if (!isLocationEnabled()) {
@@ -141,7 +115,7 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun getLastLocation() {
-        if (isOnline(requireContext())) {
+        if (FunctionLibrary.checkConnection(requireContext())) {
             if (checkPermission()) {
                 if (isLocationEnabled()) {
                     val locationCallBack = object : LocationCallback() {
@@ -210,7 +184,7 @@ class AttendanceFragment : Fragment() {
                 requestPermission()
             }
         } else {
-            isOnline(requireContext())
+            FunctionLibrary.checkConnection(requireContext())
             FunctionLibrary.toast(
                 context as Activity,
                 TOAST_WARNING,
