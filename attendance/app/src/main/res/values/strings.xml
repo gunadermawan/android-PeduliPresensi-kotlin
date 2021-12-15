@@ -23,12 +23,8 @@
     <string name="radius_attendance">Radius presensi</string>
     <string name="_10_m">10 M</string>
     <string name="turn_on_gps">Cek GPS Anda</string>
-    <string name="image_time">image time</string>
-    <string name="image_location">image location</string>
-    <string name="image_gps">image gps</string>
     <string name="gps">GPS</string>
     <string name="internet">INTERNET</string>
-    <string name="image_connections">image connections</string>
     <string name="image_app">image app</string>
     <string name="check_connection">Cek koneksi internet</string>
     <string name="email_verification">Verifikasi Email Anda</string>
