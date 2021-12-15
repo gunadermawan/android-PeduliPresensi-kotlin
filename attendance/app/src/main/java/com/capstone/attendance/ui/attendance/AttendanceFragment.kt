@@ -8,6 +8,8 @@ import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.location.LocationManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -75,6 +77,30 @@ class AttendanceFragment : Fragment() {
         return false
     }
 
+    private fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val capabilities =
+            connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+        if (capabilities != null) {
+            when {
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
     private fun checkPermissionLocations() {
         if (checkPermission()) {
             if (!isLocationEnabled()) {
@@ -98,7 +124,8 @@ class AttendanceFragment : Fragment() {
         ActivityCompat.requestPermissions(
             requireContext() as Activity, arrayOf(
                 android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                android.Manifest.permission.ACCESS_FINE_LOCATION,
+                android.Manifest.permission.INTERNET
             ),
             LOCATION_PERMISSION
         )
@@ -114,67 +141,88 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun getLastLocation() {
-        if (checkPermission()) {
-            if (isLocationEnabled()) {
-                val locationCallBack = object : LocationCallback() {
-                    override fun onLocationResult(locationResult: LocationResult) {
-                        super.onLocationResult(locationResult)
-                        val location = locationResult.lastLocation
-                        val currentLat = location.latitude
-                        val currentLong = location.longitude
+        if (isOnline(requireContext())) {
+            if (checkPermission()) {
+                if (isLocationEnabled()) {
+                    val locationCallBack = object : LocationCallback() {
+                        override fun onLocationResult(locationResult: LocationResult) {
+                            super.onLocationResult(locationResult)
+                            val location = locationResult.lastLocation
+                            val currentLat = location.latitude
+                            val currentLong = location.longitude
 //                        geocoder
-                        val destinationLat = getAddress()[0].latitude
-                        val destinationLong = getAddress()[0].longitude
-                        val distance = calculateDistance(
-                            currentLat, currentLong, destinationLat, destinationLong
-                        ) * 1000
-                        Log.d(TAG, "$TAG_RESULT - $distance")
-                        if (distance < 10.0) {
-                            showDialogForm()
-                            FunctionLibrary.toast(
-                                context as Activity,
-                                TOAST_SUCCESS,
-                                LOCATION_FOUND,
-                                MotionToastStyle.SUCCESS,
-                                MotionToast.GRAVITY_BOTTOM,
-                                MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                            )
-                        } else {
-                            FunctionLibrary.toast(
-                                context as Activity,
-                                TOAST_WARNING,
-                                OUT_OF_RANGE,
-                                MotionToastStyle.WARNING,
-                                MotionToast.GRAVITY_BOTTOM,
-                                MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                            )
-                            binding.tvCheckIn.visibility = View.VISIBLE
+                            val destinationLat = getAddress()[0].latitude
+                            val destinationLong = getAddress()[0].longitude
+                            val distance = calculateDistance(
+                                currentLat, currentLong, destinationLat, destinationLong
+                            ) * 1000
+                            Log.d(TAG, "$TAG_RESULT - $distance")
+                            if (distance < 10.0) {
+                                showDialogForm()
+                                FunctionLibrary.toast(
+                                    context as Activity,
+                                    TOAST_SUCCESS,
+                                    LOCATION_FOUND,
+                                    MotionToastStyle.SUCCESS,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(
+                                        context as Activity,
+                                        R.font.helveticabold
+                                    )
+                                )
+                            } else {
+                                FunctionLibrary.toast(
+                                    context as Activity,
+                                    TOAST_WARNING,
+                                    OUT_OF_RANGE,
+                                    MotionToastStyle.WARNING,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(
+                                        context as Activity,
+                                        R.font.helveticabold
+                                    )
+                                )
+                                binding.tvCheckIn.visibility = View.VISIBLE
+                            }
+                            fusedLocationProviderClient?.removeLocationUpdates(this)
+                            stopScanLocation()
                         }
-                        fusedLocationProviderClient?.removeLocationUpdates(this)
-                        stopScanLocation()
                     }
+                    fusedLocationProviderClient?.requestLocationUpdates(
+                        locationRequest,
+                        locationCallBack,
+                        Looper.getMainLooper()
+                    )
+                } else {
+                    FunctionLibrary.toast(
+                        context as Activity,
+                        TOAST_WARNING,
+                        PERMISSION_GPS,
+                        MotionToastStyle.WARNING,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                    )
                 }
-                fusedLocationProviderClient?.requestLocationUpdates(
-                    locationRequest,
-                    locationCallBack,
-                    Looper.getMainLooper()
-                )
             } else {
-                FunctionLibrary.toast(
-                    context as Activity,
-                    TOAST_WARNING,
-                    PERMISSION_GPS,
-                    MotionToastStyle.WARNING,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                )
+                requestPermission()
             }
         } else {
-            requestPermission()
+            isOnline(requireContext())
+            FunctionLibrary.toast(
+                context as Activity,
+                TOAST_WARNING,
+                PERMISSION_INTERNET,
+                MotionToastStyle.WARNING,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+            )
+            stopScanLocation()
         }
+
     }
 
     private fun showDialogForm() {
@@ -304,5 +352,4 @@ class AttendanceFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

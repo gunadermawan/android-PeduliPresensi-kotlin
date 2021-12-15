@@ -52,6 +52,7 @@ class ProfileFragment : Fragment() {
                 Picasso.get().load(PATH_DEFAULT_PROFILE)
                     .into(profileBinding.ivProfile)
             }
+            profileBinding.progressBar2.visibility = View.GONE
             profileBinding.etName.setText(user.displayName)
             profileBinding.etEmail.setText(user.email)
             if (user.isEmailVerified) {

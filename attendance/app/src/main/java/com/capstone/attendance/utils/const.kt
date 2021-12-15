@@ -22,6 +22,7 @@ const val PROFILE_UPDATED = "Profile berhasil diperbarui"
 const val REALTIME_DB = "kehadiran"
 const val REALTIME_DB_CANCELED = "Load cancelled"
 const val PERMISSION_GPS = "Aktifkan GPS Anda untuk memulai presensi"
+const val PERMISSION_INTERNET = "Koneksi internet tidak ditemukan"
 const val DELAY_LOCATION = 2000L
 const val TAG = "MainActivity"
 const val TAG_RESULT = "[onLocationResult]"
