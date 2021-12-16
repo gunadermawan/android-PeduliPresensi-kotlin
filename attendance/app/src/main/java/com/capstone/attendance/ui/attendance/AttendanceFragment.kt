@@ -130,7 +130,7 @@ class AttendanceFragment : Fragment() {
                                     currentLat, currentLong, destinationLat, destinationLong
                                 ) * 1000
                                 Log.d(TAG, "$TAG_RESULT - $distance")
-                                if (distance < 10.0) {
+                                if (distance < MEASURING_DISTANCE) {
                                     showDialogForm()
                                     FunctionLibrary.toast(
                                         context as Activity,
