@@ -47,6 +47,9 @@ Threat :
 2. Ripple Effect Layout (implementation 'com.skyfishjy.ripplebackground:library:1.0.1')  
 3. Picasso (implementation 'com.squareup.picasso:picasso:2.71828')  
 4. gooogle gms (implementation 'com.google.android.gms:play-services-location:18.0.0')
+5. Motion Tost (implementation 'com.github.Spikeysanju:MotionToast:1.4')
+6. Lottie Animation (def lottieVersion = "3.4.0" 
+implementation "com.airbnb.android:lottie:$lottieVersion")
 
 
 
