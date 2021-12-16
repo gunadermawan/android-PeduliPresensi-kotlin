@@ -22,7 +22,7 @@
     <string name="start_attendance">Presensi dimulai pukul</string>
     <string name="radius_attendance">Radius presensi</string>
     <string name="_10_m">10 M</string>
-    <string name="turn_on_gps">Cek GPS Anda</string>
+    <string name="turn_on_gps">Cek GPS</string>
     <string name="gps">GPS</string>
     <string name="internet">INTERNET</string>
     <string name="image_app">image app</string>

@@ -279,12 +279,16 @@ class AttendanceFragment : Fragment() {
         binding.tvScanning.visibility = View.VISIBLE
         binding.tvCheckIn.visibility = View.GONE
         binding.tvCheckInSuccess.visibility = View.GONE
+        binding.fabCheckIn.visibility = View.GONE
+        binding.gpsAnimation.visibility = View.VISIBLE
     }
 
     private fun stopScanLocation() {
         binding.rippleBackground.stopRippleAnimation()
         binding.tvScanning.visibility = View.GONE
         binding.tvCheckIn.visibility = View.VISIBLE
+        binding.gpsAnimation.visibility = View.GONE
+        binding.fabCheckIn.visibility = View.VISIBLE
     }
 
     private fun isLocationEnabled(): Boolean {
