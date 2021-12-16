@@ -23,6 +23,7 @@ object FunctionLibrary {
     ) {
         MotionToast.createColorToast(context, title, message, style, position, duration, font)
     }
+
     fun checkConnection(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -46,11 +47,13 @@ object FunctionLibrary {
         }
         return false
     }
+
     fun getTimeNow(): String? {
         val currentTime = Calendar.getInstance().time
         val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
         return dateFormat.format(currentTime)
     }
+
     fun getCurrentTime(): String? {
         val currentTime = Calendar.getInstance().time
         val dateFormat = SimpleDateFormat(SIMPLE_DATE_FORMAT, Locale.getDefault())
