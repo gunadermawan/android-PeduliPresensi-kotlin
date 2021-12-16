@@ -8,7 +8,7 @@ import com.capstone.attendance.R
 import com.capstone.attendance.ui.login.LoginActivity
 import com.capstone.attendance.utils.DELAY
 
-class SplashScreenActivity : AppCompatActivity() {
+class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -17,6 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }, DELAY.toLong())
     }
 }
