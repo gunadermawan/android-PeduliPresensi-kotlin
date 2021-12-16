@@ -1,9 +1,10 @@
-package com.capstone.attendance
+package com.capstone.attendance.ui.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.capstone.attendance.R
 import com.capstone.attendance.ui.login.LoginActivity
 import com.capstone.attendance.utils.DELAY
 
