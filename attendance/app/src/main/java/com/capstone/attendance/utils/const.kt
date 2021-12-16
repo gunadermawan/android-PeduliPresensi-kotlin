@@ -44,3 +44,4 @@ const val GOOD_EVENING = "Selamat sore,"
 const val GOOD_NIGHT = "Selamat malam,"
 const val GOOD_LATE_NIGHT = "Bergadang ya,"
 const val ATTENDANCE_TIME ="Presensi akan dimulai pada pukul 07:00"
+const val DELAY = 2500
