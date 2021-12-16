@@ -148,7 +148,7 @@
                                 android:layout_height="wrap_content"
                                 app:lottie_autoPlay="true"
                                 app:lottie_colorFilter="@color/light_white"
-                                app:lottie_loop="true"
+                                app:lottie_loop="false"
                                 app:lottie_rawRes="@raw/clock_animation" />
 
                         </LinearLayout>
@@ -199,7 +199,7 @@
                                 android:layout_height="wrap_content"
                                 app:lottie_autoPlay="true"
                                 app:lottie_colorFilter="@color/light_white"
-                                app:lottie_loop="true"
+                                app:lottie_loop="false"
                                 app:lottie_rawRes="@raw/gps_animation" />
 
                         </LinearLayout>
@@ -242,7 +242,7 @@
                                 android:layout_height="wrap_content"
                                 app:lottie_autoPlay="true"
                                 app:lottie_colorFilter="@color/light_white"
-                                app:lottie_loop="true"
+                                app:lottie_loop="false"
                                 app:lottie_rawRes="@raw/navigation_animation" />
 
                             <Button
@@ -296,8 +296,7 @@
                                 android:layout_height="wrap_content"
                                 app:lottie_autoPlay="true"
                                 app:lottie_colorFilter="@color/light_white"
-
-                                app:lottie_loop="true"
+                                app:lottie_loop="false"
                                 app:lottie_rawRes="@raw/internet_animation" />
 
                             <Button
