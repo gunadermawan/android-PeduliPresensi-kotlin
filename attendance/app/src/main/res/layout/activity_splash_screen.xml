@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenActivity"
+    tools:context=".ui.splashscreen.SplashScreenActivity"
     android:background="@color/blue_500">
 
     <com.airbnb.lottie.LottieAnimationView
