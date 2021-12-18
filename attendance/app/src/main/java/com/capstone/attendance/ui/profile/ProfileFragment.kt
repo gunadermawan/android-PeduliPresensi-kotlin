@@ -83,7 +83,7 @@ class ProfileFragment : Fragment() {
                                 context as Activity,
                                 TOAST_SUCCESS,
                                 PROFILE_UPDATED,
-                                MotionToastStyle.INFO,
+                                MotionToastStyle.SUCCESS,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,
                                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
