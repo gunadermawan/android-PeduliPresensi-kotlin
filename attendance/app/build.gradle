@@ -67,6 +67,6 @@ dependencies {
     // Motion Toast
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
 //    Lottie
-    def lottieVersion = "3.4.0"
+    def lottieVersion = "4.2.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 }
