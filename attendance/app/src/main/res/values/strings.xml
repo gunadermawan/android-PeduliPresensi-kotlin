@@ -60,4 +60,9 @@
     <string name="add_password">*Masukan password akun Anda</string>
     <string name="add_name">Masukan nama Anda</string>
     <string name="name">Name</string>
+    <string name="in_collaboration_with">Bekerjasama dengan:</string>
+    <string name="ic_mbkm">logo kampus merdeka</string>
+    <string name="ic_dicoding">logo dicoding</string>
+    <string name="ic_tegal">logo kabupaten Tegal</string>
+    <string name="processing_data">Memproses data</string>
 </resources>
