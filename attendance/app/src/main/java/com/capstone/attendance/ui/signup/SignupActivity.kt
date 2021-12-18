@@ -35,22 +35,26 @@ class SignupActivity : AppCompatActivity() {
         signupBinding.btnRegister.setOnClickListener {
             if (FunctionLibrary.checkConnection(this)) {
                 signupBinding.pbSignup.visibility = View.VISIBLE
+                signupBinding.tvProcessLogin.visibility = View.VISIBLE
                 val email = signupBinding.etEmail.text.toString().trim()
                 val pass = signupBinding.etPassword.text.toString().trim()
                 if (email.isEmpty()) {
                     signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.tvProcessLogin.visibility = View.GONE
                     signupBinding.txtInputEmail.error = EMAIL_EMPTY
                     signupBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.tvProcessLogin.visibility = View.GONE
                     signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
                     signupBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 if (pass.isEmpty() || pass.length < 8) {
                     signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.tvProcessLogin.visibility = View.GONE
                     signupBinding.txtInputPassword.error = PASSWORD_LENGTH
                     signupBinding.txtInputPassword.requestFocus()
                     return@setOnClickListener
@@ -58,6 +62,7 @@ class SignupActivity : AppCompatActivity() {
                 registerUser(email, pass)
             } else {
                 signupBinding.pbSignup.visibility = View.GONE
+                signupBinding.tvProcessLogin.visibility = View.GONE
                 FunctionLibrary.checkConnection(this)
                 FunctionLibrary.toast(
                     this,
@@ -74,12 +79,14 @@ class SignupActivity : AppCompatActivity() {
         signupBinding.btnLogin.setOnClickListener {
             Intent(this@SignupActivity, LoginActivity::class.java).also {
                 startActivity(it)
+                finish()
             }
         }
     }
 
     private fun registerUser(email: String, pass: String) {
-        signupBinding.pbSignup.visibility = View.GONE
+        signupBinding.pbSignup.visibility = View.VISIBLE
+        signupBinding.tvProcessLogin.visibility = View.VISIBLE
         auth.createUserWithEmailAndPassword(email, pass)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {

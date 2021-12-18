@@ -30,22 +30,26 @@ class LoginActivity : AppCompatActivity() {
         loginBinding.btnLogin.setOnClickListener {
             if (FunctionLibrary.checkConnection(this)) {
                 loginBinding.pbLogin.visibility = View.VISIBLE
+                loginBinding.tvProcessLogin.visibility = View.VISIBLE
                 val email = loginBinding.etEmail.text.toString().trim()
                 val pass = loginBinding.etPassword.text.toString().trim()
                 if (email.isEmpty()) {
                     loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.tvProcessLogin.visibility = View.GONE
                     loginBinding.txtInputEmail.error = EMAIL_EMPTY
                     loginBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.tvProcessLogin.visibility = View.GONE
                     loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
                     loginBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
                 if (pass.isEmpty() || pass.length < 8) {
                     loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.tvProcessLogin.visibility = View.GONE
                     loginBinding.txtInputPassword.error = PASSWORD_LENGTH
                     loginBinding.txtInputPassword.requestFocus()
                     return@setOnClickListener
@@ -53,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 loginUser(email, pass)
             } else {
                 loginBinding.pbLogin.visibility = View.GONE
+                loginBinding.tvProcessLogin.visibility = View.GONE
                 FunctionLibrary.checkConnection(this)
                 FunctionLibrary.toast(
                     this,
@@ -68,6 +73,7 @@ class LoginActivity : AppCompatActivity() {
         loginBinding.btnRegister.setOnClickListener {
             Intent(this@LoginActivity, SignupActivity::class.java).also {
                 startActivity(it)
+                finish()
             }
         }
         loginBinding.tvForgotPass.setOnClickListener {
