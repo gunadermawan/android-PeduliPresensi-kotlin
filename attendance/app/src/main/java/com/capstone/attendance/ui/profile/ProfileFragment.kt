@@ -50,7 +50,7 @@ class ProfileFragment : Fragment() {
                 Picasso.get().load(PATH_DEFAULT_PROFILE)
                     .into(profileBinding.ivProfile)
             }
-            profileBinding.progressBar2.visibility = View.GONE
+            profileBinding.pbProfile.visibility = View.GONE
             profileBinding.etName.setText(user.displayName)
             profileBinding.etEmail.setText(user.email)
             if (user.isEmailVerified) {
@@ -143,6 +143,10 @@ class ProfileFragment : Fragment() {
         profileBinding.btnChangePassword.setOnClickListener {
             val updatePass = ProfileFragmentDirections.actionUpdatePassword()
             Navigation.findNavController(it).navigate(updatePass)
+        }
+        profileBinding.btnAboutApp.setOnClickListener {
+            val about = ProfileFragmentDirections.actionAboutApp()
+            Navigation.findNavController(it).navigate(about)
         }
     }
 
