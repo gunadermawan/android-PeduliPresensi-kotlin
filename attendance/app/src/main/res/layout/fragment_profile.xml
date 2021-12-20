@@ -242,7 +242,7 @@
                     android:text="@string/change_email"
                     android:textAllCaps="false"
                     android:textColor="@color/blue_500"
-                    app:icon="@drawable/ic_logout"
+                    app:icon="@drawable/ic_mail_reset"
                     app:iconTint="@color/blue_500"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
