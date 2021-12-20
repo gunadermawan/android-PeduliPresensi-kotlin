@@ -50,6 +50,7 @@ Threat :
 5. Motion Tost (implementation 'com.github.Spikeysanju:MotionToast:1.4')
 6. Lottie Animation (def lottieVersion = "3.4.0" 
 implementation "com.airbnb.android:lottie:$lottieVersion")
+7. Wave animations (implementation "com.scwang.wave:MultiWaveHeader:1.0.0")
 
 
 
