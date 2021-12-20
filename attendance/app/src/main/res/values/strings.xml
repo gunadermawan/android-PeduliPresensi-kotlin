@@ -67,4 +67,5 @@
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
     <string name="government">Pemerintah Desa Warureja</string>
+    <string name="version_app">Version app 1.0</string>
 </resources>
