@@ -78,4 +78,8 @@
     <string name="dev_1">Guna Dermawan</string>
     <string name="dev_2">Edo Juliyanto</string>
     <string name="android_developer">Android Developer</string>
+    <string name="keluar">Keluar Aplikasi</string>
+    <string name="keluar_message">Apakah anda yakin untuk keluar?</string>
+    <string name="keluar_possitive">Ya</string>
+    <string name="keluar_negative">Batal</string>
 </resources>

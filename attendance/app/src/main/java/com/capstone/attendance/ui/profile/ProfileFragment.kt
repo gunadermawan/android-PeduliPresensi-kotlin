@@ -3,6 +3,7 @@ package com.capstone.attendance.ui.profile
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -102,11 +103,7 @@ class ProfileFragment : Fragment() {
                 }
         }
         profileBinding.btnLogout.setOnClickListener {
-            auth.signOut()
-            Intent(activity, LoginActivity::class.java).also {
-                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(it)
-            }
+            onAlertDialog(view)
         }
         profileBinding.ivProfile.setOnClickListener {
             intentCamera()
@@ -186,5 +183,22 @@ class ProfileFragment : Fragment() {
                     }
                 }
             }
+    }
+
+    private fun onAlertDialog(view: View){
+        val builder = AlertDialog.Builder(view.context)
+
+        builder.setTitle(getString(R.string.keluar))
+        builder.setMessage(getString(R.string.keluar_message))
+        builder.setPositiveButton(getString(R.string.keluar_possitive)){ _, _ ->
+            auth.signOut()
+            Intent(activity, LoginActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
+        builder.setNegativeButton(getString(R.string.keluar_negative)){ _, _ ->
+        }
+        builder.show()
     }
 }
