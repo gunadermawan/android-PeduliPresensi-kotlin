@@ -66,7 +66,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:19.0.0'
     // Motion Toast
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
-//    Lottie
+    //    Lottie
     def lottieVersion = "4.2.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+    //    wave animations
+    implementation "com.scwang.wave:MultiWaveHeader:1.0.0"
 }

@@ -181,4 +181,15 @@
         app:layout_constraintTop_toBottomOf="@+id/pb_signup"
         app:layout_constraintVertical_bias="0.0" />
 
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/multiWaveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mwhCloseColor="@color/white"
+        app:mwhIsRunning="true"
+        app:mwhStartColor="@color/blue_500"
+        app:mwhWaveHeight="60dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
