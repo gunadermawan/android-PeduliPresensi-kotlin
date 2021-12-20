@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">attendance</string>
+    <string name="app_name">PeduliPresensi</string>
     <string name="title_home">Home</string>
     <string name="home">Beranda</string>
     <string name="attendance">Presensi</string>
@@ -14,7 +14,7 @@
     <string name="btn_attendance">btn attendance</string>
     <string name="email">Email</string>
     <string name="login">Masuk</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="forgot_password">lupa password?</string>
     <string name="register">Daftar</string>
     <string name="logout">Keluar</string>
