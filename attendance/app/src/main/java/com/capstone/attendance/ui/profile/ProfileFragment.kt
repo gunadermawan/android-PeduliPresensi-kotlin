@@ -3,6 +3,7 @@ package com.capstone.attendance.ui.profile
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -102,11 +103,7 @@ class ProfileFragment : Fragment() {
                 }
         }
         profileBinding.btnLogout.setOnClickListener {
-            auth.signOut()
-            Intent(activity, LoginActivity::class.java).also {
-                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(it)
-            }
+            onAlertDialog(view)
         }
         profileBinding.ivProfile.setOnClickListener {
             intentCamera()
@@ -186,5 +183,22 @@ class ProfileFragment : Fragment() {
                     }
                 }
             }
+    }
+
+    fun onAlertDialog(view: View){
+        val builder = AlertDialog.Builder(view.context)
+
+        builder.setTitle("Keluar Aplikasi")
+        builder.setMessage("Apakah anda yakin untuk keluar?")
+        builder.setPositiveButton("Ya"){dialog, id ->
+            auth.signOut()
+            Intent(activity, LoginActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
+        builder.setNegativeButton("Batal"){dialog, id ->
+        }
+        builder.show()
     }
 }
