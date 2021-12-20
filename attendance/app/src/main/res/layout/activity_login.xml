@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,8 +55,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_email"
                     android:layout_width="match_parent"
-                    android:focusable="true"
                     android:layout_height="wrap_content"
+                    android:focusable="true"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,15 +126,43 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginBottom="276dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/image_app"
-        app:layout_constraintBottom_toBottomOf="@+id/cv_login"
+        app:layout_constraintBottom_toTopOf="@+id/cv_login"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
-        app:srcCompat="@drawable/icon_app" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.254"
+        app:srcCompat="@drawable/ic_city" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/attendance_online"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cv_login"
+        app:layout_constraintEnd_toEndOf="@+id/cv_login"
+        app:layout_constraintStart_toStartOf="@+id/cv_login"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/government"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_login"
+        app:layout_constraintEnd_toEndOf="@+id/cv_login"
+        app:layout_constraintStart_toStartOf="@+id/cv_login"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/pb_login"
@@ -144,10 +173,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_login"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_process_login"

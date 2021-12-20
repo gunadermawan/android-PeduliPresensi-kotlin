@@ -65,4 +65,6 @@
     <string name="ic_dicoding">logo dicoding</string>
     <string name="ic_tegal">logo kabupaten Tegal</string>
     <string name="processing_data">Memproses data</string>
+    <string name="attendance_online">PRESENSI ONLINE</string>
+    <string name="government">Pemerintah Desa Warureja</string>
 </resources>
