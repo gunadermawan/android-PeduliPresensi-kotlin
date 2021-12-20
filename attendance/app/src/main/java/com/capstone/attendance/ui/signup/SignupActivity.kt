@@ -116,6 +116,8 @@ class SignupActivity : AppCompatActivity() {
                     val notification = mBuilder.build()
                     mNotificationManager.notify(NOTIFICATION_ID, notification)
                 } else {
+                    signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.tvProcessLogin.visibility = View.GONE
                     FunctionLibrary.toast(
                         this,
                         TOAST_ERROR,

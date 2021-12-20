@@ -79,7 +79,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="16dp"
                 android:contentDescription="@string/ic_tegal"
-                android:src="@drawable/ic_kab_tegal"
+                android:src="@drawable/ic_city"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.474"
