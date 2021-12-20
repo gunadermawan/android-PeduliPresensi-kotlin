@@ -66,7 +66,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
-                    android:hint="@string/masukan_nama"
+                    android:hint="@string/add_name"
                     app:endIconMode="clear_text"
                     app:errorEnabled="true"
                     app:errorIconDrawable="@drawable/ic_error"
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:enabled="false"
-                    app:helperText="*verifikasi email Anda untuk dapat melakukan reset password dan ganti email"
+                    app:helperText="@string/helper_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textInputName"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -226,12 +226,12 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/btn_logout"
+                    app:layout_constraintStart_toStartOf="@+id/btnChangeEmail"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <Button
-                    android:id="@+id/btn_logout"
+                    android:id="@+id/btnChangeEmail"
                     style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -239,18 +239,18 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:gravity="center_vertical"
-                    android:text="@string/logout"
+                    android:text="@string/change_email"
                     android:textAllCaps="false"
-                    android:textColor="@color/red_700"
+                    android:textColor="@color/blue_500"
                     app:icon="@drawable/ic_logout"
-                    app:iconTint="@color/red_700"
+                    app:iconTint="@color/blue_500"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_settings"
                     app:layout_constraintVertical_bias="0.0"
-                    app:strokeColor="@color/red_700" />
+                    app:strokeColor="@color/blue_500" />
 
                 <Button
                     android:id="@+id/btnVerification"
@@ -263,10 +263,10 @@
                     android:textAllCaps="false"
                     app:icon="@drawable/ic_unverified"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/btn_logout"
+                    app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/btn_logout"
-                    app:layout_constraintTop_toBottomOf="@id/btn_logout"
+                    app:layout_constraintStart_toStartOf="@+id/btnChangeEmail"
+                    app:layout_constraintTop_toBottomOf="@id/btnChangeEmail"
                     app:layout_constraintVertical_bias="0.0"
                     app:strokeColor="@color/blue_500" />
 
@@ -289,21 +289,20 @@
                     app:strokeColor="@color/blue_500" />
 
                 <Button
-                    android:id="@+id/btnChangeEmail"
-                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:id="@+id/btn_logout"
+                    style="@style/Widget.Material3.Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="24dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/change_email"
+                    android:text="@string/logout"
+                    android:backgroundTint="@color/red_700"
                     android:textAllCaps="false"
-                    app:icon="@drawable/ic_mail_reset"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/btnChangePassword"
                     app:layout_constraintStart_toStartOf="@id/btnChangePassword"
                     app:layout_constraintTop_toBottomOf="@id/btnChangePassword"
-                    app:strokeColor="@color/blue_500" />
+                    app:strokeColor="@color/red_700" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
