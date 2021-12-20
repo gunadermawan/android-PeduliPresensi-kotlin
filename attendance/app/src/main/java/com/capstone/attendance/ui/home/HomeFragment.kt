@@ -63,11 +63,11 @@ class HomeFragment : Fragment() {
             }
         }
         val calendar = Calendar.getInstance()
-        when(calendar.get(Calendar.HOUR_OF_DAY)){
+        when (calendar.get(Calendar.HOUR_OF_DAY)) {
             in 0..11 -> binding.tvWelcome.text = GOOD_MORNING
             in 12..15 -> binding.tvWelcome.text = GOOD_AFTERNOON
-            in 16..20 -> binding.tvWelcome.text = GOOD_EVENING
-            in 21..23 -> binding.tvWelcome.text = GOOD_NIGHT
+            in 16..18 -> binding.tvWelcome.text = GOOD_EVENING
+            in 17..23 -> binding.tvWelcome.text = GOOD_NIGHT
             else -> binding.tvUserHome.text = GOOD_LATE_NIGHT
         }
     }
