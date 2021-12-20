@@ -69,4 +69,13 @@
     <string name="government">Pemerintah Desa Warureja</string>
     <string name="version_app">Version app 1.0</string>
     <string name="helper_email">*verifikasi email Anda untuk dapat melakukan reset password dan ganti email</string>
+    <string name="about">Tentang Aplikasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_app">Sebuah aplikasi untuk melakukan presensi secara online, dengan algoritma yang terbukti akurat untuk mengukur jarak, kami berharap aplikasi ini dapat memberi nilai lebih dari sekedar implementasi kode.</string>
+    <string name="build_with">Limitless dedication</string>
+    <string name="great_affiliation">Great affiliation</string>
+    <string name="dev_1">Guna Dermawan</string>
+    <string name="dev_2">Edo Juliyanto</string>
+    <string name="android_developer">Android Developer</string>
 </resources>
