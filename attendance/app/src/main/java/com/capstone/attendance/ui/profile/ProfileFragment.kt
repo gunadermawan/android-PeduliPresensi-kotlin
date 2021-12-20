@@ -185,19 +185,19 @@ class ProfileFragment : Fragment() {
             }
     }
 
-    private fun onAlertDialog(view: View){
+    private fun onAlertDialog(view: View) {
         val builder = AlertDialog.Builder(view.context)
 
         builder.setTitle(getString(R.string.keluar))
         builder.setMessage(getString(R.string.keluar_message))
-        builder.setPositiveButton(getString(R.string.keluar_possitive)){ _, _ ->
+        builder.setPositiveButton(getString(R.string.keluar_possitive)) { _, _ ->
             auth.signOut()
             Intent(activity, LoginActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
         }
-        builder.setNegativeButton(getString(R.string.keluar_negative)){ _, _ ->
+        builder.setNegativeButton(getString(R.string.keluar_negative)) { _, _ ->
         }
         builder.show()
     }
