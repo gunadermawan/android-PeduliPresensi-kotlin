@@ -185,19 +185,19 @@ class ProfileFragment : Fragment() {
             }
     }
 
-    fun onAlertDialog(view: View){
+    private fun onAlertDialog(view: View){
         val builder = AlertDialog.Builder(view.context)
 
-        builder.setTitle("Keluar Aplikasi")
-        builder.setMessage("Apakah anda yakin untuk keluar?")
-        builder.setPositiveButton("Ya"){dialog, id ->
+        builder.setTitle(getString(R.string.keluar))
+        builder.setMessage(getString(R.string.keluar_message))
+        builder.setPositiveButton(getString(R.string.keluar_possitive)){ _, _ ->
             auth.signOut()
             Intent(activity, LoginActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
         }
-        builder.setNegativeButton("Batal"){dialog, id ->
+        builder.setNegativeButton(getString(R.string.keluar_negative)){ _, _ ->
         }
         builder.show()
     }
