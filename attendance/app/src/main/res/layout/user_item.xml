@@ -66,15 +66,30 @@
             tools:text="Tanggal presensi" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_ok"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="16dp"
+            android:visibility="visible"
+            android:contentDescription="@string/date_attendance"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_user_name"
             app:layout_constraintTop_toTopOf="parent"
-            card_view:srcCompat="@drawable/ic_checkllist"
-            android:contentDescription="@string/date_attendance" />
+            app:layout_constraintVertical_bias="0.571"
+            card_view:srcCompat="@drawable/ic_checkllist" />
+
+        <ImageView
+            android:id="@+id/iv_bad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/iv_ok"
+            app:layout_constraintStart_toStartOf="@+id/iv_ok"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/ic_danger" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
