@@ -1,8 +1,6 @@
 package com.capstone.attendance.ui.home
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,16 +48,6 @@ class HomeFragment : Fragment() {
                 binding.tvUserHome.text = getString(R.string.user)
             } else {
                 binding.tvUserHome.text = user.displayName
-            }
-        }
-        binding.btnGps.setOnClickListener {
-            Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).also {
-                startActivity(it)
-            }
-        }
-        binding.btnConnections.setOnClickListener {
-            Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS).also {
-                startActivity(it)
             }
         }
         val calendar = Calendar.getInstance()

@@ -19,8 +19,8 @@
     <string name="register">Daftar</string>
     <string name="logout">Keluar</string>
     <string name="_07_00">07:00</string>
-    <string name="start_attendance">Presensi dimulai pukul</string>
-    <string name="radius_attendance">Radius presensi</string>
+    <string name="start_attendance">Presensi pukul 07:00</string>
+    <string name="radius_attendance">Radius 10 M</string>
     <string name="_10_m">10 M</string>
     <string name="turn_on_gps">Cek GPS</string>
     <string name="gps">GPS</string>
@@ -60,7 +60,7 @@
     <string name="add_password">*Masukan password akun Anda</string>
     <string name="add_name">Masukan nama Anda</string>
     <string name="name">Name</string>
-    <string name="in_collaboration_with">Bekerjasama dengan:</string>
+    <string name="in_collaboration_with">Untuk pemenuhan tugas dari:</string>
     <string name="ic_mbkm">logo kampus merdeka</string>
     <string name="ic_dicoding">logo dicoding</string>
     <string name="ic_tegal">logo kabupaten Tegal</string>
