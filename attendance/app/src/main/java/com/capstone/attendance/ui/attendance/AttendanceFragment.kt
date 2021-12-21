@@ -115,7 +115,8 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-            if (FunctionLibrary.getTimeNow()!! > "07:00" && FunctionLibrary.getTimeNow()!! < "09:00"){
+//            on Time
+            if (FunctionLibrary.getTimeNow()!! > "07:00" && FunctionLibrary.getTimeNow()!! < "09:00") {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
                         val locationCallBack = object : LocationCallback() {
@@ -183,15 +184,6 @@ class AttendanceFragment : Fragment() {
                     requestPermission()
                 }
             } else {
-                FunctionLibrary.toast(
-                    context as Activity,
-                    TOAST_INFO,
-                    ATTENDANCE_TIME,
-                    MotionToastStyle.INFO,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                )
                 stopScanLocation()
             }
         } else {
@@ -268,6 +260,7 @@ class AttendanceFragment : Fragment() {
                 )
             }
     }
+
     private fun getAddress(): List<Address> {
         val destinationPlace = ADDRESS_GEOCODER
         val geocode = Geocoder(context, Locale.getDefault())
