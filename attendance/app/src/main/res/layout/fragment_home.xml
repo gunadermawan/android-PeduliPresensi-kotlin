@@ -50,7 +50,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/ic_person"
-                        app:civ_border_color="@color/light_blue_500"
+                        app:civ_border_color="@color/Vivid_Cerulean"
                         app:civ_border_width="2dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +124,7 @@
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/light_blue_500"
+                            app:lottie_colorFilter="@color/Electric_Orange"
                             app:lottie_loop="false"
                             app:lottie_rawRes="@raw/clock_animation" />
 
@@ -156,7 +156,7 @@
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/light_blue_500"
+                            app:lottie_colorFilter="@color/RYB_Green"
                             app:lottie_loop="false"
                             app:lottie_rawRes="@raw/gps_animation" />
 
@@ -187,7 +187,7 @@
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/light_blue_500"
+                            app:lottie_colorFilter="@color/Vivid_Cerulean"
                             app:lottie_loop="false"
                             app:lottie_rawRes="@raw/navigation_animation" />
 
@@ -218,7 +218,7 @@
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/light_blue_500"
+                            app:lottie_colorFilter="@color/Tangerine_Yellow"
                             app:lottie_loop="false"
                             app:lottie_rawRes="@raw/internet_animation" />
 

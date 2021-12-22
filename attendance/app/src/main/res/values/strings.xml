@@ -7,7 +7,6 @@
     <string name="profile">Akun</string>
     <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
-    <string name="masukan_nama">Masukan nama</string>
     <string name="check_in">Ketuk untuk mulai presensi</string>
     <string name="scanning_location">Menghitung jarak lokasi Anda</string>
     <string name="check_in_success">Check-in success</string>
@@ -18,13 +17,9 @@
     <string name="forgot_password">lupa password?</string>
     <string name="register">Daftar</string>
     <string name="logout">Keluar</string>
-    <string name="_07_00">07:00</string>
     <string name="start_attendance">Presensi pukul 07:00</string>
     <string name="radius_attendance">Radius 10 M</string>
-    <string name="_10_m">10 M</string>
-    <string name="turn_on_gps">Cek GPS</string>
-    <string name="gps">GPS</string>
-    <string name="internet">INTERNET</string>
+    <string name="turn_on_gps">Pastikan GPS Aktif</string>
     <string name="image_app">image app</string>
     <string name="check_connection">Cek koneksi internet</string>
     <string name="email_verification">Verifikasi Email Anda</string>
@@ -60,10 +55,6 @@
     <string name="add_password">*Masukan password akun Anda</string>
     <string name="add_name">Masukan nama Anda</string>
     <string name="name">Name</string>
-    <string name="in_collaboration_with">Untuk pemenuhan tugas dari:</string>
-    <string name="ic_mbkm">logo kampus merdeka</string>
-    <string name="ic_dicoding">logo dicoding</string>
-    <string name="ic_tegal">logo kabupaten Tegal</string>
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
     <string name="government">Pemerintah Desa Warureja</string>
@@ -71,10 +62,8 @@
     <string name="helper_email">*verifikasi email Anda untuk dapat melakukan reset password dan ganti email</string>
     <string name="about">Tentang Aplikasi</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_app">Sebuah aplikasi untuk melakukan presensi secara online, dengan algoritma yang terbukti akurat untuk mengukur jarak, kami berharap aplikasi ini dapat memberi nilai lebih dari sekedar implementasi kode.</string>
     <string name="build_with">Limitless dedication</string>
-    <string name="great_affiliation">Great affiliation</string>
     <string name="dev_1">Guna Dermawan</string>
     <string name="dev_2">Edo Juliyanto</string>
     <string name="android_developer">Android Developer</string>
