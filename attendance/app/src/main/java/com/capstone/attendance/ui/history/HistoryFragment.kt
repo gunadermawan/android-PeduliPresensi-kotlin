@@ -53,8 +53,8 @@ class HistoryFragment : Fragment() {
         dbRef = FirebaseDatabase.getInstance().getReference(REALTIME_DB)
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                binding.progressBar.visibility = View.GONE
-                binding.textView2.visibility = View.GONE
+//                binding.progressBar.visibility = View.GONE
+//                binding.textView2.visibility = View.GONE
                 for (userSnapshot in snapshot.children) {
                     val user = userSnapshot.getValue(User::class.java)
                     if (user != null) {
@@ -65,8 +65,8 @@ class HistoryFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                binding.progressBar.visibility = View.VISIBLE
-                binding.textView2.visibility = View.VISIBLE
+//                binding.progressBar.visibility = View.VISIBLE
+//                binding.textView2.visibility = View.VISIBLE
                 Log.w(TAG, REALTIME_DB_CANCELED, error.toException())
             }
         })
