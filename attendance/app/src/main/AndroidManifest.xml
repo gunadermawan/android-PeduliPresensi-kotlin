@@ -29,6 +29,8 @@
             android:name=".ui.main.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.signup.SignupActivity"
