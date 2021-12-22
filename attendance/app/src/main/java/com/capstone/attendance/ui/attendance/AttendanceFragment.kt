@@ -181,6 +181,7 @@ class AttendanceFragment : Fragment() {
                         )
                     }
                 } else {
+                    stopScanLocation()
                     requestPermission()
                 }
             } else {

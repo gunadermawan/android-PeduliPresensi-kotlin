@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +25,8 @@ class HistoryFragment : Fragment() {
     private lateinit var dbRef: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userArrayList: ArrayList<User>
+    private lateinit var progressBar: ProgressBar
+    private lateinit var txtLoadingProgressBar: TextView
 
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null
@@ -46,6 +50,8 @@ class HistoryFragment : Fragment() {
         userRecyclerView.layoutManager = LinearLayoutManager(context)
         userRecyclerView.setHasFixedSize(true)
         userArrayList = arrayListOf()
+        progressBar = binding.progressBar
+        txtLoadingProgressBar = binding.tvProgressbar
         getUserData()
     }
 
@@ -53,9 +59,9 @@ class HistoryFragment : Fragment() {
         dbRef = FirebaseDatabase.getInstance().getReference(REALTIME_DB)
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                binding.progressBar.visibility = View.GONE
-                binding.textView2.visibility = View.GONE
                 for (userSnapshot in snapshot.children) {
+                    progressBar.visibility = View.GONE
+                    txtLoadingProgressBar.visibility = View.GONE
                     val user = userSnapshot.getValue(User::class.java)
                     if (user != null) {
                         userArrayList.add(user)
@@ -63,10 +69,7 @@ class HistoryFragment : Fragment() {
                 }
                 userRecyclerView.adapter = UserAdapter(userArrayList)
             }
-
             override fun onCancelled(error: DatabaseError) {
-                binding.progressBar.visibility = View.VISIBLE
-                binding.textView2.visibility = View.VISIBLE
                 Log.w(TAG, REALTIME_DB_CANCELED, error.toException())
             }
         })
