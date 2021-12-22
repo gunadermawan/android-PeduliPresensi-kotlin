@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PeduliPresensi</string>
+    <string name="app_name">Peduli Presensi</string>
     <string name="title_home">Home</string>
     <string name="home">Beranda</string>
     <string name="attendance">Presensi</string>
@@ -58,7 +58,7 @@
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
     <string name="government">Pemerintah Desa Warureja</string>
-    <string name="version_app">Version app 1.0</string>
+    <string name="version_app">Version app 1.0.0</string>
     <string name="helper_email">*verifikasi email Anda untuk dapat melakukan reset password dan ganti email</string>
     <string name="about">Tentang Aplikasi</string>
     <!-- TODO: Remove or change this placeholder text -->
