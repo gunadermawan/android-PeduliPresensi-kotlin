@@ -29,7 +29,6 @@ class HistoryFragment : Fragment() {
     private lateinit var progressBar: ProgressBar
     private lateinit var txtLoadingProgressBar: TextView
     private lateinit var imgEmptyData: ImageView
-
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
