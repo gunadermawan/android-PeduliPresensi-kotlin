@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -27,6 +28,7 @@ class HistoryFragment : Fragment() {
     private lateinit var userArrayList: ArrayList<User>
     private lateinit var progressBar: ProgressBar
     private lateinit var txtLoadingProgressBar: TextView
+    private lateinit var imgEmptyData: ImageView
 
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null
@@ -52,6 +54,7 @@ class HistoryFragment : Fragment() {
         userArrayList = arrayListOf()
         progressBar = binding.progressBar
         txtLoadingProgressBar = binding.tvProgressbar
+        imgEmptyData = binding.ivEmptyData
         getUserData()
     }
 
@@ -59,16 +62,19 @@ class HistoryFragment : Fragment() {
         dbRef = FirebaseDatabase.getInstance().getReference(REALTIME_DB)
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                progressBar.visibility = View.GONE
+                txtLoadingProgressBar.visibility = View.GONE
+                imgEmptyData.visibility = View.VISIBLE
                 for (userSnapshot in snapshot.children) {
-                    progressBar.visibility = View.GONE
-                    txtLoadingProgressBar.visibility = View.GONE
                     val user = userSnapshot.getValue(User::class.java)
                     if (user != null) {
                         userArrayList.add(user)
+                        imgEmptyData.visibility = View.GONE
                     }
                 }
                 userRecyclerView.adapter = UserAdapter(userArrayList)
             }
+
             override fun onCancelled(error: DatabaseError) {
                 Log.w(TAG, REALTIME_DB_CANCELED, error.toException())
             }
