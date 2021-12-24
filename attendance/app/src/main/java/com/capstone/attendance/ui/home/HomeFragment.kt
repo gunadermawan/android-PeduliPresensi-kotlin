@@ -52,11 +52,26 @@ class HomeFragment : Fragment() {
         }
         val calendar = Calendar.getInstance()
         when (calendar.get(Calendar.HOUR_OF_DAY)) {
-            in 0..11 -> binding.tvWelcome.text = GOOD_MORNING
-            in 12..15 -> binding.tvWelcome.text = GOOD_AFTERNOON
-            in 16..18 -> binding.tvWelcome.text = GOOD_EVENING
-            in 17..23 -> binding.tvWelcome.text = GOOD_NIGHT
-            else -> binding.tvUserHome.text = GOOD_LATE_NIGHT
+            in 0..11 -> {
+                binding.tvWelcome.text = GOOD_MORNING
+                binding.ivMorning.visibility = View.VISIBLE
+            }
+            in 12..15 -> {
+                binding.tvWelcome.text = GOOD_AFTERNOON
+                binding.ivAfternoon.visibility = View.VISIBLE
+            }
+            in 16..18 -> {
+                binding.tvWelcome.text = GOOD_EVENING
+                binding.ivEvening.visibility = View.VISIBLE
+            }
+            in 19..23 ->{
+                binding.tvWelcome.text = GOOD_NIGHT
+                binding.ivNight.visibility = View.VISIBLE
+            }
+            else -> {
+                binding.tvUserHome.text = GOOD_LATE_NIGHT
+                binding.ivNight.visibility = View.VISIBLE
+            }
         }
     }
 

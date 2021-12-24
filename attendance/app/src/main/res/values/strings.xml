@@ -72,4 +72,5 @@
     <string name="keluar_possitive">Ya</string>
     <string name="keluar_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
+    <string name="image_weather">image weather</string>
 </resources>
