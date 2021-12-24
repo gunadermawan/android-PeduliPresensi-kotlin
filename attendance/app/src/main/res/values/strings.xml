@@ -71,4 +71,5 @@
     <string name="keluar_message">Apakah anda yakin untuk keluar?</string>
     <string name="keluar_possitive">Ya</string>
     <string name="keluar_negative">Batal</string>
+    <string name="report_bug">Laporkan Masalah Aplikasi</string>
 </resources>
