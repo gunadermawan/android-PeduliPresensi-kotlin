@@ -4,14 +4,17 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -141,9 +144,32 @@ class ProfileFragment : Fragment() {
             val updatePass = ProfileFragmentDirections.actionUpdatePassword()
             Navigation.findNavController(it).navigate(updatePass)
         }
+        profileBinding.btnReport.setOnClickListener {
+            sendReport()
+        }
         profileBinding.btnAboutApp.setOnClickListener {
             val about = ProfileFragmentDirections.actionAboutApp()
             Navigation.findNavController(it).navigate(about)
+        }
+    }
+
+    private fun sendReport() {
+        Log.i(REPORT_TAG, REPORT_MSG)
+        val to = arrayOf(REPORT_EMAIL_DEVELOPER)
+        val emailIntent = Intent(Intent.ACTION_SEND)
+        emailIntent.data = Uri.parse(REPORT_MAIL_TO)
+        emailIntent.type = REPORT_TYPE
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, to)
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, REPORT_SUBJECT)
+        emailIntent.putExtra(Intent.EXTRA_TEXT, REPORT_SUBJECT_VALUE)
+        try {
+            startActivity(Intent.createChooser(emailIntent, REPORT_TAG))
+            Log.i(REPORT_SUCCESS, "")
+        } catch (ex: ActivityNotFoundException) {
+            Toast.makeText(
+                activity,
+                REPORT_NO_CLIENT, Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
