@@ -90,6 +90,61 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
                         app:layout_constraintVertical_bias="1.0" />
 
+                    <ImageView
+                        android:id="@+id/iv_morning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="@string/image_weather"
+                        android:src="@drawable/ic_morning"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_welcome"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_welcome"
+                        app:layout_constraintTop_toTopOf="@+id/tv_welcome"
+                        app:layout_constraintVertical_bias="0.769" />
+
+                    <ImageView
+                        android:id="@+id/iv_afternoon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image_weather"
+                        android:src="@drawable/ic_afternoon"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                        app:layout_constraintTop_toTopOf="@+id/iv_morning" />
+
+                    <ImageView
+                        android:id="@+id/iv_night"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image_weather"
+                        android:src="@drawable/ic_night"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                        app:layout_constraintTop_toTopOf="@+id/iv_morning" />
+
+                    <ImageView
+                        android:id="@+id/iv_evening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image_weather"
+                        android:src="@drawable/ic_sunset"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                        app:layout_constraintTop_toTopOf="@+id/iv_morning"
+                        app:layout_constraintVertical_bias="0.0" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
