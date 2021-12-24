@@ -52,8 +52,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/gps_animation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
         android:visibility="gone"
