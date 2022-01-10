@@ -63,7 +63,7 @@ dependencies {
     //    picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
     //    google location services
-    implementation 'com.google.android.gms:play-services-location:19.0.0'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
     // Motion Toast
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
     //    Lottie

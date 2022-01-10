@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         }
         val calendar = Calendar.getInstance()
         when (calendar.get(Calendar.HOUR_OF_DAY)) {
-            in 0..11 -> {
+            in 3..11 -> {
                 binding.tvWelcome.text = GOOD_MORNING
                 binding.ivMorning.visibility = View.VISIBLE
             }
@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
                 binding.ivNight.visibility = View.VISIBLE
             }
             else -> {
-                binding.tvUserHome.text = GOOD_LATE_NIGHT
+                binding.tvWelcome.text = GOOD_LATE_NIGHT
                 binding.ivNight.visibility = View.VISIBLE
             }
         }
