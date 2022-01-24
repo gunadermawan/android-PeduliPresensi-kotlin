@@ -89,7 +89,8 @@
             app:layout_constraintStart_toStartOf="@+id/iv_ok"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:srcCompat="@drawable/ic_danger" />
+            card_view:srcCompat="@drawable/ic_danger"
+            android:contentDescription="@string/date_attendance" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
