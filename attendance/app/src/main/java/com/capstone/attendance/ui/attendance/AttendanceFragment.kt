@@ -115,7 +115,6 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-//            on Time
             if (FunctionLibrary.getTimeNow()!! > "07:00" && FunctionLibrary.getTimeNow()!! < "09:00") {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
@@ -179,6 +178,7 @@ class AttendanceFragment : Fragment() {
                             MotionToast.LONG_DURATION,
                             ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                         )
+                        stopScanLocation()
                     }
                 } else {
                     stopScanLocation()
