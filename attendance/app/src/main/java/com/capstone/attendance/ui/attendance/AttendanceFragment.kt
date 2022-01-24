@@ -238,7 +238,6 @@ class AttendanceFragment : Fragment() {
             dialog.dismiss()
         }
         dialog.show()
-
     }
 
     private fun inputToFirebase(name: String) {
