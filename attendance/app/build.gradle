@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdk 31
-
     defaultConfig {
         applicationId "com.capstone.attendance"
         minSdk 23
