@@ -61,6 +61,8 @@ class ProfileFragment : Fragment() {
                 profileBinding.ivUnverified.visibility = View.VISIBLE
                 profileBinding.tvUnverified.visibility = View.VISIBLE
             }
+        } else {
+            profileBinding.pbProfile.visibility = View.VISIBLE
         }
         profileBinding.btnUpdate.setOnClickListener {
             val image = when {
