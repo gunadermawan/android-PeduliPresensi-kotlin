@@ -55,7 +55,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //    circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    // ripple effect layout
+    //    ripple effect layout
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
     //    firebase
     implementation platform('com.google.firebase:firebase-bom:29.0.1')
