@@ -73,4 +73,5 @@
     <string name="keluar_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
+    <string name="your_emails">Email Anda</string>
 </resources>

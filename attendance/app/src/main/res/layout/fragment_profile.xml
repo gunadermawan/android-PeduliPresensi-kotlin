@@ -76,7 +76,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ivProfile"
                     app:layout_constraintVertical_bias="0.0"
-                    app:startIconDrawable="@drawable/ic_person">
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusTopStart="@dimen/dimen_32">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_name"
@@ -92,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:enabled="false"
+                    android:hint="@string/your_emails"
                     app:helperText="@string/helper_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textInputName"
@@ -99,7 +104,11 @@
                     app:layout_constraintStart_toStartOf="@+id/textInputName"
                     app:layout_constraintTop_toBottomOf="@+id/textInputName"
                     app:layout_constraintVertical_bias="0.0"
-                    app:startIconDrawable="@drawable/ic_mail">
+                    app:startIconDrawable="@drawable/ic_mail"
+                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
+                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email"
@@ -296,8 +305,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    app:icon="@drawable/ic_bug"
                     android:text="@string/report_bug"
+                    app:icon="@drawable/ic_bug"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btnChangePassword"
                     app:layout_constraintHorizontal_bias="0.0"
