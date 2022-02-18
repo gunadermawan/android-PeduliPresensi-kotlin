@@ -47,7 +47,7 @@
     <string name="cancel">Batal</string>
     <string name="have_account">Punya Akun?</string>
     <string name="not_have_account">Belum punya akun?</string>
-    <string name="date_attendance">tannggal presensi:</string>
+    <string name="date_attendance">tanggal presensi:</string>
     <string name="get_data">Mengambil data</string>
     <string name="email_active">*Pastikan email Anda aktif</string>
     <string name="email_registered">*pastikan email Anda telah terdaftar</string>
