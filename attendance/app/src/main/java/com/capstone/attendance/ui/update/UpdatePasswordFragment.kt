@@ -80,10 +80,14 @@ class UpdatePasswordFragment : Fragment() {
                 val newPass = updatePasswordBinding.etNewPassword.text.toString().trim()
                 val newPassConfirm =
                     updatePasswordBinding.etNewPasswordConfirm.text.toString().trim()
-                if (newPass.isEmpty() || newPass.length < 8) {
+                if (newPass.isEmpty()) {
                     updatePasswordBinding.txtInputNewPassword.error = PASSWORD_EMPTY
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
                     return@btnUpdate
+                }
+                if(newPass.length < 8){
+                    updatePasswordBinding.txtInputNewPassword.error = PASSWORD_LENGTH
+                    updatePasswordBinding.txtInputNewPassword.requestFocus()
                 }
                 if (newPass != newPassConfirm) {
                     updatePasswordBinding.txtInputNewPasswordConfirm.error = PASSWORD_NOT_SAME
