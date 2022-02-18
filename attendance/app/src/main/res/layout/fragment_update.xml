@@ -60,7 +60,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_add_name"
                 app:layout_constraintVertical_bias="0.166"
-                app:startIconDrawable="@drawable/ic_mail">
+                app:startIconDrawable="@drawable/ic_mail"
+                app:boxCornerRadiusTopStart="@dimen/dimen_32"
+                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                app:boxCornerRadiusBottomStart="@dimen/dimen_32">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -140,7 +144,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_reset_email"
                 app:layout_constraintVertical_bias="0.166"
-                app:startIconDrawable="@drawable/ic_mail">
+                app:startIconDrawable="@drawable/ic_mail"
+                app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                app:boxCornerRadiusTopStart="@dimen/dimen_32">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_email"

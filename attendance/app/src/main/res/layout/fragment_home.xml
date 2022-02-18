@@ -275,7 +275,7 @@
                             app:lottie_autoPlay="true"
                             app:lottie_colorFilter="@color/Tangerine_Yellow"
                             app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/internet_animation" />
+                            app:lottie_rawRes="@raw/animation_internet" />
 
                         <TextView
                             android:layout_width="wrap_content"
