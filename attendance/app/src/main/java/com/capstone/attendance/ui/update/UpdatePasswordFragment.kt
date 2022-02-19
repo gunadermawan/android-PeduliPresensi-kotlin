@@ -41,6 +41,7 @@ class UpdatePasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
+        updatePasswordBinding.txtInputPassword.requestFocus()
         updatePasswordBinding.layoutPassword.visibility = View.VISIBLE
         updatePasswordBinding.layoutNewPass.visibility = View.GONE
         updatePasswordBinding.btnAuth.setOnClickListener {
