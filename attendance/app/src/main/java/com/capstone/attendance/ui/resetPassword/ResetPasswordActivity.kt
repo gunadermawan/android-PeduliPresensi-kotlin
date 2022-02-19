@@ -20,6 +20,7 @@ class ResetPasswordActivity : AppCompatActivity() {
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        binding.txtInputEmail.requestFocus()
         binding.btnReset.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             if (email.isEmpty()) {

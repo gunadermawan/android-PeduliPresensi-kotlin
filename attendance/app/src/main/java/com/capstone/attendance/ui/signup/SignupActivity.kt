@@ -31,6 +31,7 @@ class SignupActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar?.hide()
         }
+        signupBinding.txtInputEmail.requestFocus()
         auth = FirebaseAuth.getInstance()
         signupBinding.btnRegister.setOnClickListener {
             if (FunctionLibrary.checkConnection(this)) {
