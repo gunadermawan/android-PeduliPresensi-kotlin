@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar?.hide()
         }
+        loginBinding.txtInputEmail.requestFocus()
         auth = FirebaseAuth.getInstance()
         loginBinding.btnLogin.setOnClickListener {
             if (FunctionLibrary.checkConnection(this)) {
