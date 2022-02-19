@@ -40,6 +40,7 @@ class UpdateEmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
+        updateBinding.txtInputPassword.requestFocus()
         val user = auth.currentUser
         updateBinding.layoutPassword.visibility = View.VISIBLE
         updateBinding.layoutEmail.visibility = View.GONE
