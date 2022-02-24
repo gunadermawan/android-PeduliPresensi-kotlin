@@ -29,6 +29,7 @@ const val TAG_RESULT = "[onLocationResult]"
 const val LOCATION_FOUND = "Lokasi ditemukan"
 const val OUT_OF_RANGE = "Anda berada diluar jangkauan presensi"
 const val ATTENDANCE_SUCCESSFUL = "Presensi Anda berhasil"
+const val ATTENDANCE_LATE = "Presensi Anda ditandai sebagai terlambat"
 const val SIMPLE_DATE_FORMAT = "dd-MM-yyyy HH:mm:ss"
 const val ADDRESS_GEOCODER = "Balai Desa Warureja"
 const val MAX_RESULT = 100
