@@ -54,6 +54,7 @@
     <string name="password_length">*Password harus lebih dari  8 karakter</string>
     <string name="add_password">*Masukan password akun Anda</string>
     <string name="add_name">Nama Anda</string>
+    <string name="add_name_dialog">Masukan Nama Anda</string>
     <string name="name">Name</string>
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
