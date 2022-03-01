@@ -41,36 +41,22 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_about"
         app:layout_constraintVertical_bias="0.006" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/img_edo"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
-        app:layout_constraintEnd_toEndOf="@+id/multiWaveHeader"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView"
-        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/img_gunadermawan"
         app:civ_border_color="@color/white"
         app:civ_border_width="3dp"
         app:layout_constraintBottom_toTopOf="@+id/multiWaveHeader"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <TextView
         android:id="@+id/textView10"
@@ -82,10 +68,10 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/multiWaveHeader"
         app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="@+id/circleImageView"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/textView12"
@@ -101,33 +87,6 @@
         app:layout_constraintStart_toStartOf="@+id/circleImageView"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/android_developer"
-        android:textColor="@color/white"
-        android:textSize="11sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintEnd_toEndOf="@+id/circleImageView2"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/dev_2"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="@+id/circleImageView2"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView2"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
 
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/multiWaveHeader"
