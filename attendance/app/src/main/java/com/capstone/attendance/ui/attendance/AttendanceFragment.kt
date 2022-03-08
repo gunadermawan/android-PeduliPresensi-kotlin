@@ -379,7 +379,7 @@ class AttendanceFragment : Fragment() {
         fusedLocationProviderClient =
             LocationServices.getFusedLocationProviderClient(requireContext())
         locationRequest = LocationRequest.create().apply {
-            interval = 1000 * 5
+            interval = 1000 * 2
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
     }
