@@ -44,7 +44,7 @@
     <string name="update_email">Update Email</string>
     <string name="confirm">Konfirmasi</string>
     <string name="add_new_password">Masukan Password Baru</string>
-    <string name="save">simpan</string>
+    <string name="save">Presensi</string>
     <string name="cancel">Batal</string>
     <string name="have_account">Punya Akun?</string>
     <string name="not_have_account">Belum punya akun?</string>
@@ -55,7 +55,7 @@
     <string name="password_length">*Password harus lebih dari  8 karakter</string>
     <string name="add_password">*Masukan password akun Anda</string>
     <string name="add_name">Nama Anda</string>
-    <string name="add_name_dialog">Masukan Nama Anda</string>
+    <string name="add_name_dialog">Anda dapat melakukan presensi</string>
     <string name="name">Name</string>
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>

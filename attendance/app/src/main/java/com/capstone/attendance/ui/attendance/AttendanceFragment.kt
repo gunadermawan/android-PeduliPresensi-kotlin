@@ -36,7 +36,6 @@ import java.util.*
 import kotlin.math.*
 
 class AttendanceFragment : Fragment() {
-
     private var _binding: FragmentAttendanceBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var locationRequest: LocationRequest
@@ -287,19 +286,26 @@ class AttendanceFragment : Fragment() {
         dialog.setContentView(R.layout.layout_dialog_form)
         val btnYes = dialog.findViewById<Button>(R.id.btn_save)
         btnYes.setOnClickListener {
-            val name = dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
-            if (name.isNotEmpty()) {
-                inputToFirebase(name)
+            val user = auth.currentUser
+            val name = if (user?.displayName == null){
+                dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
             } else {
-                FunctionLibrary.toast(
-                    context as Activity,
-                    TOAST_ERROR,
-                    INPUT_YOUR_NAME,
-                    MotionToastStyle.ERROR,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                )
+                user.displayName
+            }
+            if (name != null) {
+                if (name.isNotEmpty()) {
+                    inputToFirebase(name)
+                } else {
+                    FunctionLibrary.toast(
+                        context as Activity,
+                        TOAST_ERROR,
+                        INPUT_YOUR_NAME,
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                    )
+                }
             }
             dialog.dismiss()
         }
