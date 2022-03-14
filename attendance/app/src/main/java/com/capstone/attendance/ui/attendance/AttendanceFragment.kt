@@ -183,6 +183,17 @@ class AttendanceFragment : Fragment() {
                     stopScanLocation()
                     requestPermission()
                 }
+            } else {
+                stopScanLocation()
+                FunctionLibrary.toast(
+                    context as Activity,
+                    TOAST_INFO,
+                    ATTENDANCE_TIME,
+                    MotionToastStyle.INFO,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                )
             }
         } else {
             FunctionLibrary.toast(
