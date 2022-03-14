@@ -114,7 +114,7 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-            if (FunctionLibrary.getTimeNow()!! > "07:00" && FunctionLibrary.getTimeNow()!! < "09:00") {
+            if (FunctionLibrary.getCurrentTime()!! > "07:00" && FunctionLibrary.getCurrentTime()!! < "09:00") {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
                         val locationCallBack = object : LocationCallback() {
@@ -183,7 +183,7 @@ class AttendanceFragment : Fragment() {
                     stopScanLocation()
                     requestPermission()
                 }
-            } else if (FunctionLibrary.getTimeNow()!! > "09:00" && FunctionLibrary.getTimeNow()!! < "12:00") {
+            } else if (FunctionLibrary.getCurrentTime()!! > "09:00" && FunctionLibrary.getCurrentTime()!! < "12:00") {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
                         val locationCallBack = object : LocationCallback() {
@@ -287,7 +287,7 @@ class AttendanceFragment : Fragment() {
         val btnYes = dialog.findViewById<Button>(R.id.btn_save)
         btnYes.setOnClickListener {
             val user = auth.currentUser
-            val name = if (user?.displayName == null){
+            val name = if (user?.displayName == null) {
                 dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
             } else {
                 user.displayName
