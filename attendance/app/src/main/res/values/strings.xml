@@ -23,7 +23,6 @@
     <string name="image_app">image app</string>
     <string name="check_connection">Cek koneksi internet</string>
     <string name="email_verification">Verifikasi Email Anda</string>
-    <string name="reset_password">Reset Password Anda</string>
     <string name="confirm_password">Konfirmasi Password</string>
     <string name="update">Update</string>
     <string name="change_password">Ganti Password</string>
