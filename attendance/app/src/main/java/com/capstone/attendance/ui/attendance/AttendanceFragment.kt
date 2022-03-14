@@ -31,9 +31,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
-import java.lang.Math.toRadians
 import java.util.*
-import kotlin.math.*
 
 class AttendanceFragment : Fragment() {
     private var _binding: FragmentAttendanceBinding? = null
@@ -114,7 +112,7 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-            if (timeAttendance() || timeAttendanceLate()) {
+            if (FunctionLibrary.timeAttendance() || FunctionLibrary.timeAttendanceLate()) {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
                         val locationCallBack = object : LocationCallback() {
@@ -125,7 +123,7 @@ class AttendanceFragment : Fragment() {
                                 val currentLong = location.longitude
                                 val destinationLat = getAddress()[0].latitude
                                 val destinationLong = getAddress()[0].longitude
-                                val distance = calculateDistance(
+                                val distance = FunctionLibrary.calculateDistance(
                                     currentLat, currentLong, destinationLat, destinationLong
                                 ) * 1000
                                 Log.d(TAG, "$TAG_RESULT - $distance")
@@ -207,14 +205,6 @@ class AttendanceFragment : Fragment() {
             )
             stopScanLocation()
         }
-    }
-
-    private fun timeAttendance(): Boolean {
-        return FunctionLibrary.getCurrentTime()!! > "07:00" && FunctionLibrary.getCurrentTime()!! < "09:00"
-    }
-
-    private fun timeAttendanceLate(): Boolean {
-        return FunctionLibrary.getCurrentTime()!! > "09:00" && FunctionLibrary.getCurrentTime()!! < "12:00"
     }
 
     private fun showDialogForm() {
@@ -326,21 +316,6 @@ class AttendanceFragment : Fragment() {
             interval = 1000 * 2
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
-    }
-
-    private fun calculateDistance(lat1: Double, lon1: Double, lat2: Double, long2: Double): Double {
-        val r = 6372.8
-        val radianLat1 = toRadians(lat1)
-        val radianLat2 = toRadians(lat2)
-        val dLat = toRadians(lat2 - lat1)
-        val dLon = toRadians(long2 - lon1)
-        return 2 * r * asin(
-            sqrt(
-                sin(dLat / 2).pow(2.0) + sin(dLon / 2).pow(2.0) * cos(radianLat1) * cos(
-                    radianLat2
-                )
-            )
-        )
     }
 
     override fun onDestroyView() {
