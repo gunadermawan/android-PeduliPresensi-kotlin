@@ -82,14 +82,15 @@
 
         <ImageView
             android:id="@+id/iv_bad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/date_attendance"
             android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@+id/iv_ok"
-            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/tv_user_time"
-            app:layout_constraintVertical_bias="0.49"
+            app:layout_constraintVertical_bias="0.592"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="@drawable/ic_danger" />

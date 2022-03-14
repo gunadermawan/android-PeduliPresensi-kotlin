@@ -69,10 +69,10 @@
     <string name="dev_1">Guna Dermawan</string>
     <string name="dev_2">Edo Juliyanto</string>
     <string name="android_developer">Android Developer</string>
-    <string name="keluar">Keluar Aplikasi</string>
-    <string name="keluar_message">Apakah anda yakin untuk keluar?</string>
-    <string name="keluar_possitive">Ya</string>
-    <string name="keluar_negative">Batal</string>
+    <string name="signout">Keluar Aplikasi</string>
+    <string name="signout_message">Apakah Anda yakin untuk keluar?</string>
+    <string name="signout_possitive">Ya</string>
+    <string name="signout_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
     <string name="your_emails">Email Anda</string>

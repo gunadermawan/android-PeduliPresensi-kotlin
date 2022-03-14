@@ -114,7 +114,7 @@ class AttendanceFragment : Fragment() {
 
     private fun getLastLocation() {
         if (FunctionLibrary.checkConnection(requireContext())) {
-            if (FunctionLibrary.getCurrentTime()!! > "07:00" && FunctionLibrary.getCurrentTime()!! < "09:00") {
+            if (timeAttendance() || timeAttendanceLate()) {
                 if (checkPermission()) {
                     if (isLocationEnabled()) {
                         val locationCallBack = object : LocationCallback() {
@@ -183,87 +183,6 @@ class AttendanceFragment : Fragment() {
                     stopScanLocation()
                     requestPermission()
                 }
-            } else if (FunctionLibrary.getCurrentTime()!! > "09:00" && FunctionLibrary.getCurrentTime()!! < "12:00") {
-                if (checkPermission()) {
-                    if (isLocationEnabled()) {
-                        val locationCallBack = object : LocationCallback() {
-                            override fun onLocationResult(locationResult: LocationResult) {
-                                super.onLocationResult(locationResult)
-                                val location = locationResult.lastLocation
-                                val currentLat = location.latitude
-                                val currentLong = location.longitude
-                                val destinationLat = getAddress()[0].latitude
-                                val destinationLong = getAddress()[0].longitude
-                                val distance = calculateDistance(
-                                    currentLat, currentLong, destinationLat, destinationLong
-                                ) * 1000
-                                Log.d(TAG, "$TAG_RESULT - $distance")
-                                if (distance < MEASURING_DISTANCE) {
-                                    showDialogForm()
-                                    FunctionLibrary.toast(
-                                        context as Activity,
-                                        TOAST_WARNING,
-                                        ATTENDANCE_LATE,
-                                        MotionToastStyle.WARNING,
-                                        MotionToast.GRAVITY_BOTTOM,
-                                        MotionToast.LONG_DURATION,
-                                        ResourcesCompat.getFont(
-                                            context as Activity,
-                                            R.font.helveticabold
-                                        )
-                                    )
-                                } else {
-                                    FunctionLibrary.toast(
-                                        context as Activity,
-                                        TOAST_WARNING,
-                                        OUT_OF_RANGE,
-                                        MotionToastStyle.WARNING,
-                                        MotionToast.GRAVITY_BOTTOM,
-                                        MotionToast.LONG_DURATION,
-                                        ResourcesCompat.getFont(
-                                            context as Activity,
-                                            R.font.helveticabold
-                                        )
-                                    )
-                                    binding.tvCheckIn.visibility = View.VISIBLE
-                                }
-                                fusedLocationProviderClient?.removeLocationUpdates(this)
-                                stopScanLocation()
-                            }
-                        }
-                        fusedLocationProviderClient?.requestLocationUpdates(
-                            locationRequest,
-                            locationCallBack,
-                            Looper.getMainLooper()
-                        )
-                    } else {
-                        FunctionLibrary.toast(
-                            context as Activity,
-                            TOAST_WARNING,
-                            PERMISSION_GPS,
-                            MotionToastStyle.WARNING,
-                            MotionToast.GRAVITY_BOTTOM,
-                            MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                        )
-                        stopScanLocation()
-                    }
-                } else {
-                    stopScanLocation()
-                    requestPermission()
-                }
-//                if it exceeds the specified hours
-            } else {
-                stopScanLocation()
-                FunctionLibrary.toast(
-                    context as Activity,
-                    TOAST_INFO,
-                    ATTENDANCE_TIME,
-                    MotionToastStyle.INFO,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                )
             }
         } else {
             FunctionLibrary.toast(
@@ -277,6 +196,14 @@ class AttendanceFragment : Fragment() {
             )
             stopScanLocation()
         }
+    }
+
+    private fun timeAttendance(): Boolean {
+        return FunctionLibrary.getCurrentTime()!! > "07:00" && FunctionLibrary.getCurrentTime()!! < "09:00"
+    }
+
+    private fun timeAttendanceLate(): Boolean {
+        return FunctionLibrary.getCurrentTime()!! > "09:00" && FunctionLibrary.getCurrentTime()!! < "12:00"
     }
 
     private fun showDialogForm() {
