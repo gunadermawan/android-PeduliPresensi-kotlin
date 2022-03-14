@@ -23,7 +23,8 @@ class UserAdapter(private val userList: ArrayList<User>) :
         val currentItem = userList[position]
         holder.name.text = currentItem.name
         holder.time.text = currentItem.time
-        if (currentItem.time!! > "09:00" && currentItem.time!! < "12:00") {
+//        holder.icOk.visibility = View.VISIBLE
+        if (currentItem.time!! >= "09:00" && currentItem.time!! <= "12:00") {
             holder.icBad.visibility = View.VISIBLE
             holder.icOk.visibility = View.GONE
         } else {
