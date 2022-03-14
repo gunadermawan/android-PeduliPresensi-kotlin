@@ -1,11 +1,4 @@
-# Team ID: CSD-040  
-# Nama Anggota:
-1.	A007R6017 - GUNA DERMAWAN
-2.	A195R4154 - EDO JULIANTIO
-# Tema		: 
-Utilitas
-# Judul Proyek	:  
-Pengembangan mobile presensi berbasis GPS dan Geocoding menggunakan metode haversine
+# APLIKASI PRESENSI MOBILE BERBASIS ANDROID DAN GEOCODER MENGGUNAKAN METODE HAVERSINE
 # Executive summary: 
 Presensi adalah salah satu faktor yang digunakan untuk laporan atau dijadikan sebagai indikator dalam pengambilan keputusan dari sebuah instansi, permasalahan yang sering kali muncul adalah metode dalam melakukan presensi, pada sebagian instansi pemerintahan, contohnya di kantor balai desa Warureja Kab. Tegal, presensi para pegawai masih menggunkan cara konvensional, yaitu dengan cara ditulis di buku presensi yang nantinya akan dilakukan rekapitulasi untuk dijadikan bahan evaluasi kepala desa, namun dengan menggunakan cara konvensional, akan didapatkan berbagai permasalahan, salah satunya adalah tentang kedispilnan para pegawai, oleh sebab itu diperlukan sebuah sistem penanganan yang menyediakan kemudahan dan kenyamanan saat melakukan presensi yaitu dengan membangun aplikasi presensi berbasis android dengan memanfaatkan GPS dan geocoding sebagai alat untuk membantu melakukan presensi. GPS adalah sistem navigasi berbasis satelit sedangkan geoceoding adalah mekanisme untuk melakukan translasi bahasa manusia dan akan diterjemahkan menjadi sebuah koordinat peta yaitu berupa latitude dan longitude.
 # Research Questions:
