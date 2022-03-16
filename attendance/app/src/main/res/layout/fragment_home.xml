@@ -9,287 +9,259 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingBottom="50dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/banner_application"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_banners"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_home"
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:orientation="vertical"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_profile_home"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/banner_application"
+                    android:src="@drawable/ic_person"
+                    app:civ_border_color="@color/Vivid_Cerulean"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.081"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.253" />
+
+                <TextView
+                    android:id="@+id/tv_welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/welcome"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toEndOf="@+id/iv_user_profile_home"
+                    app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home"
+                    app:layout_constraintVertical_bias="0.148" />
+
+                <TextView
+                    android:id="@+id/tv_user_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/user"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_home"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+                    app:layout_constraintVertical_bias="0.8" />
+
+                <ImageView
+                    android:id="@+id/iv_morning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/image_weather"
+                    android:src="@drawable/ic_morning"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_welcome"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_welcome"
+                    app:layout_constraintTop_toTopOf="@+id/tv_welcome"
+                    app:layout_constraintVertical_bias="0.769" />
+
+                <ImageView
+                    android:id="@+id/iv_afternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_weather"
+                    android:src="@drawable/ic_afternoon"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                    app:layout_constraintTop_toTopOf="@+id/iv_morning" />
+
+                <ImageView
+                    android:id="@+id/iv_night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_weather"
+                    android:src="@drawable/ic_night"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                    app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                    app:layout_constraintTop_toTopOf="@+id/iv_morning" />
+
+                <ImageView
+                    android:id="@+id/iv_evening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_weather"
+                    android:src="@drawable/ic_sunset"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_morning"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_morning"
+                    app:layout_constraintTop_toTopOf="@+id/iv_morning"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/news"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cv_home"
+            app:layout_constraintStart_toStartOf="@+id/cv_home"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.36" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_24"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/dimen_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_home"
-                style="?attr/materialCardViewElevatedStyle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="vertical"
-                app:cardCornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/img_news"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.054"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:maxEms="17"
+                    android:paddingStart="@dimen/dimen_16"
+                    android:paddingEnd="@dimen/dimen_16"
+                    android:text="@string/news1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.363" />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_user_profile_home"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:src="@drawable/ic_person"
-                        app:civ_border_color="@color/Vivid_Cerulean"
-                        app:civ_border_width="2dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.081"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.253" />
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Radar Tegal"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/dimen_12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6"
+                    app:layout_constraintVertical_bias="0.0" />
 
-                    <TextView
-                        android:id="@+id/tv_welcome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="@string/welcome"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.069"
-                        app:layout_constraintStart_toEndOf="@+id/iv_user_profile_home"
-                        app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home"
-                        app:layout_constraintVertical_bias="0.148" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="69dp"
+                    android:text="@string/news_time"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/dimen_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView9"
+                    app:layout_constraintTop_toTopOf="@+id/textView9"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/tv_user_home"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="32dp"
-                        android:text="@string/user"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_home"
-                        app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
-                        app:layout_constraintVertical_bias="0.8" />
-
-                    <ImageView
-                        android:id="@+id/iv_morning"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:contentDescription="@string/image_weather"
-                        android:src="@drawable/ic_morning"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_welcome"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/tv_welcome"
-                        app:layout_constraintTop_toTopOf="@+id/tv_welcome"
-                        app:layout_constraintVertical_bias="0.769" />
-
-                    <ImageView
-                        android:id="@+id/iv_afternoon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/image_weather"
-                        android:src="@drawable/ic_afternoon"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
-                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
-                        app:layout_constraintTop_toTopOf="@+id/iv_morning" />
-
-                    <ImageView
-                        android:id="@+id/iv_night"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/image_weather"
-                        android:src="@drawable/ic_night"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
-                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
-                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
-                        app:layout_constraintTop_toTopOf="@+id/iv_morning" />
-
-                    <ImageView
-                        android:id="@+id/iv_evening"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/image_weather"
-                        android:src="@drawable/ic_sunset"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
-                        app:layout_constraintEnd_toEndOf="@+id/iv_morning"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/iv_morning"
-                        app:layout_constraintTop_toTopOf="@+id/iv_morning"
-                        app:layout_constraintVertical_bias="0.0" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_24"
-                android:alignmentMode="alignMargins"
-                android:columnCount="2"
-                android:columnOrderPreserved="false"
-                android:orientation="horizontal"
-                android:rowCount="4">
-
-                <androidx.cardview.widget.CardView
-                    style="?attr/materialCardViewElevatedStyle"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            style="@style/Theme.Attendance"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/Electric_Orange"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/clock_animation" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/start_attendance"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    style="?attr/materialCardViewElevatedStyle"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            style="@style/Theme.Attendance"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/RYB_Green"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/gps_animation" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/radius_attendance"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    style="?attr/materialCardViewElevatedStyle"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/Vivid_Cerulean"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/navigation_animation" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/turn_on_gps"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    style="?attr/materialCardViewElevatedStyle"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_colorFilter="@color/Tangerine_Yellow"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/animation_internet" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/check_connection"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </GridLayout>
-
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -76,4 +76,9 @@
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
     <string name="your_emails">Email Anda</string>
+    <string name="banner_application">banner_application</string>
+    <string name="news">#InfoTegal</string>
+    <string name="news1">Vaksinasi Kota Tegal Meluas Secara Masif</string>
+    <string name="img_news">gambar berita</string>
+    <string name="news_time">| 1 Menit yang lalu</string>
 </resources>
