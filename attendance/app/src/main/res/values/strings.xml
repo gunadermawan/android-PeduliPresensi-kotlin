@@ -63,6 +63,7 @@
     <string name="version_app">Version app 1.0.0</string>
     <string name="helper_email">* Verifikasi email Anda untuk dapat melakukan reset password dan ganti email</string>
     <string name="about">Tentang Aplikasi</string>
+    <string name="attendanceLate">"Presensi Anda ditandai sebagai terlambat"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="about_app">Sebuah aplikasi untuk melakukan presensi secara online, dengan algoritma yang terbukti akurat untuk mengukur jarak, kami berharap aplikasi ini dapat memberi nilai lebih dari sekedar implementasi kode.</string>
     <string name="build_with">Limitless dedication</string>
@@ -76,4 +77,10 @@
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
     <string name="your_emails">Email Anda</string>
+    <string name="banner_application">banner_application</string>
+    <string name="news">#InfoTegal</string>
+    <string name="news1">Vaksinasi Kota Tegal Meluas Secara Masif</string>
+    <string name="img_news">gambar berita</string>
+    <string name="news_time">| 1 Menit yang lalu</string>
+    <string name="attendanceLateText">Presensi Anda terlambat</string>
 </resources>
