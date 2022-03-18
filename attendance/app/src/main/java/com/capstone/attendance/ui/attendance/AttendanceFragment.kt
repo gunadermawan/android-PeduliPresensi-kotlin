@@ -209,6 +209,7 @@ class AttendanceFragment : Fragment() {
             MaterialAlertDialogBuilder(it)
                 .setTitle(resources.getString(R.string.attendancDialog))
                 .setMessage(resources.getString(R.string.attendancMessage))
+                .setIcon(ResourcesCompat.getDrawable(resources, R.drawable.ic_finger_outline, null))
                 .setPositiveButton(resources.getString(R.string.attendancNow)) { _, _ ->
                     val user = auth.currentUser
                     val name = user?.displayName

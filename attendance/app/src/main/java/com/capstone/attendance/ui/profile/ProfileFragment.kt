@@ -202,6 +202,7 @@ class ProfileFragment : Fragment() {
         context?.let {
             MaterialAlertDialogBuilder(it)
                 .setTitle(resources.getString(R.string.signout))
+                .setIcon(ResourcesCompat.getDrawable(resources, R.drawable.ic_logout, null))
                 .setMessage(resources.getString(R.string.signout_message))
                 .setPositiveButton(resources.getString(R.string.signout_possitive)) { _, _ ->
                     auth.signOut()
