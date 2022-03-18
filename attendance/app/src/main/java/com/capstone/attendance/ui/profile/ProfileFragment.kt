@@ -3,7 +3,6 @@ package com.capstone.attendance.ui.profile
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
-import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -106,7 +105,7 @@ class ProfileFragment : Fragment() {
                 }
         }
         profileBinding.btnLogout.setOnClickListener {
-            allertDialog()
+            alertDialog()
         }
         profileBinding.ivProfile.setOnClickListener {
             intentCamera()
@@ -199,32 +198,17 @@ class ProfileFragment : Fragment() {
             }
     }
 
-    private fun onAlertDialog(view: View) {
-        val builder = AlertDialog.Builder(view.context)
-        builder.setTitle(getString(R.string.signout))
-        builder.setMessage(getString(R.string.signout_message))
-        builder.setPositiveButton(getString(R.string.signout_possitive)) { _, _ ->
-            auth.signOut()
-            Intent(activity, LoginActivity::class.java).also {
-                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(it)
-            }
-        }
-        builder.setNegativeButton(getString(R.string.signout_negative)) { _, _ ->
-        }
-        builder.show()
-    }
-
-    private fun allertDialog() {
+    private fun alertDialog() {
         context?.let {
             MaterialAlertDialogBuilder(it)
                 .setTitle(resources.getString(R.string.signout))
                 .setMessage(resources.getString(R.string.signout_message))
                 .setPositiveButton(resources.getString(R.string.signout_possitive)) { _, _ ->
                     auth.signOut()
-                    Intent(activity, LoginActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
+                    Intent(activity, LoginActivity::class.java).also { intent ->
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
                     }
                 }
                 .setNegativeButton(resources.getString(R.string.signout_negative)) { _, _ ->

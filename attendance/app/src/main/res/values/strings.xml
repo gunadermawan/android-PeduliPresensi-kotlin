@@ -3,6 +3,9 @@
     <string name="title_home">Home</string>
     <string name="home">Beranda</string>
     <string name="attendance">Presensi</string>
+    <string name="attendancDialog">Presensi dapat dilakukan</string>
+    <string name="attendancMessage">ketuk untuk memulai presensi Anda</string>
+    <string name="attendancNow">Presensi sekarang</string>
     <string name="histori">Histori</string>
     <string name="profile">Akun</string>
     <string name="welcome">Selamat datang,</string>

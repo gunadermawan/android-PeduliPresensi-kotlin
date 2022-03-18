@@ -1,7 +1,6 @@
 package com.capstone.attendance.ui.attendance
 
 import android.app.Activity
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -16,9 +15,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.Button
-import android.widget.EditText
 import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -27,6 +23,7 @@ import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
 import com.capstone.attendance.utils.*
 import com.google.android.gms.location.*
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import www.sanju.motiontoast.MotionToast
@@ -128,7 +125,7 @@ class AttendanceFragment : Fragment() {
                                 ) * 1000
                                 Log.d(TAG, "$TAG_RESULT - $distance")
                                 if (distance < MEASURING_DISTANCE) {
-                                    showDialogForm()
+                                    showDialog()
                                     FunctionLibrary.toast(
                                         context as Activity,
                                         TOAST_SUCCESS,
@@ -207,41 +204,31 @@ class AttendanceFragment : Fragment() {
         }
     }
 
-    private fun showDialogForm() {
-        val dialog = Dialog(requireContext())
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.layout_dialog_form)
-        val btnYes = dialog.findViewById<Button>(R.id.btn_save)
-        btnYes.setOnClickListener {
-            val user = auth.currentUser
-            val name = if (user?.displayName == null) {
-                dialog.findViewById<EditText>(R.id.et_name_attendance).text.toString().trim()
-            } else {
-                user.displayName
-            }
-            if (name != null) {
-                if (name.isNotEmpty()) {
-                    inputToFirebase(name)
-                } else {
-                    FunctionLibrary.toast(
-                        context as Activity,
-                        TOAST_ERROR,
-                        INPUT_YOUR_NAME,
-                        MotionToastStyle.ERROR,
-                        MotionToast.GRAVITY_BOTTOM,
-                        MotionToast.LONG_DURATION,
-                        ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                    )
+    private fun showDialog() {
+        context?.let {
+            MaterialAlertDialogBuilder(it)
+                .setTitle(resources.getString(R.string.attendancDialog))
+                .setMessage(resources.getString(R.string.attendancMessage))
+                .setPositiveButton(resources.getString(R.string.attendancNow)) { _, _ ->
+                    val user = auth.currentUser
+                    val name = user?.displayName
+                    if (name != null) {
+                        inputToFirebase(name)
+                    } else {
+                        FunctionLibrary.toast(
+                            context as Activity,
+                            TOAST_ERROR,
+                            INPUT_YOUR_NAME,
+                            MotionToastStyle.ERROR,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                        )
+                    }
                 }
-            }
-            dialog.dismiss()
+                .setNegativeButton(resources.getString(R.string.signout_negative)) { _, _ -> }
+                .show()
         }
-        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel)
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
     }
 
     private fun inputToFirebase(name: String) {
