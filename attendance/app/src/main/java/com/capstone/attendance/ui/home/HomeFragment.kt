@@ -40,9 +40,11 @@ class HomeFragment : Fragment() {
         if (user != null) {
             if (user.photoUrl != null) {
                 Picasso.get().load(user.photoUrl).into(binding.ivUserProfileHome)
+                binding.pbHomeProfile.visibility = View.GONE
             } else {
                 Picasso.get().load(PATH_DEFAULT_PROFILE)
                     .into(binding.ivUserProfileHome)
+                binding.pbHomeProfile.visibility = View.GONE
             }
             if (user.displayName == null) {
                 binding.tvUserHome.text = getString(R.string.user)
