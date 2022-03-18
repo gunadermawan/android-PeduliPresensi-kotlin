@@ -83,4 +83,5 @@
     <string name="img_news">gambar berita</string>
     <string name="news_time">| 1 Menit yang lalu</string>
     <string name="attendanceLateText">Presensi Anda terlambat</string>
+    <string name="image_of_content">image of Content</string>
 </resources>

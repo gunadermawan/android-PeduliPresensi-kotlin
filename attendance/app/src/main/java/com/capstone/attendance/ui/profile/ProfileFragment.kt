@@ -19,6 +19,7 @@ import com.capstone.attendance.R
 import com.capstone.attendance.databinding.FragmentProfileBinding
 import com.capstone.attendance.ui.login.LoginActivity
 import com.capstone.attendance.utils.*
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -105,7 +106,7 @@ class ProfileFragment : Fragment() {
                 }
         }
         profileBinding.btnLogout.setOnClickListener {
-            onAlertDialog(view)
+            allertDialog()
         }
         profileBinding.ivProfile.setOnClickListener {
             intentCamera()
@@ -212,5 +213,23 @@ class ProfileFragment : Fragment() {
         builder.setNegativeButton(getString(R.string.signout_negative)) { _, _ ->
         }
         builder.show()
+    }
+
+    private fun allertDialog() {
+        context?.let {
+            MaterialAlertDialogBuilder(it)
+                .setTitle(resources.getString(R.string.signout))
+                .setMessage(resources.getString(R.string.signout_message))
+                .setPositiveButton(resources.getString(R.string.signout_possitive)) { _, _ ->
+                    auth.signOut()
+                    Intent(activity, LoginActivity::class.java).also {
+                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(it)
+                    }
+                }
+                .setNegativeButton(resources.getString(R.string.signout_negative)) { _, _ ->
+
+                }.show()
+        }
     }
 }
