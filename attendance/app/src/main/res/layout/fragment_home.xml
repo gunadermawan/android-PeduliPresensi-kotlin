@@ -65,6 +65,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.253" />
 
+                <ProgressBar
+                    android:id="@+id/pbHomeProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_home"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_user_profile_home"
+                    app:layout_constraintStart_toStartOf="@+id/iv_user_profile_home"
+                    app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home" />
+
                 <TextView
                     android:id="@+id/tv_welcome"
                     android:layout_width="wrap_content"
