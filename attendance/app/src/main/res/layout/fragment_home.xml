@@ -19,7 +19,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/banner_application"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_banners"
+            android:src="@drawable/img_banner_applications"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
