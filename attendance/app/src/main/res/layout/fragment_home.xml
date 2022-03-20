@@ -170,7 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -213,6 +213,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
+                    android:id="@+id/imageView5"
                     android:layout_width="@dimen/dimen_64"
                     android:layout_height="@dimen/dimen_64"
                     android:layout_marginTop="8dp"
@@ -226,6 +227,43 @@
                     app:layout_constraintStart_toEndOf="@+id/appCompatImageButton"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_64"
+                    android:layout_height="@dimen/dimen_64"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/image_of_content"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="@dimen/dimen_64"
+                    android:layout_height="@dimen/dimen_64"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/image_of_content"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/appCompatImageButton"
+                    app:layout_constraintStart_toStartOf="@+id/appCompatImageButton"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_64"
+                    android:layout_height="@dimen/dimen_64"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/image_of_content"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                    app:layout_constraintStart_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
