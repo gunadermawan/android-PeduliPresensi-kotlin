@@ -24,9 +24,11 @@
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_change_email.xml" value="0.16547231270358306" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_checkllist.xml" value="0.16710526315789473" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_error.xml" value="0.26458333333333334" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_exit_to_app.xml" value="0.2295" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_home.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_location.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_mail_reset.xml" value="0.16547231270358306" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_news.xml" value="0.2295" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_office.xml" value="0.26458333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_person.xml" value="0.2295" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_time.xml" value="0.26458333333333334" />
@@ -44,7 +46,7 @@
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_attendance.xml" value="0.1" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_history.xml" value="0.176" />
-        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_home.xml" value="0.536" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_profile.xml" value="0.152" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_update.xml" value="0.2" />

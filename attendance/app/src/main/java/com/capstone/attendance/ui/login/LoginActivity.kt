@@ -48,7 +48,14 @@ class LoginActivity : AppCompatActivity() {
                     loginBinding.txtInputEmail.requestFocus()
                     return@setOnClickListener
                 }
-                if (pass.isEmpty() || pass.length < 8) {
+                if (pass.isEmpty()) {
+                    loginBinding.pbLogin.visibility = View.GONE
+                    loginBinding.tvProcessLogin.visibility = View.GONE
+                    loginBinding.txtInputPassword.error = PASSWORD_EMPTY
+                    loginBinding.txtInputPassword.requestFocus()
+                    return@setOnClickListener
+                }
+                if (pass.length < 8) {
                     loginBinding.pbLogin.visibility = View.GONE
                     loginBinding.tvProcessLogin.visibility = View.GONE
                     loginBinding.txtInputPassword.error = PASSWORD_LENGTH

@@ -56,6 +56,13 @@ class SignupActivity : AppCompatActivity() {
                 if (pass.isEmpty() || pass.length < 8) {
                     signupBinding.pbSignup.visibility = View.GONE
                     signupBinding.tvProcessLogin.visibility = View.GONE
+                    signupBinding.txtInputPassword.error = PASSWORD_EMPTY
+                    signupBinding.txtInputPassword.requestFocus()
+                    return@setOnClickListener
+                }
+                if (pass.length < 8) {
+                    signupBinding.pbSignup.visibility = View.GONE
+                    signupBinding.tvProcessLogin.visibility = View.GONE
                     signupBinding.txtInputPassword.error = PASSWORD_LENGTH
                     signupBinding.txtInputPassword.requestFocus()
                     return@setOnClickListener
