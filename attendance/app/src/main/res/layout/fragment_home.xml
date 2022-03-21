@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_500"
+    android:paddingBottom="@dimen/dimen_72"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dimen_72">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/banner_application"
@@ -170,14 +172,14 @@
             android:id="@+id/imageView8"
             android:layout_width="@dimen/dimen_32"
             android:layout_height="@dimen/dimen_32"
+            android:contentDescription="@string/icon_external_app"
             android:src="@drawable/ic_exit_to_app"
             app:layout_constraintBottom_toBottomOf="@+id/tv_features_app"
             app:layout_constraintEnd_toEndOf="@+id/cv_home"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/cv_home"
             app:layout_constraintTop_toTopOf="@+id/tv_features_app"
-            app:layout_constraintVertical_bias="0.454"
-            android:contentDescription="@string/icon_external_app" />
+            app:layout_constraintVertical_bias="0.454" />
 
         <TextView
             android:id="@+id/tv_features_app"
@@ -407,7 +409,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/cv_news_1"
             app:layout_constraintStart_toStartOf="@id/cv_news_1"
-            app:layout_constraintTop_toBottomOf="@+id/cv_news_1">
+            app:layout_constraintTop_toBottomOf="@+id/cv_news_1"
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -455,6 +458,70 @@
                     app:layout_constraintEnd_toEndOf="@+id/textView3"
                     app:layout_constraintStart_toStartOf="@+id/textView3"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_news_3"
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cv_news2"
+            app:layout_constraintStart_toStartOf="@+id/cv_news2"
+            app:layout_constraintTop_toBottomOf="@+id/cv_news2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageView4"
+                    android:layout_width="@dimen/dimen_64"
+                    android:layout_height="@dimen/dimen_64"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/news1"
+                    android:textSize="@dimen/dimen_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvDateNews1"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/dimen_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView4"
+                    app:layout_constraintEnd_toEndOf="@+id/textView9"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
