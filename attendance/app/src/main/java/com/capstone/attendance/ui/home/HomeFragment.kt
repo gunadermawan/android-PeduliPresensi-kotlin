@@ -1,5 +1,7 @@
 package com.capstone.attendance.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -66,7 +68,7 @@ class HomeFragment : Fragment() {
                 binding.tvWelcome.text = GOOD_EVENING
                 binding.ivEvening.visibility = View.VISIBLE
             }
-            in 19..23 ->{
+            in 19..23 -> {
                 binding.tvWelcome.text = GOOD_NIGHT
                 binding.ivNight.visibility = View.VISIBLE
             }
@@ -75,10 +77,86 @@ class HomeFragment : Fragment() {
                 binding.ivNight.visibility = View.VISIBLE
             }
         }
+        binding.iv1.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://www.laporgub.jatengprov.go.id/")).also {
+                startActivity(it)
+            }
+        }
+        binding.iv2.setOnClickListener {
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=id.lapor.bupati3")
+            ).also {
+                startActivity(it)
+            }
+        }
+        binding.iv3.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://covid19.tegalkab.go.id/")).also {
+                startActivity(it)
+            }
+        }
+        binding.iv4.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://ppid.tegalkab.go.id/")).also {
+                startActivity(it)
+            }
+        }
+        binding.iv5.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://utama.tegalkab.go.id/")).also {
+                startActivity(it)
+            }
+        }
+        binding.iv6.setOnClickListener {
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://disdukcapil.tegalkab.go.id/")
+            ).also {
+                startActivity(it)
+            }
+        }
+        binding.cvNews1.setOnClickListener {
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.jawapos.com/jpg-today/01/12/2021/buat-aplikasi-lapor-gub-cara-ganjar-respons-aduan-pungli-di-jateng/?msclkid=288292e4a9ef11ec8e1ab4d36f1a3a76")
+            ).also {
+                startActivity(it)
+            }
+        }
+        binding.cvNews2.setOnClickListener {
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://regional.kompas.com/read/2021/06/29/195730778/polres-tegal-kota-gelar-vaksinasi-covid-19-gratis-tanpa-surat-domisili?msclkid=50e6f242a9ef11eca876bccc7a4397d9")
+            ).also {
+                startActivity(it)
+            }
+        }
+        binding.cvNews3.setOnClickListener {
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://jatengprov.go.id/beritadaerah/layanan-aduan-lapor-bupati-tegal-hadir-di-versi-android/?msclkid=dc53f2f0a9f011ec8f5a399a0a2d84f9")
+            ).also {
+                startActivity(it)
+            }
+        }
+
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+//    override fun onClick(v: View?) {
+//        when (view) {
+//            binding.iv1 -> {
+//                Intent(
+//                    Intent.ACTION_VIEW,
+//                    Uri.parse("https://www.laporgub.jatengprov.go.id/")
+//                ).also {
+//                    startActivity(it)
+//                }
+//            }
+//        }
+//    }
 }
+

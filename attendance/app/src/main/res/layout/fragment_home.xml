@@ -35,9 +35,7 @@
             style="?attr/materialCardViewElevatedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:orientation="vertical"
             app:cardCornerRadius="16dp"
@@ -53,20 +51,18 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_user_profile_home"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_width="@dimen/dimen_72"
+                    android:layout_height="@dimen/dimen_72"
                     android:contentDescription="@string/banner_application"
                     android:src="@drawable/ic_person"
                     app:civ_border_color="@color/Vivid_Cerulean"
                     app:civ_border_width="2dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.081"
+                    app:layout_constraintHorizontal_bias="0.058"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.253" />
+                    app:layout_constraintVertical_bias="0.484" />
 
                 <ProgressBar
                     android:id="@+id/pbHomeProfile"
@@ -90,13 +86,12 @@
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toEndOf="@+id/iv_user_profile_home"
                     app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home"
-                    app:layout_constraintVertical_bias="0.148" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/tv_user_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="32dp"
                     android:text="@string/user"
@@ -107,7 +102,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_welcome"
                     app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
-                    app:layout_constraintVertical_bias="0.8" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/iv_morning"
@@ -157,12 +152,12 @@
                     android:contentDescription="@string/image_weather"
                     android:src="@drawable/ic_sunset"
                     android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_morning"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_user_home"
                     app:layout_constraintEnd_toEndOf="@+id/iv_morning"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/iv_morning"
-                    app:layout_constraintTop_toTopOf="@+id/iv_morning"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_welcome"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -186,6 +181,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/features_extra"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_16"
@@ -214,14 +210,14 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageButton"
+                    android:id="@+id/iv_1"
                     android:layout_width="@dimen/dimen_64"
                     android:layout_height="@dimen/dimen_64"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
+                    android:src="@drawable/ic_lapor_gub"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.056"
@@ -229,14 +225,27 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_icon_1"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_4"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_1"
+                    app:layout_constraintStart_toStartOf="@+id/iv_1"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_1"
+                    app:layout_constraintVertical_bias="0.0" />
+
                 <ImageView
-                    android:id="@+id/appCompatImageButton"
+                    android:id="@+id/iv_2"
                     android:layout_width="@dimen/dimen_64"
                     android:layout_height="@dimen/dimen_64"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
+                    android:src="@drawable/ic_lapor_bupati"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -244,58 +253,135 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_icon_2"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_5"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_2"
+                    app:layout_constraintStart_toStartOf="@+id/iv_2"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_2"
+                    app:layout_constraintVertical_bias="0.0" />
+
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/iv_3"
                     android:layout_width="@dimen/dimen_64"
                     android:layout_height="@dimen/dimen_64"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
+                    android:src="@drawable/ic_covid19"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.885"
-                    app:layout_constraintStart_toEndOf="@+id/appCompatImageButton"
+                    app:layout_constraintStart_toEndOf="@+id/iv_2"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
-                <ImageView
-                    android:layout_width="@dimen/dimen_64"
-                    android:layout_height="@dimen/dimen_64"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageButton"
-                    app:layout_constraintStart_toStartOf="@+id/imageButton"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_icon_3"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_6"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_3"
+                    app:layout_constraintStart_toStartOf="@+id/iv_3"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_3"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:dividerInsetEnd="@dimen/dimen_16"
+                    app:dividerInsetStart="@dimen/dimen_16"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_4"
+                    app:layout_constraintEnd_toEndOf="@+id/textView15"
+                    app:layout_constraintStart_toStartOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
                 <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="@dimen/dimen_64"
-                    android:layout_height="@dimen/dimen_64"
+                    android:id="@+id/iv_4"
+                    android:layout_width="@dimen/dimen_72"
+                    android:layout_height="@dimen/dimen_72"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
+                    android:src="@drawable/ic_ppid"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/appCompatImageButton"
-                    app:layout_constraintStart_toStartOf="@+id/appCompatImageButton"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton" />
+                    app:layout_constraintEnd_toEndOf="@+id/iv_1"
+                    app:layout_constraintStart_toStartOf="@+id/iv_1"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/info_icon_4"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_4"
+                    app:layout_constraintStart_toStartOf="@+id/iv_4"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_4"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
+                    android:id="@+id/iv_5"
                     android:layout_width="@dimen/dimen_64"
                     android:layout_height="@dimen/dimen_64"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/image_of_content"
-                    android:src="@drawable/ic_camera"
+                    android:src="@drawable/ic_pemkab"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                    app:layout_constraintEnd_toEndOf="@+id/iv_2"
+                    app:layout_constraintStart_toStartOf="@+id/iv_2"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_2" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_icon_5"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_5"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_5"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_5"
+                    app:layout_constraintVertical_bias="0.41000003" />
+
+                <ImageView
+                    android:id="@+id/iv_6"
+                    android:layout_width="@dimen/dimen_64"
+                    android:layout_height="@dimen/dimen_64"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/image_of_content"
+                    android:src="@drawable/ic_disdukcapil"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_3"
+                    app:layout_constraintStart_toStartOf="@+id/iv_3"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_icon_6"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_6"
+                    app:layout_constraintStart_toStartOf="@+id/iv_6"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_6"
+                    app:layout_constraintVertical_bias="0.45999998" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -357,7 +443,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_person"
+                    android:src="@drawable/article_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -386,9 +472,11 @@
                     android:id="@+id/tv_news2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:text="@string/tvDateNews1"
                     android:textColor="@color/light_white"
-                    android:textSize="@dimen/dimen_12"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/tv_news1"
                     app:layout_constraintStart_toStartOf="@+id/tv_news1"
@@ -424,7 +512,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_person"
+                    android:src="@drawable/article_2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -440,7 +528,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="32dp"
-                    android:text="@string/news1"
+                    android:text="@string/news2"
                     android:textSize="@dimen/dimen_16"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -451,10 +539,10 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/tvDateNews1"
+                    android:text="@string/tvDateNews2"
                     android:textColor="@color/light_white"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView3"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView3"
                     app:layout_constraintStart_toStartOf="@+id/textView3"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -488,7 +576,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_person"
+                    android:src="@drawable/article_3"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -504,7 +592,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="32dp"
-                    android:text="@string/news1"
+                    android:text="@string/news3"
                     android:textSize="@dimen/dimen_16"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -515,10 +603,10 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/tvDateNews1"
+                    android:text="@string/tvDateNews3"
                     android:textColor="@color/light_white"
-                    android:textSize="@dimen/dimen_12"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView4"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView9"
                     app:layout_constraintStart_toStartOf="@+id/textView9"
                     app:layout_constraintTop_toBottomOf="@+id/textView9" />
