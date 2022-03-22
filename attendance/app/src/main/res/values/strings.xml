@@ -72,10 +72,20 @@
     <string name="your_emails">Email Anda</string>
     <string name="banner_application">banner_application</string>
     <string name="image_of_content">image of Content</string>
-    <string name="news1">Vaksinasi Massal di Kota Tegal telah dilaksanakan</string>
-    <string name="tvDateNews1">Radar Tegal | 2 Menit yang lalu</string>
+    <string name="news1">Buat Aplikasi Lapor Gub, Cara Ganjar Respons Aduan Pungli di Jateng</string>
+    <string name="news2">Polres Tegal Kota Gelar Vaksinasi Covid-19 Gratis Tanpa Surat Domisili</string>
+    <string name="news3">Layanan Aduan Lapor Bupati Tegal Hadir di Versi Android</string>
+    <string name="tvDateNews1">Jawa Pos | 2 Menit yang lalu</string>
+    <string name="tvDateNews2">Kompas | 15 Menit yang lalu</string>
+    <string name="tvDateNews3">Republika | 1 Jam yang lalu</string>
     <string name="news_selected">#BeritaPilihan</string>
     <string name="icon_news">icon news</string>
     <string name="features_extra">Fitur Eksternal</string>
     <string name="icon_external_app">icon eksternal app</string>
+    <string name="info_icon_1">Lapor Gubernur</string>
+    <string name="info_icon_2">Lapor Bupati</string>
+    <string name="info_icon_3">Info Covid-19</string>
+    <string name="info_icon_4">PPID Kab. Tegal</string>
+    <string name="info_icon_5">Portal Kab. Tegal</string>
+    <string name="info_icon_6">Disdukcapil Kab. Tegal</string>
 </resources>

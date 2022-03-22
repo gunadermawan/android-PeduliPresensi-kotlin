@@ -15,8 +15,9 @@
         <entry key="..\:/Users/zzz/Documents/GitHub/msib-capstone/attendance/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/zzz/Documents/GitHub/msib-capstone/attendance/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26458333333333334" />
-        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable-v24/round_corner_nav.xml" value="0.16547231270358306" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable-v24/round_corner_nav.xml" value="0.144" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable-v24/round_courners_nav.xml" value="0.16547231270358306" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/bg_attendance_success.xml" value="0.1575" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/bg_checkin_success.xml" value="0.25092592592592594" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_banner_apps.xml" value="0.1575" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/drawable/ic_bug.xml" value="0.26458333333333334" />
@@ -46,7 +47,7 @@
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_attendance.xml" value="0.1" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_history.xml" value="0.176" />
-        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_home.xml" value="0.536" />
+        <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_home.xml" value="0.6" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_profile.xml" value="0.152" />
         <entry key="..\:/mobile programming/Kampus-merdeka/capstone/msib-capstone/attendance/app/src/main/res/layout/fragment_update.xml" value="0.2" />
@@ -65,5 +66,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.136" />
+      </ProjectState>
+    </option>
   </component>
 </project>
