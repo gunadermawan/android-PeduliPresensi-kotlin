@@ -46,8 +46,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="wrap_content">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_user_profile_home"
@@ -149,6 +148,7 @@
                     android:id="@+id/iv_evening"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:contentDescription="@string/image_weather"
                     android:src="@drawable/ic_sunset"
                     android:visibility="invisible"
@@ -156,8 +156,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/iv_morning"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/iv_morning"
-                    app:layout_constraintTop_toTopOf="@+id/tv_welcome"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="@+id/iv_morning"
+                    app:layout_constraintVertical_bias="0.48" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
