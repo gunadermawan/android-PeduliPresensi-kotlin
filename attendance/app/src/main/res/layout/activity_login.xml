@@ -13,13 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4">
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.41000003">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,9 +29,12 @@
                 android:id="@+id/tv_login"
                 style="@style/TextContent_login"
                 android:text="@string/login"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInput_email"
@@ -42,6 +45,10 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/email"
+                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                app:boxCornerRadiusTopStart="@dimen/dimen_32"
                 app:endIconMode="clear_text"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
@@ -50,10 +57,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_login"
                 app:layout_goneMarginStart="@dimen/dimen_32"
-                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
-                app:boxCornerRadiusBottomStart="@dimen/dimen_32"
-                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                app:boxCornerRadiusTopStart="@dimen/dimen_32"
                 app:startIconDrawable="@drawable/ic_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -70,15 +73,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
+                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                app:boxCornerRadiusTopStart="@dimen/dimen_32"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="@+id/txtInput_email"
                 app:layout_constraintStart_toStartOf="@+id/txtInput_email"
                 app:layout_constraintTop_toBottomOf="@+id/txtInput_email"
-                app:startIconDrawable="@drawable/ic_password"
-                app:boxCornerRadiusTopStart="@dimen/dimen_32"
-                app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
-                app:boxCornerRadiusBottomStart="@dimen/dimen_32">
+                app:startIconDrawable="@drawable/ic_password">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
@@ -133,17 +137,17 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/dimen_72"
+        android:layout_height="@dimen/dimen_72"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/image_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012"
+        app:layout_constraintVertical_bias="0.100000024"
         app:srcCompat="@drawable/ic_city" />
 
     <TextView
@@ -157,6 +161,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cv_login"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.0" />
@@ -165,7 +170,6 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="@string/government"
         android:textColor="@color/white"
         android:textSize="16sp"
