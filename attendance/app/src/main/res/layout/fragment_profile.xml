@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_500"
+    android:paddingBottom="@dimen/dimen_48"
     tools:context=".ui.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp">
+        android:paddingBottom="@dimen/dimen_48">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvForm"
