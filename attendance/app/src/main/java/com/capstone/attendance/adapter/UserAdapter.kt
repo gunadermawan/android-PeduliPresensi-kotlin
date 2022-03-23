@@ -21,15 +21,13 @@ class UserAdapter(private val userList: ArrayList<User>) :
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentItem = userList[position]
         holder.name.text = currentItem.name
-//        holder.time.text = currentItem.time
         if (currentItem.time!! >= "09:00") {
-            holder.time.text = "Presensi Anda terlambat!"
+            holder.time.text = holder.itemView.context.getString(R.string.attendancLate)
             holder.timeAttendance.visibility = View.GONE
         } else {
             holder.time.text = currentItem.time
         }
 
-//        holder.icOk.visibility = View.VISIBLE
         if (currentItem.time!! >= "09:00" && currentItem.time!! <= "12:00") {
             holder.icBad.visibility = View.VISIBLE
             holder.icOk.visibility = View.GONE
