@@ -35,8 +35,8 @@
             style="?attr/materialCardViewElevatedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_24"
             android:orientation="vertical"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -46,7 +46,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_4">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_user_profile_home"
