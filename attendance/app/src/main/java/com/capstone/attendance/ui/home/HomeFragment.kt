@@ -137,26 +137,11 @@ class HomeFragment : Fragment() {
                 startActivity(it)
             }
         }
-
-
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-//    override fun onClick(v: View?) {
-//        when (view) {
-//            binding.iv1 -> {
-//                Intent(
-//                    Intent.ACTION_VIEW,
-//                    Uri.parse("https://www.laporgub.jatengprov.go.id/")
-//                ).also {
-//                    startActivity(it)
-//                }
-//            }
-//        }
-//    }
 }
 
