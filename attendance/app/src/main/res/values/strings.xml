@@ -4,7 +4,9 @@
     <string name="home">Beranda</string>
     <string name="attendance">Presensi</string>
     <string name="attendancDialog">Presensi dapat dilakukan</string>
-    <string name="attendancLate">Presensi Anda terlambat!</string>
+    <string name="attendancLate">Presensi Anda terlambat kurang dari 1 jam</string>
+    <string name="attendancLate2">Presensi Anda terlambat kurang dari 2 jam</string>
+    <string name="attendancLate3">Presensi Anda terlambat kurang dari 3 jam</string>
     <string name="attendancMessage">ketuk tombol "presensi sekarang" untuk memulai presensi Anda</string>
     <string name="attendancNow">Presensi sekarang</string>
     <string name="histori">Histori</string>
