@@ -40,6 +40,7 @@ class UserAdapter(private val userList: ArrayList<User>) :
                 holder.icBad.visibility = View.VISIBLE
                 holder.icOk.visibility = View.GONE
             }
+
             else -> {
                 holder.time.text = currentItem.time
                 holder.icBad.visibility = View.GONE
