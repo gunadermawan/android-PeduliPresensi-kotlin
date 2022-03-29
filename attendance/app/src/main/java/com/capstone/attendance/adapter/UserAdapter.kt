@@ -21,19 +21,30 @@ class UserAdapter(private val userList: ArrayList<User>) :
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentItem = userList[position]
         holder.name.text = currentItem.name
-        if (currentItem.time!! >= "09:00") {
-            holder.time.text = holder.itemView.context.getString(R.string.attendancLate)
-            holder.timeAttendance.visibility = View.GONE
-        } else {
-            holder.time.text = currentItem.time
-        }
-
-        if (currentItem.time!! >= "09:00" && currentItem.time!! <= "12:00") {
-            holder.icBad.visibility = View.VISIBLE
-            holder.icOk.visibility = View.GONE
-        } else {
-            holder.icBad.visibility = View.GONE
-            holder.icOk.visibility = View.VISIBLE
+        when {
+            currentItem.time!! >= "09:00" && currentItem.time!! <= "10:00" -> {
+                holder.time.text = holder.itemView.context.getString(R.string.attendancLate)
+                holder.timeAttendance.visibility = View.GONE
+                holder.icBad.visibility = View.VISIBLE
+                holder.icOk.visibility = View.GONE
+            }
+            currentItem.time!! >= "10:00" && currentItem.time!! <= "11:00" -> {
+                holder.time.text = holder.itemView.context.getString(R.string.attendancLate2)
+                holder.timeAttendance.visibility = View.GONE
+                holder.icBad.visibility = View.VISIBLE
+                holder.icOk.visibility = View.GONE
+            }
+            currentItem.time!! >= "11:00" && currentItem.time!! <= "12:00" -> {
+                holder.time.text = holder.itemView.context.getString(R.string.attendancLate3)
+                holder.timeAttendance.visibility = View.GONE
+                holder.icBad.visibility = View.VISIBLE
+                holder.icOk.visibility = View.GONE
+            }
+            else -> {
+                holder.time.text = currentItem.time
+                holder.icBad.visibility = View.GONE
+                holder.icOk.visibility = View.VISIBLE
+            }
         }
     }
 

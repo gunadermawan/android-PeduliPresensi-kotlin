@@ -163,8 +163,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/cv_signup"
         app:layout_constraintEnd_toEndOf="@+id/cv_signup"
-        app:layout_constraintStart_toStartOf="@+id/cv_signup"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/cv_signup" />
 
     <ProgressBar
         android:id="@+id/pb_signup"

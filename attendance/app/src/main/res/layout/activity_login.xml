@@ -176,8 +176,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cv_login"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ProgressBar
         android:id="@+id/pb_login"
