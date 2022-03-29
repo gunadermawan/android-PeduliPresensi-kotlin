@@ -128,6 +128,7 @@
         android:layout_width="@dimen/dimen_72"
         android:layout_height="@dimen/dimen_72"
         android:layout_marginTop="64dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/image_app"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/cv_signup"
@@ -146,13 +147,14 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="@+id/cv_signup"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/cv_signup"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -161,7 +163,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/cv_signup"
         app:layout_constraintEnd_toEndOf="@+id/cv_signup"
-        app:layout_constraintStart_toStartOf="@+id/cv_signup"
+        app:layout_constraintStart_toStartOf="@+id/cv_signup" />
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ProgressBar
