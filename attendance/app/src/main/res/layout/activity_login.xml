@@ -144,7 +144,6 @@
         android:contentDescription="@string/image_app"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/cv_login"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/cv_login"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_city" />
