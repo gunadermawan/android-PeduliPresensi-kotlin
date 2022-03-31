@@ -180,15 +180,22 @@ class AttendanceFragment : Fragment() {
                 }
             } else {
                 stopScanLocation()
-                FunctionLibrary.toast(
-                    context as Activity,
-                    TOAST_INFO,
-                    ATTENDANCE_TIME,
-                    MotionToastStyle.INFO,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                )
+//                FunctionLibrary.toast(
+//                    context as Activity,
+//                    TOAST_INFO,
+//                    ATTENDANCE_TIME,
+//                    MotionToastStyle.INFO,
+//                    MotionToast.GRAVITY_BOTTOM,
+//                    MotionToast.LONG_DURATION,
+//                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+//                )
+                context?.let {
+                    MaterialAlertDialogBuilder(it)
+                        .setTitle("Presensi tidak dapat dilakukan!")
+                        .setMessage("Jam presensi dimulai pukul 07:00 - 09:00")
+                        .setPositiveButton("oke") { _, _ -> }
+                        .show()
+                }
             }
         } else {
             FunctionLibrary.toast(
