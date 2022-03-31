@@ -141,7 +141,7 @@ class AttendanceFragment : Fragment() {
                                 } else {
                                     simpleDialog(
                                         "DI LUAR JANGKAUAN!",
-                                        "Anda berada diluar jangkauan presensi, silahkan mendekat dan coba lagi.",
+                                        "Anda berada diluar jangkauan presensi, silahkan mendekat ke area presensi dan coba lagi.",
                                         "oke"
                                     )
                                     binding.tvCheckIn.visibility = View.VISIBLE
@@ -179,7 +179,7 @@ class AttendanceFragment : Fragment() {
 //                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
 //                )
                 simpleDialog(
-                    "PRESENSI DITOLAK",
+                    "PRESENSI DITOLAK!",
                     "Jam presensi dimulai pukul 07:00 - 09:00",
                     "oke"
                 )
