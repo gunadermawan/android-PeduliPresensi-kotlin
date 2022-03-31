@@ -139,17 +139,10 @@ class AttendanceFragment : Fragment() {
                                         )
                                     )
                                 } else {
-                                    FunctionLibrary.toast(
-                                        context as Activity,
-                                        TOAST_WARNING,
-                                        OUT_OF_RANGE,
-                                        MotionToastStyle.WARNING,
-                                        MotionToast.GRAVITY_BOTTOM,
-                                        MotionToast.LONG_DURATION,
-                                        ResourcesCompat.getFont(
-                                            context as Activity,
-                                            R.font.helveticabold
-                                        )
+                                    simpleDialog(
+                                        "DI LUAR JANGKAUAN!",
+                                        "Anda berada diluar jangkauan presensi, silahkan mendekat dan coba lagi.",
+                                        "oke"
                                     )
                                     binding.tvCheckIn.visibility = View.VISIBLE
                                 }
@@ -163,14 +156,10 @@ class AttendanceFragment : Fragment() {
                             Looper.getMainLooper()
                         )
                     } else {
-                        FunctionLibrary.toast(
-                            context as Activity,
-                            TOAST_WARNING,
-                            PERMISSION_GPS,
-                            MotionToastStyle.WARNING,
-                            MotionToast.GRAVITY_BOTTOM,
-                            MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                        simpleDialog(
+                            "GPS MATI!",
+                            "Aktifkan GPS untuk memulai presensi",
+                            "oke"
                         )
                         stopScanLocation()
                     }
@@ -189,13 +178,11 @@ class AttendanceFragment : Fragment() {
 //                    MotionToast.LONG_DURATION,
 //                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
 //                )
-                context?.let {
-                    MaterialAlertDialogBuilder(it)
-                        .setTitle("Presensi tidak dapat dilakukan!")
-                        .setMessage("Jam presensi dimulai pukul 07:00 - 09:00")
-                        .setPositiveButton("oke") { _, _ -> }
-                        .show()
-                }
+                simpleDialog(
+                    "PRESENSI DITOLAK",
+                    "Jam presensi dimulai pukul 07:00 - 09:00",
+                    "oke"
+                )
             }
         } else {
             FunctionLibrary.toast(
@@ -208,6 +195,16 @@ class AttendanceFragment : Fragment() {
                 ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
             )
             stopScanLocation()
+        }
+    }
+
+    private fun simpleDialog(title: String, message: String, PossitiveButton: String) {
+        context?.let {
+            MaterialAlertDialogBuilder(it)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(PossitiveButton) { _, _ -> }
+                .show()
         }
     }
 
