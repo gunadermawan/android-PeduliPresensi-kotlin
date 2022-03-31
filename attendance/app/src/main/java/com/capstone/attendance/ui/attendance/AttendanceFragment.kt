@@ -40,7 +40,7 @@ class AttendanceFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentAttendanceBinding.inflate(inflater, container, false)
         return binding.root
@@ -140,9 +140,8 @@ class AttendanceFragment : Fragment() {
                                     )
                                 } else {
                                     simpleDialog(
-                                        "DI LUAR JANGKAUAN!",
-                                        "Anda berada diluar jangkauan presensi, silahkan mendekat ke area presensi dan coba lagi.",
-                                        "oke"
+                                        OUT_OF_RANGE,
+                                        OUT_OF_RANGE_MESSAGE
                                     )
                                     binding.tvCheckIn.visibility = View.VISIBLE
                                 }
@@ -157,9 +156,8 @@ class AttendanceFragment : Fragment() {
                         )
                     } else {
                         simpleDialog(
-                            "GPS MATI!",
-                            "Aktifkan GPS untuk memulai presensi",
-                            "oke"
+                            GPS_STATUS,
+                            GPS_MESSAGE
                         )
                         stopScanLocation()
                     }
@@ -169,19 +167,9 @@ class AttendanceFragment : Fragment() {
                 }
             } else {
                 stopScanLocation()
-//                FunctionLibrary.toast(
-//                    context as Activity,
-//                    TOAST_INFO,
-//                    ATTENDANCE_TIME,
-//                    MotionToastStyle.INFO,
-//                    MotionToast.GRAVITY_BOTTOM,
-//                    MotionToast.LONG_DURATION,
-//                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-//                )
                 simpleDialog(
-                    "PRESENSI DITOLAK!",
-                    "Jam presensi dimulai pukul 07:00 - 09:00",
-                    "oke"
+                    ATTENDANCE_DENIED,
+                    ATTENDANCE_TIME
                 )
             }
         } else {
@@ -198,12 +186,12 @@ class AttendanceFragment : Fragment() {
         }
     }
 
-    private fun simpleDialog(title: String, message: String, PossitiveButton: String) {
+    private fun simpleDialog(title: String, message: String) {
         context?.let {
             MaterialAlertDialogBuilder(it)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(PossitiveButton) { _, _ -> }
+                .setPositiveButton("oke") { _, _ -> }
                 .show()
         }
     }
