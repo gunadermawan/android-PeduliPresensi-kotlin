@@ -71,10 +71,10 @@ object FunctionLibrary {
     }
 
     fun timeAttendance(): Boolean {
-        return FunctionLibrary.getCurrentTime()!! > "07:00" && FunctionLibrary.getCurrentTime()!! < "09:00"
+        return getCurrentTime()!! > "07:00" && getCurrentTime()!! < "09:00"
     }
 
     fun timeAttendanceLate(): Boolean {
-        return FunctionLibrary.getCurrentTime()!! > "09:00" && FunctionLibrary.getCurrentTime()!! < "12:00"
+        return getCurrentTime()!! > "09:00" && getCurrentTime()!! < "12:00"
     }
 }
