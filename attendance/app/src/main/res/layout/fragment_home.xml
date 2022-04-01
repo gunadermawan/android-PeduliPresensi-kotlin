@@ -53,6 +53,9 @@
                     android:id="@+id/iv_user_profile_home"
                     android:layout_width="@dimen/dimen_72"
                     android:layout_height="@dimen/dimen_72"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:contentDescription="@string/banner_application"
                     android:src="@drawable/ic_person"
                     app:civ_border_color="@color/Vivid_Cerulean"
@@ -83,8 +86,8 @@
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.069"
-                    app:layout_constraintStart_toEndOf="@+id/iv_user_profile_home"
+                    app:layout_constraintHorizontal_bias="0.483"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/iv_user_profile_home"
                     app:layout_constraintVertical_bias="0.0" />
 
