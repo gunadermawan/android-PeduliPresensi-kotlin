@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.capstone.attendance.R
 import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentAttendanceBinding
@@ -26,6 +27,9 @@ import com.google.android.gms.location.*
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
 import java.util.*
@@ -120,40 +124,46 @@ class AttendanceFragment : Fragment() {
                                 val currentLong = location.longitude
                                 val destinationLat = getAddress()[0].latitude
                                 val destinationLong = getAddress()[0].longitude
-                                val distance = FunctionLibrary.calculateDistance(
-                                    currentLat, currentLong, destinationLat, destinationLong
-                                ) * 1000
-                                Log.d(TAG, "$TAG_RESULT - $distance")
-                                if (distance < MEASURING_DISTANCE) {
-                                    showDialog()
-                                    FunctionLibrary.toast(
-                                        context as Activity,
-                                        TOAST_SUCCESS,
-                                        LOCATION_FOUND,
-                                        MotionToastStyle.SUCCESS,
-                                        MotionToast.GRAVITY_BOTTOM,
-                                        MotionToast.LONG_DURATION,
-                                        ResourcesCompat.getFont(
-                                            context as Activity,
-                                            R.font.helveticabold
-                                        )
-                                    )
-                                } else {
-                                    simpleDialog(
-                                        OUT_OF_RANGE,
-                                        OUT_OF_RANGE_MESSAGE
-                                    )
-                                    binding.tvCheckIn.visibility = View.VISIBLE
+                                lifecycleScope.launch(Dispatchers.Default) {
+                                    val distance = FunctionLibrary.calculateDistance(
+                                        currentLat, currentLong, destinationLat, destinationLong
+                                    ) * 1000
+                                    Log.d(TAG, "$TAG_RESULT - $distance")
+                                    withContext(Dispatchers.Main) {
+                                        if (distance < MEASURING_DISTANCE) {
+                                            showDialog()
+                                            FunctionLibrary.toast(
+                                                context as Activity,
+                                                TOAST_SUCCESS,
+                                                LOCATION_FOUND,
+                                                MotionToastStyle.SUCCESS,
+                                                MotionToast.GRAVITY_BOTTOM,
+                                                MotionToast.LONG_DURATION,
+                                                ResourcesCompat.getFont(
+                                                    context as Activity,
+                                                    R.font.helveticabold
+                                                )
+                                            )
+                                        } else {
+                                            simpleDialog(
+                                                OUT_OF_RANGE,
+                                                OUT_OF_RANGE_MESSAGE
+                                            )
+                                            binding.tvCheckIn.visibility = View.VISIBLE
+                                        }
+                                    }
                                 }
                                 fusedLocationProviderClient?.removeLocationUpdates(this)
                                 stopScanLocation()
                             }
                         }
-                        fusedLocationProviderClient?.requestLocationUpdates(
-                            locationRequest,
-                            locationCallBack,
-                            Looper.getMainLooper()
-                        )
+                        lifecycleScope.launch(Dispatchers.Default) {
+                            fusedLocationProviderClient?.requestLocationUpdates(
+                                locationRequest,
+                                locationCallBack,
+                                Looper.getMainLooper()
+                            )
+                        }
                     } else {
                         simpleDialog(
                             GPS_STATUS,

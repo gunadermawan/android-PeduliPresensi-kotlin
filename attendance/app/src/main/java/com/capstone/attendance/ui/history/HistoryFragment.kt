@@ -1,6 +1,5 @@
 package com.capstone.attendance.ui.history
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,6 +17,7 @@ import com.capstone.attendance.data.remote.User
 import com.capstone.attendance.databinding.FragmentHistoryBinding
 import com.capstone.attendance.utils.REALTIME_DB
 import com.capstone.attendance.utils.REALTIME_DB_CANCELED
+import com.capstone.attendance.utils.TAG
 import com.capstone.attendance.viewModel.HistoryViewModel
 import com.google.firebase.database.*
 
@@ -36,7 +36,7 @@ class HistoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         historyViewModel =
             ViewModelProvider(this)[HistoryViewModel::class.java]
