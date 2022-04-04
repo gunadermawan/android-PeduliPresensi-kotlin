@@ -7,7 +7,7 @@
     <string name="attendancLate">Anda terlambat </string>
     <string name="attendancLate2">Anda terlambat lebih dari 1 jam</string>
     <string name="attendancLate3">Anda terlambat kurang dari 2 jam</string>
-    <string name="attendancMessage">ketuk tombol "presensi sekarang" untuk memulai presensi Anda</string>
+    <string name="attendancMessage">ketuk tombol <bold>"presensi sekarang"</bold> untuk memulai presensi Anda</string>
     <string name="attendancNow">Presensi sekarang</string>
     <string name="histori">Histori</string>
     <string name="profile">Akun</string>
