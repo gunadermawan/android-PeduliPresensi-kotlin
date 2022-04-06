@@ -34,33 +34,35 @@ class LoginActivity : AppCompatActivity() {
                 loginBinding.tvProcessLogin.visibility = View.VISIBLE
                 val email = loginBinding.etEmail.text.toString().trim()
                 val pass = loginBinding.etPassword.text.toString().trim()
-                if (email.isEmpty()) {
-                    loginBinding.pbLogin.visibility = View.GONE
-                    loginBinding.tvProcessLogin.visibility = View.GONE
-                    loginBinding.txtInputEmail.error = EMAIL_EMPTY
-                    loginBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    loginBinding.pbLogin.visibility = View.GONE
-                    loginBinding.tvProcessLogin.visibility = View.GONE
-                    loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
-                    loginBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
-                }
-                if (pass.isEmpty()) {
-                    loginBinding.pbLogin.visibility = View.GONE
-                    loginBinding.tvProcessLogin.visibility = View.GONE
-                    loginBinding.txtInputPassword.error = PASSWORD_EMPTY
-                    loginBinding.txtInputPassword.requestFocus()
-                    return@setOnClickListener
-                }
-                if (pass.length < 8) {
-                    loginBinding.pbLogin.visibility = View.GONE
-                    loginBinding.tvProcessLogin.visibility = View.GONE
-                    loginBinding.txtInputPassword.error = PASSWORD_LENGTH
-                    loginBinding.txtInputPassword.requestFocus()
-                    return@setOnClickListener
+                when {
+                    email.isEmpty() -> {
+                        loginBinding.pbLogin.visibility = View.GONE
+                        loginBinding.tvProcessLogin.visibility = View.GONE
+                        loginBinding.txtInputEmail.error = EMAIL_EMPTY
+                        loginBinding.txtInputEmail.requestFocus()
+                        return@setOnClickListener
+                    }
+                    !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                        loginBinding.pbLogin.visibility = View.GONE
+                        loginBinding.tvProcessLogin.visibility = View.GONE
+                        loginBinding.txtInputEmail.error = EMAIL_NOT_VALID
+                        loginBinding.txtInputEmail.requestFocus()
+                        return@setOnClickListener
+                    }
+                    pass.isEmpty() -> {
+                        loginBinding.pbLogin.visibility = View.GONE
+                        loginBinding.tvProcessLogin.visibility = View.GONE
+                        loginBinding.txtInputPassword.error = PASSWORD_EMPTY
+                        loginBinding.txtInputPassword.requestFocus()
+                        return@setOnClickListener
+                    }
+                    pass.length < 8 -> {
+                        loginBinding.pbLogin.visibility = View.GONE
+                        loginBinding.tvProcessLogin.visibility = View.GONE
+                        loginBinding.txtInputPassword.error = PASSWORD_LENGTH
+                        loginBinding.txtInputPassword.requestFocus()
+                        return@setOnClickListener
+                    }
                 }
                 loginUser(email, pass)
             } else {
@@ -93,19 +95,28 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginUser(email: String, pass: String) {
         auth.signInWithEmailAndPassword(email, pass)
-            .addOnCompleteListener(this) {
-                if (it.isSuccessful) {
+            .addOnCompleteListener(this) { login ->
+                if (login.isSuccessful) {
                     Intent(this@LoginActivity, MainActivity::class.java).also { intent ->
                         intent.flags =
                             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     }
-                } else {
-                    loginBinding.pbLogin.visibility = View.GONE
-                    loginBinding.tvProcessLogin.visibility = View.GONE
-                    loginBinding.txtInputPassword.error = WRONG_PASSWORD
-                    loginBinding.txtInputPassword.requestFocus()
                 }
+            }
+            .addOnFailureListener {
+                loginBinding.pbLogin.visibility = View.GONE
+                loginBinding.tvProcessLogin.visibility = View.GONE
+                FunctionLibrary.toast(
+                    this,
+                    TOAST_ERROR,
+                    "${it.message}",
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helveticabold)
+                )
+                loginBinding.txtInputPassword.requestFocus()
             }
     }
 
