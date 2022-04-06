@@ -28,9 +28,7 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         signupBinding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(signupBinding.root)
-        if (supportActionBar != null) {
-            supportActionBar?.hide()
-        }
+        supportActionBar?.hide()
         signupBinding.txtInputEmail.requestFocus()
         auth = FirebaseAuth.getInstance()
         signupBinding.btnRegister.setOnClickListener {
@@ -39,33 +37,35 @@ class SignupActivity : AppCompatActivity() {
                 signupBinding.tvProcessLogin.visibility = View.VISIBLE
                 val email = signupBinding.etEmail.text.toString().trim()
                 val pass = signupBinding.etPassword.text.toString().trim()
-                if (email.isEmpty()) {
-                    signupBinding.pbSignup.visibility = View.GONE
-                    signupBinding.tvProcessLogin.visibility = View.GONE
-                    signupBinding.txtInputEmail.error = EMAIL_EMPTY
-                    signupBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    signupBinding.pbSignup.visibility = View.GONE
-                    signupBinding.tvProcessLogin.visibility = View.GONE
-                    signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
-                    signupBinding.txtInputEmail.requestFocus()
-                    return@setOnClickListener
-                }
-                if (pass.isEmpty() || pass.length < 8) {
-                    signupBinding.pbSignup.visibility = View.GONE
-                    signupBinding.tvProcessLogin.visibility = View.GONE
-                    signupBinding.txtInputPassword.error = PASSWORD_EMPTY
-                    signupBinding.txtInputPassword.requestFocus()
-                    return@setOnClickListener
-                }
-                if (pass.length < 8) {
-                    signupBinding.pbSignup.visibility = View.GONE
-                    signupBinding.tvProcessLogin.visibility = View.GONE
-                    signupBinding.txtInputPassword.error = PASSWORD_LENGTH
-                    signupBinding.txtInputPassword.requestFocus()
-                    return@setOnClickListener
+                when {
+                    email.isEmpty() -> {
+                        signupBinding.pbSignup.visibility = View.GONE
+                        signupBinding.tvProcessLogin.visibility = View.GONE
+                        signupBinding.txtInputEmail.error = EMAIL_EMPTY
+                        signupBinding.txtInputEmail.requestFocus()
+                        return@setOnClickListener
+                    }
+                    !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                        signupBinding.pbSignup.visibility = View.GONE
+                        signupBinding.tvProcessLogin.visibility = View.GONE
+                        signupBinding.txtInputEmail.error = EMAIL_NOT_VALID
+                        signupBinding.txtInputEmail.requestFocus()
+                        return@setOnClickListener
+                    }
+                    pass.isEmpty() || pass.length < 8 -> {
+                        signupBinding.pbSignup.visibility = View.GONE
+                        signupBinding.tvProcessLogin.visibility = View.GONE
+                        signupBinding.txtInputPassword.error = PASSWORD_EMPTY
+                        signupBinding.txtInputPassword.requestFocus()
+                        return@setOnClickListener
+                    }
+                    pass.length < 8 -> {
+                        signupBinding.pbSignup.visibility = View.GONE
+                        signupBinding.tvProcessLogin.visibility = View.GONE
+                        signupBinding.txtInputPassword.error = PASSWORD_LENGTH
+                        signupBinding.txtInputPassword.requestFocus()
+                        return@setOnClickListener
+                    }
                 }
                 registerUser(email, pass)
             } else {
