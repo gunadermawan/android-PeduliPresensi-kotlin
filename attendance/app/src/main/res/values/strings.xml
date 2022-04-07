@@ -27,7 +27,7 @@
     <string name="email_verification">Verifikasi Email</string>
     <string name="reset_password">Reset Password Anda</string>
     <string name="confirm_password">Konfirmasi Password</string>
-    <string name="update">Update</string>
+    <string name="update">Update Foto</string>
     <string name="change_password">Ganti Password</string>
     <string name="new_password">password baru</string>
     <string name="register_succes">Registrasi Berhasil!</string>
@@ -50,7 +50,8 @@
     <string name="not_have_account">Belum punya akun?</string>
     <string name="date_attendance">tanggal presensi:</string>
     <string name="get_data">Mengambil data</string>
-    <string name="email_active">*Pastikan email Anda aktif</string>
+    <string name="email_active">* Pastikan email Anda aktif</string>
+    <string name="username_active">Username digunakan untuk identifikasi presensi Anda</string>
     <string name="email_registered">*pastikan email Anda telah terdaftar</string>
     <string name="password_length">*Password harus lebih dari  8 karakter</string>
     <string name="add_password">*Masukan password akun Anda</string>
@@ -91,4 +92,10 @@
     <string name="info_icon_4">PPID Kab. Tegal</string>
     <string name="info_icon_5">Portal Kab. Tegal</string>
     <string name="info_icon_6">Disdukcapil Kab. Tegal</string>
+    <string name="changeUsername">Ganti Username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_username">Masukan username</string>
+    <string name="update_username">update username</string>
+    <string name="hint_username">masukan username</string>
 </resources>

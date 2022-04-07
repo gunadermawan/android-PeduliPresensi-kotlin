@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         profileBinding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return profileBinding.root
@@ -70,14 +70,7 @@ class ProfileFragment : Fragment() {
                 user?.photoUrl == null -> Uri.parse(PATH_DEFAULT_PROFILE)
                 else -> user.photoUrl
             }
-            val name = profileBinding.etName.text.toString().trim()
-            if (name.isEmpty()) {
-                profileBinding.textInputName.error = NAME_EMPTY
-                profileBinding.textInputName.requestFocus()
-                return@setOnClickListener
-            }
             UserProfileChangeRequest.Builder()
-                .setDisplayName(name)
                 .setPhotoUri(image)
                 .build().also {
                     user?.updateProfile(it)?.addOnCompleteListener { Task ->
@@ -135,6 +128,11 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+        profileBinding.btnChangeUsername.setOnClickListener {
+            val updateUsername =
+                ProfileFragmentDirections.actionUpdateUsername()
+            Navigation.findNavController(it).navigate(updateUsername)
+        }
         profileBinding.btnChangeEmail.setOnClickListener {
             val updateEmail = ProfileFragmentDirections.actionUpdateEmail()
             Navigation.findNavController(it).navigate(updateEmail)
@@ -171,6 +169,7 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {

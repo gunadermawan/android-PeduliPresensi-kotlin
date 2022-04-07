@@ -44,6 +44,9 @@
         <action
             android:id="@+id/actionAboutApp"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/actionUpdateUsername"
+            app:destination="@id/updateUsernameFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
@@ -74,6 +77,15 @@
         tools:layout="@layout/fragment_about" >
         <action
             android:id="@+id/actionBackAboutApp"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateUsernameFragment"
+        android:name="com.capstone.attendance.ui.update.UpdateUsernameFragment"
+        android:label="fragment_update_username"
+        tools:layout="@layout/fragment_update_username" >
+        <action
+            android:id="@+id/actionUpdatedUsername"
             app:destination="@id/navigation_profile" />
     </fragment>
 </navigation>

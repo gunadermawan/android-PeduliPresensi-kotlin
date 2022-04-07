@@ -67,7 +67,12 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
+                    android:enabled="false"
                     android:hint="@string/add_name"
+                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
                     app:endIconMode="clear_text"
                     app:errorEnabled="true"
                     app:errorIconDrawable="@drawable/ic_error"
@@ -75,13 +80,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivProfile"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:startIconDrawable="@drawable/ic_person"
-                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
-                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusTopStart="@dimen/dimen_32">
+                    app:layout_constraintTop_toBottomOf="@id/btnUpdate"
+                    app:layout_constraintVertical_bias="0.0">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_name"
@@ -91,25 +91,24 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputEmail"
-                    android:visibility="visible"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:enabled="false"
                     android:hint="@string/your_emails"
+                    android:visibility="visible"
+                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
+                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
+                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
                     app:helperText="@string/helper_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textInputName"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/textInputName"
                     app:layout_constraintTop_toBottomOf="@+id/textInputName"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:startIconDrawable="@drawable/ic_mail"
-                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
-                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
-                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32">
+                    app:layout_constraintVertical_bias="0.0">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email"
@@ -183,17 +182,17 @@
                     style="@style/Widget.Material3.Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:text="@string/update"
                     android:textAllCaps="false"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputName"
                     app:layout_constraintEnd_toEndOf="@+id/textInputEmail"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textInputEmail"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputEmail"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivProfile"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ProgressBar
                     android:id="@+id/pb_profile"
@@ -205,7 +204,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -243,12 +241,31 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <Button
-                    android:id="@+id/btnChangeEmail"
+                    android:id="@+id/btnChangeUsername"
                     style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/changeUsername"
+                    android:textAllCaps="false"
+                    app:icon="@drawable/ic_person_otuline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_settings"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:strokeColor="@color/blue_500" />
+
+                <Button
+                    android:id="@+id/btnChangeEmail"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
                     android:gravity="center_vertical"
                     android:text="@string/change_email"
@@ -260,7 +277,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_settings"
+                    app:layout_constraintTop_toBottomOf="@+id/btnChangeUsername"
                     app:layout_constraintVertical_bias="0.0"
                     app:strokeColor="@color/blue_500" />
 
