@@ -35,6 +35,7 @@ class UpdateUsernameFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         updateUsernameBinding.etUsername.requestFocus()
         val user = auth.currentUser
+        updateUsernameBinding.etUsername.setText(user?.displayName)
         updateUsernameBinding.btnUpdate.setOnClickListener {
             val name = updateUsernameBinding.etUsername.text.toString()
             if (name.isEmpty()) {
@@ -57,7 +58,8 @@ class UpdateUsernameFragment : Fragment() {
                                 MotionToastStyle.SUCCESS,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                                ResourcesCompat.getFont(context as Activity,
+                                    R.font.helveticabold)
                             )
                         } else {
                             FunctionLibrary.toast(
@@ -67,7 +69,8 @@ class UpdateUsernameFragment : Fragment() {
                                 MotionToastStyle.ERROR,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
+                                ResourcesCompat.getFont(context as Activity,
+                                    R.font.helveticabold)
                             )
                         }
                     }
