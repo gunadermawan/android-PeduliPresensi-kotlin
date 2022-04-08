@@ -112,87 +112,89 @@ class AttendanceFragment : Fragment() {
     }
 
     private fun getLastLocation() {
-        if (FunctionLibrary.checkConnection(requireContext())) {
-            if (FunctionLibrary.timeAttendance() || FunctionLibrary.timeAttendanceLate()) {
-                if (checkPermission()) {
-                    if (isLocationEnabled()) {
-                        val locationCallBack = object : LocationCallback() {
-                            override fun onLocationResult(locationResult: LocationResult) {
-                                super.onLocationResult(locationResult)
-                                val location = locationResult.lastLocation
-                                val currentLat = location.latitude
-                                val currentLong = location.longitude
-                                val destinationLat = getAddress()[0].latitude
-                                val destinationLong = getAddress()[0].longitude
-                                lifecycleScope.launch(Dispatchers.Default) {
-                                    val distance = FunctionLibrary.calculateDistance(
-                                        currentLat, currentLong, destinationLat, destinationLong
-                                    ) * 1000
-                                    Log.d(TAG, "$TAG_RESULT - $distance")
-                                    withContext(Dispatchers.Main) {
-                                        if (distance < MEASURING_DISTANCE) {
-                                            showDialog()
-                                            FunctionLibrary.toast(
-                                                context as Activity,
-                                                TOAST_SUCCESS,
-                                                LOCATION_FOUND,
-                                                MotionToastStyle.SUCCESS,
-                                                MotionToast.GRAVITY_BOTTOM,
-                                                MotionToast.LONG_DURATION,
-                                                ResourcesCompat.getFont(
+        lifecycleScope.launch(Dispatchers.Default) {
+            if (FunctionLibrary.checkConnection(requireContext())) {
+                if (FunctionLibrary.timeAttendance() || FunctionLibrary.timeAttendanceLate()) {
+                    if (checkPermission()) {
+                        if (isLocationEnabled()) {
+                            val locationCallBack = object : LocationCallback() {
+                                override fun onLocationResult(locationResult: LocationResult) {
+                                    super.onLocationResult(locationResult)
+                                    val location = locationResult.lastLocation
+                                    val currentLat = location.latitude
+                                    val currentLong = location.longitude
+                                    val destinationLat = getAddress()[0].latitude
+                                    val destinationLong = getAddress()[0].longitude
+                                    lifecycleScope.launch(Dispatchers.Default) {
+                                        val distance = FunctionLibrary.calculateDistance(
+                                            currentLat, currentLong, destinationLat, destinationLong
+                                        ) * 1000
+                                        Log.d(TAG, "$TAG_RESULT - $distance")
+                                        withContext(Dispatchers.Main) {
+                                            if (distance < MEASURING_DISTANCE) {
+                                                showDialog()
+                                                FunctionLibrary.toast(
                                                     context as Activity,
-                                                    R.font.helveticabold
+                                                    TOAST_SUCCESS,
+                                                    LOCATION_FOUND,
+                                                    MotionToastStyle.SUCCESS,
+                                                    MotionToast.GRAVITY_BOTTOM,
+                                                    MotionToast.LONG_DURATION,
+                                                    ResourcesCompat.getFont(
+                                                        context as Activity,
+                                                        R.font.helveticabold
+                                                    )
                                                 )
-                                            )
-                                        } else {
-                                            simpleDialog(
-                                                OUT_OF_RANGE,
-                                                OUT_OF_RANGE_MESSAGE
-                                            )
-                                            binding.tvCheckIn.visibility = View.VISIBLE
+                                            } else {
+                                                simpleDialog(
+                                                    OUT_OF_RANGE,
+                                                    OUT_OF_RANGE_MESSAGE
+                                                )
+                                                binding.tvCheckIn.visibility = View.VISIBLE
+                                            }
                                         }
                                     }
+                                    fusedLocationProviderClient?.removeLocationUpdates(this)
+                                    stopScanLocation()
                                 }
-                                fusedLocationProviderClient?.removeLocationUpdates(this)
-                                stopScanLocation()
                             }
-                        }
-                        lifecycleScope.launch(Dispatchers.Default) {
-                            fusedLocationProviderClient?.requestLocationUpdates(
-                                locationRequest,
-                                locationCallBack,
-                                Looper.getMainLooper()
+                            lifecycleScope.launch(Dispatchers.IO) {
+                                fusedLocationProviderClient?.requestLocationUpdates(
+                                    locationRequest,
+                                    locationCallBack,
+                                    Looper.getMainLooper()
+                                )
+                            }
+                        } else {
+                            simpleDialog(
+                                GPS_STATUS,
+                                GPS_MESSAGE
                             )
+                            stopScanLocation()
                         }
                     } else {
-                        simpleDialog(
-                            GPS_STATUS,
-                            GPS_MESSAGE
-                        )
                         stopScanLocation()
+                        requestPermission()
                     }
                 } else {
                     stopScanLocation()
-                    requestPermission()
+                    simpleDialog(
+                        ATTENDANCE_DENIED,
+                        ATTENDANCE_TIME
+                    )
                 }
             } else {
-                stopScanLocation()
-                simpleDialog(
-                    ATTENDANCE_DENIED,
-                    ATTENDANCE_TIME
+                FunctionLibrary.toast(
+                    context as Activity,
+                    TOAST_ERROR,
+                    PERMISSION_INTERNET,
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
                 )
+                stopScanLocation()
             }
-        } else {
-            FunctionLibrary.toast(
-                context as Activity,
-                TOAST_ERROR,
-                PERMISSION_INTERNET,
-                MotionToastStyle.ERROR,
-                MotionToast.GRAVITY_BOTTOM,
-                MotionToast.LONG_DURATION,
-                ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-            )
-            stopScanLocation()
         }
     }
 
@@ -215,18 +217,24 @@ class AttendanceFragment : Fragment() {
                 .setPositiveButton(resources.getString(R.string.attendancNow)) { _, _ ->
                     val user = auth.currentUser
                     val name = user?.displayName
-                    if (name != null) {
-                        inputToFirebase(name)
-                    } else {
-                        FunctionLibrary.toast(
-                            context as Activity,
-                            TOAST_ERROR,
-                            INPUT_YOUR_NAME,
-                            MotionToastStyle.ERROR,
-                            MotionToast.GRAVITY_BOTTOM,
-                            MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(context as Activity, R.font.helveticabold)
-                        )
+                    lifecycleScope.launch(Dispatchers.IO) {
+                        if (name != null) {
+                            inputToFirebase(name)
+                        } else {
+                            withContext(Dispatchers.Main) {
+                                FunctionLibrary.toast(
+                                    context as Activity,
+                                    TOAST_ERROR,
+                                    INPUT_YOUR_NAME,
+                                    MotionToastStyle.ERROR,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(context as Activity,
+                                        R.font.helveticabold)
+                                )
+                            }
+
+                        }
                     }
                 }
                 .setNegativeButton(resources.getString(R.string.signout_negative)) { _, _ -> }
