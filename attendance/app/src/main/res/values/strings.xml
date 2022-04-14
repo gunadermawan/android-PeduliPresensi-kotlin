@@ -55,12 +55,12 @@
     <string name="email_registered">*pastikan email Anda telah terdaftar</string>
     <string name="password_length">*Password harus lebih dari  8 karakter</string>
     <string name="add_password">*Masukan password akun Anda</string>
-    <string name="add_name">Nama Anda</string>
+    <string name="add_name">Nama</string>
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
     <string name="government">Pemerintah Desa Warureja</string>
     <string name="version_app">Version app 1.0.0</string>
-    <string name="helper_email">* Verifikasi email Anda untuk dapat melakukan reset password dan ganti email</string>
+    <string name="helper_email">* Verifikasi email Anda untuk dapat melakukan reset password dan hal penting lainya.</string>
     <string name="about">Tentang Aplikasi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="about_app">Sebuah aplikasi untuk melakukan presensi secara online, dengan algoritma yang terbukti akurat untuk mengukur jarak, kami berharap aplikasi ini dapat memberi nilai lebih dari sekedar implementasi kode.</string>
@@ -73,7 +73,7 @@
     <string name="signout_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
-    <string name="your_emails">Email Anda</string>
+    <string name="your_emails">Email</string>
     <string name="banner_application">banner_application</string>
     <string name="image_of_content">image of Content</string>
     <string name="news1">Buat Aplikasi Lapor Gub, Cara Ganjar Respons Aduan Pungli di Jateng</string>
