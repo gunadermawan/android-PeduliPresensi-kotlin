@@ -30,7 +30,7 @@ class UpdateEmailFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         updateBinding = FragmentUpdateBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
@@ -44,6 +44,7 @@ class UpdateEmailFragment : Fragment() {
         val user = auth.currentUser
         updateBinding.layoutPassword.visibility = View.VISIBLE
         updateBinding.layoutEmail.visibility = View.GONE
+        updateBinding.etEmail.setText(user?.email)
         updateBinding.btnAuth.setOnClickListener {
             val pass = updateBinding.etPassword.text.toString().trim()
             if (pass.isEmpty()) {
