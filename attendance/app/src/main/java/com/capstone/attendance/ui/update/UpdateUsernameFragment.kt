@@ -54,7 +54,7 @@ class UpdateUsernameFragment : Fragment() {
                             FunctionLibrary.toast(
                                 context as Activity,
                                 TOAST_SUCCESS,
-                                PROFILE_UPDATED,
+                                USERNAME_UPDATED,
                                 MotionToastStyle.SUCCESS,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,

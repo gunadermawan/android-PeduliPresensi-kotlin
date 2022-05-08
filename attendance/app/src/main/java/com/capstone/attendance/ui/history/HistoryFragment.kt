@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -76,6 +77,7 @@ class HistoryFragment : Fragment() {
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(TAG, REALTIME_DB_CANCELED, error.toException())
+                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
             }
         })
     }
