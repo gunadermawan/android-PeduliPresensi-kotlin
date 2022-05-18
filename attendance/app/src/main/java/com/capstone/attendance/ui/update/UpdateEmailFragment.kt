@@ -59,6 +59,7 @@ class UpdateEmailFragment : Fragment() {
                         Task.isSuccessful -> {
                             updateBinding.layoutPassword.visibility = View.GONE
                             updateBinding.layoutEmail.visibility = View.VISIBLE
+                            updateBinding.etEmail.requestFocus()
                         }
                         Task.exception is FirebaseAuthInvalidCredentialsException -> {
                             updateBinding.txtInputPassword.error = WRONG_PASSWORD

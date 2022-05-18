@@ -33,7 +33,7 @@
     <string name="register_succes">Registrasi Berhasil!</string>
     <string name="update_profile_succes">Pembaruan profil</string>
     <string name="update_email_succes_desc">Email Anda Berhasil diperbarui.</string>
-    <string name="update_password_succes_desc">Password Anda Berhasil diperbarui.</string>
+    <string name="update_password_succes_desc">Silahkan login dengan password baru Anda</string>
     <string name="register_succes_desc">Silahkan aktivasi email Anda di menu profil</string>
     <string name="btn_reset_pass">Reset password</string>
     <string name="add_email">Masukan email</string>
