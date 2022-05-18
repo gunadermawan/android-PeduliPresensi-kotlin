@@ -65,10 +65,8 @@
         android:label="fragment_update_password"
         tools:layout="@layout/fragment_update_password" >
         <action
-            android:id="@+id/actionUpdatedPassword"
-            app:destination="@id/navigation_profile"
-            app:popUpTo="@id/navigation_profile"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/actionUpdatedPass"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -88,4 +86,9 @@
             android:id="@+id/actionUpdatedUsername"
             app:destination="@id/navigation_profile" />
     </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.capstone.attendance.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

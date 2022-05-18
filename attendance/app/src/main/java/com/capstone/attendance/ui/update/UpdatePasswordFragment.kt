@@ -29,7 +29,7 @@ class UpdatePasswordFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
         updatePasswordBinding =
@@ -58,6 +58,7 @@ class UpdatePasswordFragment : Fragment() {
                         Task.isSuccessful -> {
                             updatePasswordBinding.layoutPassword.visibility = View.GONE
                             updatePasswordBinding.layoutNewPass.visibility = View.VISIBLE
+                            updatePasswordBinding.etNewPassword.requestFocus()
                         }
                         Task.exception is FirebaseAuthInvalidCredentialsException -> {
                             updatePasswordBinding.txtInputPassword.error = WRONG_PASSWORD
@@ -86,7 +87,7 @@ class UpdatePasswordFragment : Fragment() {
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
                     return@btnUpdate
                 }
-                if(newPass.length < 8){
+                if (newPass.length < 8) {
                     updatePasswordBinding.txtInputNewPassword.error = PASSWORD_LENGTH
                     updatePasswordBinding.txtInputNewPassword.requestFocus()
                 }
@@ -100,8 +101,9 @@ class UpdatePasswordFragment : Fragment() {
                     user.updatePassword(newPass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             val actionUpdatedPass =
-                                UpdatePasswordFragmentDirections.actionUpdatedPassword()
+                                UpdatePasswordFragmentDirections.actionUpdatedPass()
                             Navigation.findNavController(view).navigate(actionUpdatedPass)
+                            auth.signOut()
                             val mNotificationManager =
                                 activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                             val mBuilder = NotificationCompat.Builder(
