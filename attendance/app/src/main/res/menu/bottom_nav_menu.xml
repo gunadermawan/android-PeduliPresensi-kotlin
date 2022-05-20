@@ -17,7 +17,7 @@
         android:title="@string/histori" />
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_person_otuline"
+        android:icon="@drawable/ic_person_outline"
         android:title="@string/profile" />
 
 </menu>
