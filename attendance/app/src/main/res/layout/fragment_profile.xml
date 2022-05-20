@@ -73,7 +73,6 @@
                     app:boxCornerRadiusBottomStart="@dimen/dimen_32"
                     app:boxCornerRadiusTopEnd="@dimen/dimen_32"
                     app:boxCornerRadiusTopStart="@dimen/dimen_32"
-                    app:endIconMode="clear_text"
                     app:errorEnabled="true"
                     app:errorIconDrawable="@drawable/ic_error"
                     app:layout_constraintBottom_toBottomOf="parent"
