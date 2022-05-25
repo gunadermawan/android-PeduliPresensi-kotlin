@@ -209,7 +209,7 @@
                     app:layout_constraintVertical_bias="1.0" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/iv_infoProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -384,7 +384,7 @@
                     app:strokeColor="@color/Electric_Orange" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/iv_settingsAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"

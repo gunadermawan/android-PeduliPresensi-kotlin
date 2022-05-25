@@ -39,6 +39,7 @@
     <string name="add_email">Masukan email</string>
     <string name="input_email">Masukan Email</string>
     <string name="settings">Pengaturan Akun</string>
+    <string name="settings_info">Lakukan manajemen akun Anda seperti ganti email dan password, semua peraturan akan tersimpan kedalam server aplikasi.</string>
     <string name="change_email">Ganti Email</string>
     <string name="tv_verified">Email terverifikasi</string>
     <string name="tv_unverified">Belum verifikasi email</string>
@@ -69,6 +70,7 @@
     <string name="android_developer">Android Developer</string>
     <string name="signout">Keluar Aplikasi</string>
     <string name="signout_message">Apakah Anda yakin untuk keluar?</string>
+    <string name="info_profile_message">Berisi informasi detail mengenai akun Anda. Verifikasi email Anda untuk dapat melakukan reset password dan hal penting lainya. </string>
     <string name="signout_possitive">Ya</string>
     <string name="signout_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
@@ -98,7 +100,7 @@
     <string name="input_username">Masukan username</string>
     <string name="update_username">update username</string>
     <string name="hint_username">masukan username</string>
-    <string name="logo_goverment">logo goverment</string>
+    <string name="logo_goverment">logo government</string>
     <string name="username">Username</string>
     <string name="account_info">Info Akun</string>
     <string name="profile_info">Info Profil</string>
