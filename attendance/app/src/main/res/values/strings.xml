@@ -99,4 +99,6 @@
     <string name="update_username">update username</string>
     <string name="hint_username">masukan username</string>
     <string name="logo_goverment">logo goverment</string>
+    <string name="username">Username</string>
+    <string name="account_info">Info Akun</string>
 </resources>

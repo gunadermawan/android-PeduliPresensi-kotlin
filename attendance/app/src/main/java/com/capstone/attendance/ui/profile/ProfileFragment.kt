@@ -52,8 +52,8 @@ class ProfileFragment : Fragment() {
                     .into(profileBinding.ivProfile)
             }
             profileBinding.pbProfile.visibility = View.GONE
-            profileBinding.etName.setText(user.displayName)
-            profileBinding.etEmail.setText(user.email)
+            profileBinding.etName.text = user.displayName
+            profileBinding.etEmail.text = user.email
             if (user.isEmailVerified) {
                 profileBinding.ivVerified.visibility = View.VISIBLE
                 profileBinding.tvVerified.visibility = View.VISIBLE
