@@ -34,18 +34,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginVertical="16dp">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile"
-                    android:textColor="@color/blue_500"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ivProfile"
                     android:layout_width="150dp"
@@ -56,140 +44,77 @@
                     app:civ_border_width="3dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputName"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_usernmae"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:text="@string/username"
+                    android:textColor="@color/grey_material"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/btnUpdate"
+                    app:layout_constraintTop_toTopOf="@+id/et_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/et_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:enabled="false"
-                    android:hint="@string/add_name"
-                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
-                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
-                    app:errorEnabled="true"
-                    app:errorIconDrawable="@drawable/ic_error"
+                    android:text="@string/username"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="@+id/tv_usernmae"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_accountInfo" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/email"
+                    android:textColor="@color/grey_material"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btnUpdate"
-                    app:layout_constraintVertical_bias="0.0">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputEmail"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:enabled="false"
-                    android:hint="@string/your_emails"
-                    android:visibility="visible"
-                    app:boxCornerRadiusBottomEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusBottomStart="@dimen/dimen_32"
-                    app:boxCornerRadiusTopEnd="@dimen/dimen_32"
-                    app:boxCornerRadiusTopStart="@dimen/dimen_32"
-                    app:helperText="@string/helper_email"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textInputName"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/textInputName"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputName"
-                    app:layout_constraintVertical_bias="0.0">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
-                    android:id="@+id/tv_unverified"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/tv_unverified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivUnverified"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/ivUnverified"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputEmail"
-                    app:layout_constraintVertical_bias="0.166" />
-
-                <ImageView
-                    android:id="@+id/ivUnverified"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:contentDescription="@string/tv_unverified"
-                    android:src="@drawable/ic_unverified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
-                    app:layout_constraintEnd_toEndOf="@+id/textView"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textInputEmail"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputEmail"
+                    app:layout_constraintStart_toStartOf="@+id/tv_usernmae"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_usernmae"
                     app:layout_constraintVertical_bias="0.0" />
 
-                <ImageView
-                    android:id="@+id/ivVerified"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/et_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:contentDescription="@string/tv_verified"
-                    android:src="@drawable/ic_verified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivUnverified"
-                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    android:text="@string/email"
+                    app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+                    app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/ivUnverified"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputEmail" />
-
-                <TextView
-                    android:id="@+id/tv_verified"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/tv_verified"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_unverified"
-                    app:layout_constraintEnd_toEndOf="@+id/tv_unverified"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_unverified"
-                    app:layout_constraintTop_toTopOf="@+id/tv_unverified" />
+                    app:layout_constraintStart_toStartOf="@+id/et_name"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView" />
 
                 <Button
                     android:id="@+id/btnUpdate"
                     style="@style/Widget.Material3.Button"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
                     android:gravity="center"
                     android:text="@string/update"
                     android:textAllCaps="false"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/textInputName"
-                    app:layout_constraintEnd_toEndOf="@+id/textInputEmail"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_usernmae"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textInputEmail"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ivProfile"
                     app:layout_constraintVertical_bias="0.0" />
 
@@ -202,7 +127,99 @@
                     app:layout_constraintBottom_toBottomOf="@+id/ivProfile"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toTopOf="@+id/ivProfile" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:dividerInsetEnd="@dimen/dimen_16"
+                    app:dividerInsetStart="@dimen/dimen_16"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_usernmae"
+                    app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
+                    app:layout_constraintStart_toStartOf="@+id/btnUpdate"
+                    app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/iv_unverified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/email_verification"
+                    android:src="@drawable/ic_unverified"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+                <ImageView
+                    android:id="@+id/iv_verified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/email_verification"
+                    android:src="@drawable/ic_verified"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_unverified"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_unverified"
+                    app:layout_constraintStart_toStartOf="@+id/iv_unverified"
+                    app:layout_constraintTop_toTopOf="@+id/iv_unverified" />
+
+                <TextView
+                    android:id="@+id/tv_verified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_verified"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_unverified"
+                    app:layout_constraintEnd_toEndOf="@+id/et_email"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/et_email"
+                    app:layout_constraintTop_toTopOf="@+id/iv_unverified"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tv_unverified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_unverified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_verified"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_verified"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_verified"
+                    app:layout_constraintTop_toTopOf="@+id/tv_verified" />
+
+                <TextView
+                    android:id="@+id/tv_accountInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/profile_info"
+                    android:textSize="@dimen/dimen_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/et_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_usernmae"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_about_outline"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_accountInfo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_accountInfo"
+                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -230,11 +247,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/settings"
-                    android:textColor="@color/blue_500"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/dimen_16"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/btnChangeEmail"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
@@ -249,7 +266,7 @@
                     android:gravity="center_vertical"
                     android:text="@string/changeUsername"
                     android:textAllCaps="false"
-                    app:icon="@drawable/ic_person_otuline"
+                    app:icon="@drawable/ic_person_outline"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -355,7 +372,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/Electric_Orange"
                     android:text="@string/logout"
                     android:textAllCaps="false"
@@ -365,6 +382,18 @@
                     app:layout_constraintStart_toStartOf="@id/btn_about_app"
                     app:layout_constraintTop_toBottomOf="@id/btn_about_app"
                     app:strokeColor="@color/Electric_Orange" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_about_outline"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_settings"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_settings"
+                    app:layout_constraintTop_toTopOf="@+id/tv_settings" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

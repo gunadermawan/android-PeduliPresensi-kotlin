@@ -7,21 +7,18 @@
     android:background="@color/white"
     tools:context=".ui.splashscreen.Splash">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
+    <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/logo_goverment"
+        android:src="@drawable/ic_city"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:lottie_autoPlay="true"
-        app:lottie_colorFilter="@color/blue_500"
-        app:lottie_loop="false"
-        app:lottie_rawRes="@raw/finger_animation" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView13"
@@ -55,11 +52,11 @@
             android:id="@+id/imageView3"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:backgroundTint="@color/blue_500"
             android:contentDescription="@string/app_name"
             android:src="@drawable/icon_app_splash"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/blue_500"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

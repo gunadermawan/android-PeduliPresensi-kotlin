@@ -38,7 +38,7 @@
     <string name="btn_reset_pass">Reset password</string>
     <string name="add_email">Masukan email</string>
     <string name="input_email">Masukan Email</string>
-    <string name="settings">Pengaturan</string>
+    <string name="settings">Pengaturan Akun</string>
     <string name="change_email">Ganti Email</string>
     <string name="tv_verified">Email terverifikasi</string>
     <string name="tv_unverified">Belum verifikasi email</string>
@@ -98,4 +98,8 @@
     <string name="input_username">Masukan username</string>
     <string name="update_username">update username</string>
     <string name="hint_username">masukan username</string>
+    <string name="logo_goverment">logo goverment</string>
+    <string name="username">Username</string>
+    <string name="account_info">Info Akun</string>
+    <string name="profile_info">Info Profil</string>
 </resources>
