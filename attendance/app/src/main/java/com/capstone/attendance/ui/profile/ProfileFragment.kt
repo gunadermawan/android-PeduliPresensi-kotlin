@@ -97,6 +97,18 @@ class ProfileFragment : Fragment() {
                     }
                 }
         }
+        profileBinding.ivInfoProfile.setOnClickListener{
+            MaterialAlertDialogBuilder(context as Activity)
+                .setTitle(resources.getString(R.string.profile_info))
+                .setMessage(resources.getString(R.string.info_profile_message))
+                .show()
+        }
+        profileBinding.ivSettingsAccount.setOnClickListener {
+            MaterialAlertDialogBuilder(context as Activity)
+                .setTitle(resources.getString(R.string.settings))
+                .setMessage(resources.getString(R.string.settings_info))
+                .show()
+        }
         profileBinding.btnLogout.setOnClickListener {
             alertDialog()
         }
