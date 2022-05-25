@@ -34,18 +34,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginVertical="16dp">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile"
-                    android:textColor="@color/blue_500"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ivProfile"
                     android:layout_width="150dp"
@@ -56,7 +44,7 @@
                     app:civ_border_width="3dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -83,7 +71,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.4"
                     app:layout_constraintStart_toStartOf="@+id/tv_usernmae"
-                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_accountInfo" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView"
@@ -125,9 +113,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/tv_usernmae"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivProfile"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ProgressBar
                     android:id="@+id/pb_profile"
@@ -138,7 +127,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/ivProfile"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toTopOf="@+id/ivProfile" />
 
                 <com.google.android.material.divider.MaterialDivider
                     android:id="@+id/divider"
@@ -151,7 +140,8 @@
                     app:layout_constraintBottom_toTopOf="@+id/tv_usernmae"
                     app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
                     app:layout_constraintStart_toStartOf="@+id/btnUpdate"
-                    app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/iv_unverified"
@@ -201,6 +191,35 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_verified"
                     app:layout_constraintTop_toTopOf="@+id/tv_verified" />
+
+                <TextView
+                    android:id="@+id/tv_accountInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/profile_info"
+                    android:textSize="@dimen/dimen_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/et_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_usernmae"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_about_outline"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_accountInfo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_accountInfo"
+                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -228,11 +247,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/settings"
-                    android:textColor="@color/blue_500"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/dimen_16"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/btnChangeEmail"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
@@ -363,6 +382,18 @@
                     app:layout_constraintStart_toStartOf="@id/btn_about_app"
                     app:layout_constraintTop_toBottomOf="@id/btn_about_app"
                     app:strokeColor="@color/Electric_Orange" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_about_outline"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_settings"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_settings"
+                    app:layout_constraintTop_toTopOf="@+id/tv_settings" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
