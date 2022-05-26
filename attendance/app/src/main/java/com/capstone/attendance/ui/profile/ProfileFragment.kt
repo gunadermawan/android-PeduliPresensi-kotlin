@@ -52,7 +52,11 @@ class ProfileFragment : Fragment() {
                     .into(profileBinding.ivProfile)
             }
             profileBinding.pbProfile.visibility = View.GONE
-            profileBinding.etName.text = user.displayName
+            if (user.displayName == null) {
+                profileBinding.etName.text = getString(R.string.user_unset)
+            } else {
+                profileBinding.etName.text = user.displayName
+            }
             profileBinding.etEmail.text = user.email
             if (user.isEmailVerified) {
                 profileBinding.ivVerified.visibility = View.VISIBLE
@@ -97,7 +101,7 @@ class ProfileFragment : Fragment() {
                     }
                 }
         }
-        profileBinding.ivInfoProfile.setOnClickListener{
+        profileBinding.ivInfoProfile.setOnClickListener {
             MaterialAlertDialogBuilder(context as Activity)
                 .setTitle(resources.getString(R.string.profile_info))
                 .setMessage(resources.getString(R.string.info_profile_message))

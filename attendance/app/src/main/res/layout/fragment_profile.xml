@@ -147,38 +147,43 @@
                     android:id="@+id/iv_unverified"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
                     android:contentDescription="@string/email_verification"
                     android:src="@drawable/ic_unverified"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/materialTextView"
+                    app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/materialTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+                    app:layout_constraintStart_toStartOf="@+id/iv_verified"
+                    app:layout_constraintTop_toTopOf="@+id/tv_unverified" />
 
                 <ImageView
                     android:id="@+id/iv_verified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:contentDescription="@string/email_verification"
                     android:src="@drawable/ic_verified"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_unverified"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_unverified"
-                    app:layout_constraintStart_toStartOf="@+id/iv_unverified"
-                    app:layout_constraintTop_toTopOf="@+id/iv_unverified" />
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_verified"
+                    app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_verified"
+                    app:layout_constraintTop_toTopOf="@+id/tv_verified" />
 
                 <TextView
                     android:id="@+id/tv_verified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/tv_verified"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_unverified"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/et_email"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/et_email"
-                    app:layout_constraintTop_toTopOf="@+id/iv_unverified"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toTopOf="@+id/et_email" />
 
                 <TextView
                     android:id="@+id/tv_unverified"
@@ -190,7 +195,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/tv_verified"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_verified"
-                    app:layout_constraintTop_toTopOf="@+id/tv_verified" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_verified"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/tv_accountInfo"
@@ -218,7 +224,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/tv_accountInfo"
-                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo"
+                    android:contentDescription="@string/image_info_profile" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -393,7 +400,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/tv_settings"
-                    app:layout_constraintTop_toTopOf="@+id/tv_settings" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_settings"
+                    android:contentDescription="@string/imageview_info_settings" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
