@@ -224,7 +224,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/tv_accountInfo"
-                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_accountInfo"
+                    android:contentDescription="@string/image_info_profile" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -399,7 +400,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/tv_settings"
-                    app:layout_constraintTop_toTopOf="@+id/tv_settings" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_settings"
+                    android:contentDescription="@string/imageview_info_settings" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

@@ -13,6 +13,7 @@
     <string name="profile">Akun</string>
     <string name="welcome">Selamat datang,</string>
     <string name="user">User</string>
+    <string name="user_unset">Atur username Anda</string>
     <string name="check_in">Ketuk untuk mulai presensi</string>
     <string name="scanning_location">Menghitung jarak lokasi Anda</string>
     <string name="check_in_success">Check-in success</string>
@@ -104,4 +105,6 @@
     <string name="username">Username</string>
     <string name="account_info">Info Akun</string>
     <string name="profile_info">Info Profil</string>
+    <string name="image_info_profile">image info profile</string>
+    <string name="imageview_info_settings">imageView info settings</string>
 </resources>
