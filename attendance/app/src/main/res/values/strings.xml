@@ -57,12 +57,10 @@
     <string name="email_registered">*pastikan email Anda telah terdaftar</string>
     <string name="password_length">*Password harus lebih dari  8 karakter</string>
     <string name="add_password">*Masukan password akun Anda</string>
-    <string name="add_name">Nama</string>
     <string name="processing_data">Memproses data</string>
     <string name="attendance_online">PRESENSI ONLINE</string>
     <string name="government">Pemerintah Desa Warureja</string>
     <string name="version_app">Version app 1.0.0</string>
-    <string name="helper_email">* Verifikasi email Anda untuk dapat melakukan reset password dan hal penting lainya.</string>
     <string name="about">Tentang Aplikasi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="about_app">Aplikasi presensi pegawai pemerintah desa Warureja. Kami berharap aplikasi ini lebih dari implementasi kode</string>
@@ -76,7 +74,6 @@
     <string name="signout_negative">Batal</string>
     <string name="report_bug">Laporkan Masalah Aplikasi</string>
     <string name="image_weather">image weather</string>
-    <string name="your_emails">Email</string>
     <string name="banner_application">banner_application</string>
     <string name="image_of_content">image of Content</string>
     <string name="news1">Buat Aplikasi Lapor Gub, Cara Ganjar Respons Aduan Pungli di Jateng</string>
@@ -97,13 +94,11 @@
     <string name="info_icon_6">Disdukcapil Kab. Tegal</string>
     <string name="changeUsername">Ganti Username</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="input_username">Masukan username</string>
     <string name="update_username">update username</string>
     <string name="hint_username">masukan username</string>
     <string name="logo_goverment">logo government</string>
     <string name="username">Username</string>
-    <string name="account_info">Info Akun</string>
     <string name="profile_info">Info Profil</string>
     <string name="image_info_profile">image info profile</string>
     <string name="imageview_info_settings">imageView info settings</string>
