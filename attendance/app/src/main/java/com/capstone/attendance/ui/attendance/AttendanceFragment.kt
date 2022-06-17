@@ -120,7 +120,7 @@ class AttendanceFragment : Fragment() {
                             override fun onLocationResult(locationResult: LocationResult) {
                                 super.onLocationResult(locationResult)
                                 val location = locationResult.lastLocation
-                                val currentLat = location.latitude
+                                val currentLat = location!!.latitude
                                 val currentLong = location.longitude
                                 val destinationLat = getAddress()[0].latitude
                                 val destinationLong = getAddress()[0].longitude
