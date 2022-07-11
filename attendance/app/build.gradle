@@ -72,6 +72,4 @@ dependencies {
     //    Lottie
     def lottieVersion = "4.2.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
-    //    wave animations
-//    implementation "com.scwang.wave:MultiWaveHeader:1.0.0"
 }
