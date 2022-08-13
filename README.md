@@ -1,2 +1,2 @@
 # APLIKASI PRESENSI MOBILE BERBASIS ANDROID DAN GEOCODER MENGGUNAKAN METODE HAVERSINE
-[playStore-slide1](https://user-images.githubusercontent.com/53375007/184467481-30640fa6-ee57-4244-aa2a-cddda569fc58.png)
+![playStore-slide1](https://user-images.githubusercontent.com/53375007/184467492-4b3e0955-36e9-4e9d-8aa6-988f95ab5186.png)
