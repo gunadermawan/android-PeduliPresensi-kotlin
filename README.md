@@ -1,4 +1,4 @@
-# APLIKASI PRESENSI MOBILE BERBASIS ANDROID DAN GEOCODER MENGGUNAKAN METODE HAVERSINE
+## Aplikasi Presensi berbasis android menggunakan algoritma haversine
 ![playStore-slide1](https://user-images.githubusercontent.com/53375007/184467492-4b3e0955-36e9-4e9d-8aa6-988f95ab5186.png)
 
 
