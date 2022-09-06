@@ -5,5 +5,5 @@
 ## Technology 
 You will probably need the `clone` to start codding from this project, open your git and start `cloning` use this remote URL:
 ```haskell
-https://github.com/itselaras/hyuka-web.git
+https://github.com/gunadermawan/android-PeduliPresensi-kotlin.git
 ```
